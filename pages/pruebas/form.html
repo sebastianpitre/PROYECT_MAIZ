@@ -1,0 +1,254 @@
+<!-- Ejemplo para un suelo adecuado para cultivar maíz:
+
+Clima: Tropical
+
+Temperatura: 28
+
+Precipitaciones: 1200 
+
+Altitud: 200
+
+Disponibilidad de Agua: Alta
+
+Textura del Suelo: Franco-arcilloso
+
+pH del Suelo: 6.8
+
+Contenido de Nitrógeno: 150
+
+Contenido de Fósforo: 60
+
+Contenido de Potasio: 250
+
+Profundidad del Muestreo: 40
+
+Cantidad de Muestras: 15
+
+Variedad de Maíz: Híbrido A
+
+Rendimiento Esperado: 9000
+
+Resistencia a Enfermedades y Plagas: Alta
+
+Días a la Madurez: 110
+
+Labores de Preparación: Labranza mínima y nivelación del terreno
+
+Frecuencia de Riegos: Una vez por semana
+
+Control de Malezas: Aplicación de herbicidas selectivos
+
+Aplicación de Fertilizantes: Aplicación de NPK 15-15-15
+
+Monitoreo de Plagas y Enfermedades: Inspección regular de hojas y mazorcas
+
+Criterios de Madurez: Granos duros y brillantes
+
+Con estos valores, el resultado mostrará que el suelo es adecuado para cultivar maíz.
+
+Ejemplo para un suelo no adecuado para cultivar maíz:
+
+Clima: Subártico
+
+Temperatura: 5
+
+Precipitaciones: 400
+
+Altitud: 1000
+
+Disponibilidad de Agua: Baja
+
+Textura del Suelo: Arcilloso
+
+pH del Suelo: 8.5
+
+Contenido de Nitrógeno: 80
+
+Contenido de Fósforo: 20
+
+Contenido de Potasio: 100
+
+Profundidad del Muestreo: 20
+
+Cantidad de Muestras: 5
+
+Variedad de Maíz: Híbrido C
+
+Rendimiento Esperado: 6000
+
+Resistencia a Enfermedades y Plagas: Baja
+
+Días a la Madurez: 130
+
+Labores de Preparación: Arado profundo y quema de rastrojos
+
+Frecuencia de Riegos: Dos veces al mes
+
+Control de Malezas: Control manual sin aplicación de herbicidas
+
+Aplicación de Fertilizantes: Sin aplicación de fertilizantes
+
+Monitoreo de Plagas y Enfermedades: Ausencia de monitoreo
+
+Criterios de Madurez: Granos arrugados y opacos
+
+Con estos valores, el resultado mostrará que el suelo no es adecuado para cultivar maíz y se recomendará evaluar otras opciones de cultivo.
+
+Recuerda que estos son solo ejemplos y que los resultados pueden variar según las necesidades y características específicas de tu región y cultivo. Asegúrate de ajustar los valores según tus condiciones reales. -->
+
+<form id="myForm">
+    <h2>Estudio del Suelo</h2>
+  
+    <h3>Información de la Región:</h3>
+    <div>
+      <label for="clima">Clima:</label>
+      <input type="text" id="clima" name="clima" required>
+    </div>
+  
+    <div>
+      <label for="temperatura">Temperatura:</label>
+      <input type="number" id="temperatura" name="temperatura" required>
+    </div>
+  
+    <div>
+      <label for="precipitaciones">Precipitaciones:</label>
+      <input type="number" id="precipitaciones" name="precipitaciones" required>
+    </div>
+  
+    <div>
+      <label for="altitud">Altitud:</label>
+      <input type="number" id="altitud" name="altitud" required>
+    </div>
+  
+    <div>
+      <label for="agua">Disponibilidad de Agua:</label>
+      <input type="text" id="agua" name="agua" required>
+    </div>
+  
+  
+    <h3>Análisis del Suelo:</h3>
+    <div>
+      <label for="textura">Textura del Suelo:</label>
+      <input type="text" id="textura" name="textura" required>
+    </div>
+  
+    <div>
+      <label for="ph">pH del Suelo:</label>
+      <input type="number" id="ph" name="ph" required step="0.1">
+    </div>
+  
+    <div>
+      <label for="nitrogeno">Contenido de Nitrógeno:</label>
+      <input type="number" id="nitrogeno" name="nitrogeno" required>
+    </div>
+  
+    <div>
+      <label for="fosforo">Contenido de Fósforo:</label>
+      <input type="number" id="fosforo" name="fosforo" required>
+    </div>
+  
+    <div>
+      <label for="potasio">Contenido de Potasio:</label>
+      <input type="number" id="potasio" name="potasio" required>
+    </div>
+  
+  
+    <h3>Muestreo del Suelo:</h3>
+    <div>
+      <label for="profundidad">Profundidad del Muestreo:</label>
+      <input type="number" id="profundidad" name="profundidad" required>
+    </div>
+  
+    <div>
+      <label for="muestras">Cantidad de Muestras:</label>
+      <input type="number" id="muestras" name="muestras" required>
+    </div>
+  
+  
+    <h3>Selección de Semillas:</h3>
+    <div>
+      <label for="variedad">Variedad de Maíz:</label>
+      <select id="variedad" name="variedad" required>
+        <option value="">Selecciona una variedad</option>
+        <option value="Híbrido A">Híbrido A</option>
+        <option value="Híbrido B">Híbrido B</option>
+        <option value="Híbrido C">Híbrido C</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="rendimiento">Rendimiento Esperado:</label>
+      <input type="number" id="rendimiento" name="rendimiento" required>
+    </div>
+  
+    <div>
+      <label for="resistencia">Resistencia a Enfermedades y Plagas:</label>
+      <select id="resistencia" name="resistencia" required>
+        <option value="">Selecciona una resistencia</option>
+        <option value="Alta">Alta</option>
+        <option value="Media">Media</option>
+        <option value="Baja">Baja</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="diasmadurez">Días a la Madurez:</label>
+      <input type="number" id="diasmadurez" name="diasmadurez" required>
+    </div>
+  
+  
+    <h3>Preparación del Suelo:</h3>
+    <div>
+      <label for="labores">Labores de Preparación:</label>
+      <input type="text" id="labores" name="labores" required>
+    </div>
+  
+  
+    <h3>Manejo del Cultivo:</h3>
+    <div>
+      <label for="riegos">Frecuencia de Riegos:</label>
+      <input type="text" id="riegos" name="riegos" required>
+    </div>
+  
+    <div>
+      <label for="malezas">Control de Malezas:</label>
+      <input type="text" id="malezas" name="malezas" required>
+    </div>
+  
+    <div>
+      <label for="fertilizantes">Aplicación de Fertilizantes:</label>
+      <input type="text" id="fertilizantes" name="fertilizantes" required>
+    </div>
+  
+    <div>
+      <label for="monitoreo">Monitoreo de Plagas y Enfermedades:</label>
+      <input type="text" id="monitoreo" name="monitoreo" required>
+    </div>
+  
+  
+    <h3>Cosecha:</h3>
+    <div>
+      <label for="madurez">Criterios de Madurez:</label>
+      <input type="text" id="madurez" name="madurez" required>
+    </div>
+  
+  
+    <button type="submit">Enviar</button>
+  </form>
+
+
+  <section class="py-3">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="mb-5">Análisis</h3>
+        </div>
+      </div>
+
+      <div id="resultado">
+        <!-- Aquí se mostrará el resultado generado por JavaScript -->
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>

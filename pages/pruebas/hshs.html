@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de cambio de texto según opción seleccionada</title>
+    <script>
+        function cambiarTexto() {
+            var select = document.getElementById("opciones");
+            var texto = document.getElementById("texto-cambiante");
+            
+            // Obtener el valor seleccionado
+            var opcionSeleccionada = select.value;
+            
+            // Actualizar el texto según la opción seleccionada
+            if (opcionSeleccionada === "dia") {
+                texto.textContent = "Tiempo por día";
+            } else if (opcionSeleccionada === "mes") {
+                texto.textContent = "Tiempo por mes";
+            } else if (opcionSeleccionada === "año") {
+                texto.textContent = "Tiempo por año";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Selecciona una opción:</h1>
+    <select id="opciones" onchange="cambiarTexto()">
+        <option value="dia">Día</option>
+        <option value="mes">Mes</option>
+        <option value="año">Año</option>
+    </select>
+    
+    <h2 id="texto-cambiante">Texto a cambiar</h2>
+</body>
+</html>

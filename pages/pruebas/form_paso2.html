@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de productos</title>
+  <style>
+    /* Estilos adicionales para mejorar la apariencia */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    
+    input[type="text"], input[type="number"] {
+      width: 200px;
+    }
+    
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Formulario de productos</h2>
+  
+  <form id="productForm">
+    <label for="transactionType">Tipo de transacción:</label>
+    <select id="transactionType" onchange="changeForm()">
+      <option> selecciona </option>
+      <option value="alquilar">Alquilar</option>
+      <option value="comprar">Comprar</option>
+    </select>
+    
+    <div id="alquilerForm" style="display: none;">
+      <label for="productNameAlquiler">Nombre del producto:</label>
+      <input type="text" id="productNameAlquiler" required>
+      
+      <label for="quantityAlquiler">Cantidad:</label>
+      <input type="number" id="quantityAlquiler" min="1" required>
+      
+      <label for="pricePerUnitAlquiler">Precio por unidad:</label>
+      <input type="number" id="pricePerUnitAlquiler" min="0" step="0.01" required>
+      
+      <label for="rentalTime">Tiempo de alquiler:</label>
+      <input type="text" id="rentalTime" required>
+      
+      <button type="button" onclick="addProduct()">Agregar producto</button>
+    </div>
+    
+    <div id="comprarForm" style="display: none;">
+      <label for="productNameComprar">Nombre del producto:</label>
+      <input type="text" id="productNameComprar" required>
+      
+      <label for="quantityComprar">Cantidad:</label>
+      <input type="number" id="quantityComprar" min="1" required>
+      
+      <label for="pricePerUnitComprar">Precio por unidad:</label>
+      <input type="number" id="pricePerUnitComprar" min="0" step="0.01" required>
+      
+      <button type="button" onclick="addProduct()">Agregar producto</button>
+    </div>
+  </form>
+  
+  <h3>Tabla de productos</h3>
+  
+  <table id="productTable">
+    <thead>
+      <tr>
+        <th>Nombre del producto</th>
+        <th>Cantidad</th>
+        <th>Precio por unidad</th>
+        <th>Tiempo / Tipo</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4" align="right"><strong>Total:</strong></td>
+        <td id="totalAmount">0</td>
+      </tr>
+    </tfoot>
+  </table>
+  
+  <script>
+    function changeForm() {
+      var transactionType = document.getElementById("transactionType").value;
+      
+      var alquilerForm = document.getElementById("alquilerForm");
+      var comprarForm = document.getElementById("comprarForm");
+      
+      if (transactionType === "alquilar") {
+        alquilerForm.style.display = "block";
+        comprarForm.style.display = "none";
+      } else if (transactionType === "comprar") {
+        alquilerForm.style.display = "none";
+        comprarForm.style.display = "block";
+      }
+    }
+    
+    function addProduct() {
+      var transactionType = document.getElementById("transactionType").value;
+      
+      var productName, quantity, pricePerUnit, additionalInfo;
+      
+      if (transactionType === "alquilar") {
+        productName = document.getElementById("productNameAlquiler").value;
+        quantity = document.getElementById("quantityAlquiler").value;
+        pricePerUnit = document.getElementById("pricePerUnitAlquiler").value;
+        additionalInfo = document.getElementById("rentalTime").value;
+      } else if (transactionType === "comprar") {
+        productName = document.getElementById("productNameComprar").value;
+        quantity = document.getElementById("quantityComprar").value;
+        pricePerUnit = document.getElementById("pricePerUnitComprar").value;
+        additionalInfo = "Comprar";
+      }
+      
+      var subtotal = (quantity * pricePerUnit).toFixed(2);
+      
+      var table = document.getElementById("productTable").getElementsByTagName('tbody')[0];
+      var newRow = table.insertRow(table.rows.length);
+      
+      var cell1 = newRow.insertCell(0);
+      var cell2 = newRow.insertCell(1);
+      var cell3 = newRow.insertCell(2);
+      var cell4 = newRow.insertCell(3);
+      var cell5 = newRow.insertCell(4);
+      
+      cell1.innerHTML = productName;
+      cell2.innerHTML = quantity;
+      cell3.innerHTML = "$" + pricePerUnit;
+      cell4.innerHTML = additionalInfo;
+      cell5.innerHTML = "$" + subtotal;
+      
+      var totalAmountCell = document.getElementById("totalAmount");
+      var currentTotal = parseFloat(totalAmountCell.innerText);
+      totalAmountCell.innerText = (currentTotal + parseFloat(subtotal)).toFixed(2);
+      
+      resetForm(transactionType);
+    }
+    
+    function resetForm(transactionType) {
+      if (transactionType === "alquilar") {
+        document.getElementById("productNameAlquiler").value = "";
+        document.getElementById("quantityAlquiler").value = "";
+        document.getElementById("pricePerUnitAlquiler").value = "";
+        document.getElementById("rentalTime").value = "";
+      } else if (transactionType === "comprar") {
+        document.getElementById("productNameComprar").value = "";
+        document.getElementById("quantityComprar").value = "";
+        document.getElementById("pricePerUnitComprar").value = "";
+      }
+    }
+  </script>
+</body>
+</html>
