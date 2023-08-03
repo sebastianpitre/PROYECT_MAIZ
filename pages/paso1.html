@@ -62,7 +62,7 @@
           actualizarTabla();
 
           // Escuchar eventos de cambio en el formulario
-          setInterval(actualizarTabla, 1000);
+          setInterval(actualizarTabla, 1000000); //edité la actualización de la tabla
       });
   </script>
      
@@ -293,8 +293,8 @@
                 <div class="row mb-3">
                   <div class="input-group input-group-static py-3">
                     <label for="studyPrice">Digite el Valor de la cotización</label>
-                    <input type="number" class="form-control" placeholder="Digite el precio" id="cotizar" min="0"
-                      step="0.01" onclick="cotizar()" required>
+                    <input type="number" class="form-control" placeholder="Digite el precio" value=""  oninput="sumar()"  id="cotizar" min="0"
+                      step="0.01" onclick="" required>
                   </div>
                 </div>
 

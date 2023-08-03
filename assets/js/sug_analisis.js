@@ -2,6 +2,7 @@
         const hectareas = parseFloat(document.getElementById("hectareas").value);
         const hectarea = document.getElementById("hectareas").value;
         const condicion = document.getElementById("condicion").value;
+
         const tipo_transaccion =0;
         console.log(condicion);
         // Crear un objeto FormData y agregar el dato
@@ -100,3 +101,31 @@
         });
     }
     // Calcular herramientas al cargar la página con 2 hectáreas por defecto
+
+
+function sumar() {
+    const cotizar = document.getElementById("cotizar").value;
+    console.log(cotizar);
+    // Crear un objeto FormData y agregar el dato
+    const formData = new FormData();
+    formData.append('cotizar', cotizar);
+
+    var num1 = parseInt(document.getElementById("cotizar").value) || 0;
+    var num2 = parseInt(document.getElementById("totalAmount").innerText) || 0;
+    
+    var resultadot = num1 + num2;
+    
+    document.getElementById("resultadot").innerHTML = "$ " + (resultadot).toFixed(2);
+    fetch('../assets/php/guardar.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log(data); // Respuesta del servidor (opcional)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+

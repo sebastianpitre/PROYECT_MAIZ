@@ -28,6 +28,7 @@ include('funciones.php');
       }
       $tablaHTML .= "</tbody>";
       $tablaHTML .= "<tfoot><tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Gasto Total:</h4> </strong></td><td id='resultado'>0</td></tr></tfoot>";
+      $tablaHTML .= "<tfoot><tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Gasto Total:</h4> </strong></td><td id='resultadot'>0</td></tr></tfoot>";
       $tablaHTML .= " <tfoot><tr>";
       $tablaHTML .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
       $tablaHTML .= " <td id='totalAmount'>$sumar</td>";

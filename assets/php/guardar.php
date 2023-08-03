@@ -8,6 +8,7 @@
 
   $hectarea = $_POST['hectareas'];
   $condicion = $_POST['condicion'];
+  $cotizar = $_POST['cotizar'];
   echo"hola cartacol .$hectarea";
   /* Guarda al seleccionar el Botón comprar 909 =hectareas*/
   if( $condicion==="hectarea"){
@@ -15,6 +16,8 @@
     $miconexion=conectar_bd('', 'bd_valores');
     $resultado=consulta($miconexion,"INSERT INTO `terreno`( `area`)
     values('$hectarea')");
+    $resultado=consulta($miconexion,"INSERT INTO `inventario1`( `subtotal_alquiler`)
+    values('$cotizar')");
 
  
 
@@ -33,6 +36,7 @@
     $nombre_c=$_POST['nombre_c'];
     $cantidad_c=$_POST['cantidad_c'];
     $precio_c=$_POST['precio_c'];
+    $cotizar = $_POST['cotizar'];
     $miconexion=conectar_bd('', 'bd_cultivomaiz');
     $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`)
     values('$nombre_c','$tipo','$cantidad_c','$precio_c')");

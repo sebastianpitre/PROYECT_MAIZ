@@ -86,3 +86,7 @@ function enviarDatosComprar() {
       console.error('Error:', error);
     });
   }
+
+function sumar (params) {
+  
+}
