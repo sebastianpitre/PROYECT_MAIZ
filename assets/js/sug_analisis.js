@@ -1,5 +1,27 @@
     function calcularHerramientas() {
         const hectareas = parseFloat(document.getElementById("hectareas").value);
+        const hectarea = document.getElementById("hectareas").value;
+        const condicion = document.getElementById("condicion").value;
+        const tipo_transaccion =0;
+        console.log(condicion);
+        // Crear un objeto FormData y agregar el dato
+        const formData = new FormData();
+        formData.append('hectareas', hectarea);
+        formData.append('condicion', condicion);
+
+        // Realizar una petición Fetch para enviar los datos al servidor
+
+        fetch('../assets/php/guardar.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Respuesta del servidor (opcional)
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 
         if (isNaN(hectareas) || hectareas < 0) {
             alert("La cantidad de hectáreas debe ser un número positivo.");
@@ -78,4 +100,3 @@
         });
     }
     // Calcular herramientas al cargar la página con 2 hectáreas por defecto
-    calcularHerramientas();
