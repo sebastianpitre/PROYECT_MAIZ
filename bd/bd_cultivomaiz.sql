@@ -69,7 +69,7 @@ insert  into `terreno`(`id`,`area`,`surcos`,`distancia`,`id_user`) values (1,'10
 
 UNLOCK TABLES;
 
-/*Table structure for table `usuario` */
+/*Table structure for table  `usuario`- */
 
 DROP TABLE IF EXISTS `usuario`;
 
