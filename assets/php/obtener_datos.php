@@ -18,7 +18,7 @@ include('funciones.php');
   $dist_semillasm = intval($dist_semillas)/100;
   $dist_surcosm = intval($dist_surcos)/100;
   $cant_plantas = round(intval($area)/($dist_semillasm*$dist_surcosm));
-  $cant_obtenida = (($cant_planta*300)/1000) ;
+  $cant_obtenida = (($cant_plantas*300)/1000) ;
   $area=$area = intval($area*10000);
   $area=$area ." m²";
   $dist_semillas = $dist_semillas ." cm";
