@@ -1,6 +1,7 @@
 
 
 <?php
+session_start();
   include('funciones.php');
 // Obtener el dato enviado desde JavaScript
 
@@ -8,15 +9,15 @@
 
   $hectarea = $_POST['hectareas'];
   $condicion = $_POST['condicion'];
-  $cotizar = $_POST['cotizar'];
+  //$cotizar = $_POST['cotizar'];
   echo"hola cartacol .$hectarea";
   /* Guarda al seleccionar el Botón comprar 909 =hectareas*/
   if( $condicion==="hectarea"){
     $hectarea=$_POST['hectareas'];
     $miconexion=conectar_bd('', 'bd_cultivomaiz');
-    $resultado=consulta($miconexion,"UPDATE `terreno` SET `area`='$hectarea' WHERE `id_user`LIKE 1");
-    $resultado=consulta($miconexion,"INSERT INTO `inventario1`( `subtotal_alquiler`)
-    values('$cotizar')");
+    $resultado=consulta($miconexion,"UPDATE `terreno` SET `area`='$hectarea' WHERE `id_user`LIKE '{$_SESSION['id_usuario']}'");
+    //$resultado=consulta($miconexion,"INSERT INTO `inventario`( `subtotal_alquiler`)
+    //values('$cotizar')");
 
  
 

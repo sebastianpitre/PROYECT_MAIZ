@@ -1,16 +1,17 @@
 <?php
+session_start();
 include('funciones.php');
-      
+
   // Creamos un array con los valores
   $miconexion = conectar_bd('', 'bd_cultivomaiz');
-  $busqueda=consulta($miconexion,"SELECT * FROM usuario WHERE id_usuario like 1");
+  $busqueda=consulta($miconexion,"SELECT * FROM usuario WHERE id_usuario like '{$_SESSION['id_usuario']}'");
   /*         echo"***************+++++++++++++++++++++++*****************************",$_SESSION['nusuario'];*/
   $fila1 = $busqueda->fetch_object(); 
   $nombre =$fila1->nombre_u;
   $id_usuario = $fila1->id_usuario;
 
-  $busqueda=consulta($miconexion,"SELECT * FROM terreno WHERE id_user like $id_usuario");
-  $fila2 = $busqueda->fetch_object(); 
+  $busqueda1=consulta($miconexion,"SELECT * FROM terreno WHERE id_user like $id_usuario");
+  $fila2 = $busqueda1->fetch_object(); 
   $area = $fila2->area;
   $dist_surcos = $fila2->surcos;
   $dist_semillas = $fila2->distancia;

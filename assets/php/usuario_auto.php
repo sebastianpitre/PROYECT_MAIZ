@@ -11,6 +11,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
   $verificacion0=consulta($miconexion,"SELECT MAX(id_usuario) as max_id from usuario");
   if ($verificacion0){
     $verificacion=consulta($miconexion,"ALTER TABLE usuario AUTO_INCREMENT=1");
+    $verificaci=consulta($miconexion,"ALTER TABLE terreno AUTO_INCREMENT=1");
     $fila0=$verificacion0->fetch_object(); 
     $valor=$fila0->max_id;
     $valor=$valor+1;
@@ -30,13 +31,15 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
   
   if ($valor>0 ) {  
     //+$row0;//$_POST[''];
-    // $password=$_POST[''];
+    // $password=$_POST[''];SELECT * FROM terreno WHERE id_user
     $resultado=consulta($miconexion,"INSERT INTO `usuario`( `nombre_u`)
     values('$username')");
-  
+   $resultado2=consulta($miconexion,"INSERT INTO `terreno`(`surcos`,`distancia`,`id_user`)
+   values(90,25,'$valor')");
     if($resultado){
         $_SESSION['username']=$username;
-        echo"inciciando sesion  '{$_SESSION['username']}'";
+        $_SESSION['id_usuario']=$valor;
+        echo"inciciando sesion  '{$_SESSION['id_usuario']}'";
         echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="../../pages/paso1.html"</script>';
         echo"inciciando sesion";
       } else {
