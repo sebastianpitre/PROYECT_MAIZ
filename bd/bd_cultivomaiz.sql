@@ -61,6 +61,29 @@ insert  into `usuario`(`id_usuario`,`nombre_u`,`pss_u`) values (1,'user1',NULL),
 
 UNLOCK TABLES;
 
+/*Table structure for table `terreno` */
+
+DROP TABLE IF EXISTS `terreno`;
+
+CREATE TABLE `terreno` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `area` varchar(255) DEFAULT NULL,
+  `surcos` varchar(255) DEFAULT NULL,
+  `distancia` varchar(255) DEFAULT NULL,
+  `id_user` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_usuario` (`id_user`),
+  CONSTRAINT `fk_usuario` FOREIGN KEY (`id_user`) REFERENCES `bd_cultivomaiz`.`usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `terreno` */
+
+LOCK TABLES `terreno` WRITE;
+
+insert  into `terreno`(`id`,`area`,`surcos`,`distancia`,`id_user`) values (1,'1','2','3',1);
+
+UNLOCK TABLES;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

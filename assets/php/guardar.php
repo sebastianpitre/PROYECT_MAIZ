@@ -13,9 +13,8 @@
   /* Guarda al seleccionar el Botón comprar 909 =hectareas*/
   if( $condicion==="hectarea"){
     $hectarea=$_POST['hectareas'];
-    $miconexion=conectar_bd('', 'bd_valores');
-    $resultado=consulta($miconexion,"INSERT INTO `terreno`( `area`)
-    values('$hectarea')");
+    $miconexion=conectar_bd('', 'bd_cultivomaiz');
+    $resultado=consulta($miconexion,"UPDATE `terreno` SET `area`='$hectarea' WHERE `id_user`LIKE 1");
     $resultado=consulta($miconexion,"INSERT INTO `inventario1`( `subtotal_alquiler`)
     values('$cotizar')");
 

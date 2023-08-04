@@ -1,0 +1,29 @@
+html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de Mostrar Divs</title>
+</head>
+<body>
+  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div3"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url: 'actualizar.php',
+        dataType: 'json',
+        success: function(data) {
+          $('#div1').html(data.valor1);
+          $('#div2').html(data.valor2);
+          $('#div3').html(data.valor3);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
+

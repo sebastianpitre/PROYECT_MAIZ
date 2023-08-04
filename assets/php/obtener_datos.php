@@ -1,39 +1,40 @@
 <?php
 include('funciones.php');
-      $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `inventario`");
+      
+  // Creamos un array con los valores
+  $miconexion = conectar_bd('', 'bd_cultivomaiz');
+  $busqueda=consulta($miconexion,"SELECT * FROM usuario WHERE id_usuario like 1");
+  /*         echo"***************+++++++++++++++++++++++*****************************",$_SESSION['nusuario'];*/
+  $fila1 = $busqueda->fetch_object(); 
+  $nombre =$fila1->nombre_u;
+  $id_usuario = $fila1->id_usuario;
 
-      $tablaHTML = "<table><thead>";
-      $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
-      $tablaHTML .= "<tbody><tr>";
-      $sumar=0;
+  $busqueda=consulta($miconexion,"SELECT * FROM terreno WHERE id_user like $id_usuario");
+  $fila2 = $busqueda->fetch_object(); 
+  $area = $fila2->area;
+  $dist_surcos = $fila2->surcos;
+  $dist_semillas = $fila2->distancia;
+  $dist_semillasm = intval($dist_semillas)/100;
+  $dist_surcosm = intval($dist_surcos)/100;
+  $cant_plantas = round(intval($area)/($dist_semillasm*$dist_surcosm));
+  $cant_obtenida = round(($cant_plantas*300)/1000) ;
+  $area=$area ." m²";
+  $dist_semillas = $dist_semillas ." cm";
+  $dist_surcos = $dist_surcos ." cm";
 
-      while ($fila = $resulta->fetch_assoc()) {
-        $numero1=$fila['precio_unidad'];
-        $numero2=$fila['cantidad'];
-        $hora=$fila['tiempo_alq'];
-        $producto=intval($numero1)*intval($numero2)*intval($hora);
-        $sumar= $sumar+$producto;
-        $id=$fila['id'] ;
-        $tablaHTML .= "<tr>";
-        $tablaHTML .= "<td>" . $fila['nombre_producto'] . "</td>";
-        $tablaHTML .= "<td>" . $fila['tipo_inventario'] . "</td>";
-        $tablaHTML .= "<td>" . $fila['cantidad'] . "</td>";
-        $tablaHTML .= "<td>" . $fila['precio_unidad'] . "</td>";
-        $tablaHTML .= "<td>" . $fila['tiempo_alq'] . "</td>";
-        $tablaHTML .= "<td>" . $producto . "</td>";
-        $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
+  // Creamos un array con los valores
+  $valores = array(
+    'valor1' => $nombre,
+    'valor2' => $area,
+    'valor3' => $dist_surcos,
+    'valor4' => $dist_semillas,
+    'valor5' => $cant_plantas,
+    'valor6' => $cant_obtenida
 
-        $tablaHTML .= "</tr>";
-      }
-      $tablaHTML .= "</tbody>";
-      $tablaHTML .= "<tfoot><tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Gasto Total:</h4> </strong></td><td id='resultado'>0</td></tr></tfoot>";
-      $tablaHTML .= "<tfoot><tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Gasto Total:</h4> </strong></td><td id='resultadot'>0</td></tr></tfoot>";
-      $tablaHTML .= " <tfoot><tr>";
-      $tablaHTML .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
-      $tablaHTML .= " <td id='totalAmount'>$sumar</td>";
-      $tablaHTML .= "</tr></tfoot>";
-      $tablaHTML .= "</table>";
+  );
 
-      echo $tablaHTML;
+  // Devolvemos los valores como un JSON
+  header('Content-Type: application/json');
+  echo json_encode($valores);
+      
 ?>
