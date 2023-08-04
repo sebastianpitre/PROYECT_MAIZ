@@ -4,9 +4,6 @@
 session_start();
   include('funciones.php');
 // Obtener el dato enviado desde JavaScript
-
-
-
   $hectarea = $_POST['hectareas'];
   $condicion = $_POST['condicion'];
   //$cotizar = $_POST['cotizar'];
@@ -18,9 +15,6 @@ session_start();
     $resultado=consulta($miconexion,"UPDATE `terreno` SET `area`='$hectarea' WHERE `id_user`LIKE '{$_SESSION['id_usuario']}'");
     //$resultado=consulta($miconexion,"INSERT INTO `inventario`( `subtotal_alquiler`)
     //values('$cotizar')");
-
- 
-
   }
  
 
@@ -30,18 +24,18 @@ session_start();
 
   /* Guarda al seleccionar el Botón comprar */
   if( $tipo==="comprar"){
-            
+   // $cotizar = $_POST['cotizar'];  
     $nombre_c=$_POST['nombre_c'];
     $cantidad_c=$_POST['cantidad_c'];
     $precio_c=$_POST['precio_c'];
-    $cotizar = $_POST['cotizar'];
+    
     $miconexion=conectar_bd('', 'bd_cultivomaiz');
     $verificaci=consulta($miconexion,"ALTER TABLE inventario AUTO_INCREMENT=1");
     $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user1`)
     values('$nombre_c','$tipo','$cantidad_c','$precio_c','{$_SESSION['id_usuario']}')");
 
     if($resultado){
-      echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
+//      echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
     } 
       else {
         echo "Error al guardar los datos: " . $miconexion->error;
@@ -64,7 +58,7 @@ session_start();
     values('$nombre_a','$tipo','$cantidad_a','$precio_a','$tiempo_a','{$_SESSION['id_usuario']}')");
 
       if($resultado){
-        echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
+  //      echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
         } 
           else {
             echo "Error al guardar los datos: " . $miconexion->error;
