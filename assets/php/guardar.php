@@ -24,9 +24,7 @@ session_start();
   }
  
 
-  if ($_POST['tipo_transaccion']<0) {
-    $tipo =0;
-  }else{
+ 
 
   $tipo = $_POST['tipo_transaccion'];
 
@@ -38,8 +36,9 @@ session_start();
     $precio_c=$_POST['precio_c'];
     $cotizar = $_POST['cotizar'];
     $miconexion=conectar_bd('', 'bd_cultivomaiz');
-    $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`)
-    values('$nombre_c','$tipo','$cantidad_c','$precio_c')");
+    $verificaci=consulta($miconexion,"ALTER TABLE inventario AUTO_INCREMENT=1");
+    $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user1`)
+    values('$nombre_c','$tipo','$cantidad_c','$precio_c','{$_SESSION['id_usuario']}')");
 
     if($resultado){
       echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
@@ -59,10 +58,10 @@ session_start();
 
     $miconexion=conectar_bd('', 'bd_cultivomaiz');
     //hay que incrementar  desde donde elimina el usuario y asi aprobechar  todo los espacios de la tabla
-    $verificacion=consulta($miconexion,"ALTER TABLE usuario AUTO_INCREMENT=1");
+    $verificacion=consulta($miconexion,"ALTER TABLE inventario AUTO_INCREMENT=1");
     //codigo por realizar cambiandoel 1 por un valor de la consulta cuando se valide cuales el valor max
-    $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`)
-    values('$nombre_a','$tipo','$cantidad_a','$precio_a','$tiempo_a')");
+    $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`,`id_user1`)
+    values('$nombre_a','$tipo','$cantidad_a','$precio_a','$tiempo_a','{$_SESSION['id_usuario']}')");
 
       if($resultado){
         echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
@@ -71,5 +70,5 @@ session_start();
             echo "Error al guardar los datos: " . $miconexion->error;
       }
   }
-}
+
 ?>

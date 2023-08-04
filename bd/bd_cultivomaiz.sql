@@ -29,7 +29,12 @@ CREATE TABLE `inventario` (
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  
+  PRIMARY KEY (`id`),
+  `id_user1` int(255) DEFAULT NULL,
+  KEY `fk_usuario` (`id_user1`),
+  CONSTRAINT `fk_usuario1` FOREIGN KEY (`id_user1`) REFERENCES `usuario` (`id_usuario`)
+
 ) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf8;
 
 /*Data for the table `inventario` */
@@ -49,8 +54,9 @@ CREATE TABLE `terreno` (
   `area` varchar(255) DEFAULT NULL,
   `surcos` varchar(255) DEFAULT NULL,
   `distancia` varchar(255) DEFAULT NULL,
-  `id_user` int(255) DEFAULT NULL,
+ 
   PRIMARY KEY (`id`),
+   `id_user` int(255) DEFAULT NULL,
   KEY `fk_usuario` (`id_user`),
   CONSTRAINT `fk_usuario` FOREIGN KEY (`id_user`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
