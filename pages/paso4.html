@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo_maiz.png">
   <link rel="icon" type="image/png" href="../assets/img/logo_maiz.png">
   <title>
-    Paso 3 - Sistema de riego
+    Paso 4 - Proceso de siembra
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -53,7 +53,7 @@
         // Función para actualizar la tabla con los datos del servidor
         function actualizarTabla() {
             $.ajax({
-                url: '../assets/php/obtener_tabla3.php', // Archivo PHP que obtiene los datos del servidor
+                url: '../assets/php/obtener_tabla4.php', // Archivo PHP que obtiene los datos del servidor
                 
                 success: function(data) {
                     $('#tabla').html(data); // Actualizar el contenido de la tabla con los datos recibidos
@@ -299,7 +299,7 @@
         <div class="row">
           <div class="col-10 mx-auto border-radius-lg">
             <div class="row">
-              <h4 class="text-center mt-3 animate-text" id="animate-text1">SISTEMA DE RIEGO.</h4>
+              <h4 class="text-center mt-3 animate-text" id="animate-text1">PROCESO DE SIEMBRA.</h4>
 
               <!-- <div class="col-xl-6 col-md-5 px-5 z-index-2 position-relative">
                 <div class="row ">
@@ -405,7 +405,7 @@
     <section class="row mb-2 card opacity-9">
       <div class="container-fluid">
         <div class="row mb-3">
-          <h4 class="text-center mt-3 animate-text" id="animate-text1">SUGERENCIA PARA EL SISTEMA DE RIEGO.</h4>
+          <h4 class="text-center mt-3 animate-text" id="animate-text1">SUGERENCIA PARA EL PROCESO DE SIEMBRA.</h4>
           <div id="resultado">
             <div class="container">
               <div class="col-14 row" id="herramientas-lista">
@@ -523,7 +523,7 @@
       style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
       <div class="col-12 mx-auto " style="padding-top: 7px;">
 
-        <a href="paso2.html">
+        <a href="paso3.html">
           <button class="btn btn-outline-success btn-icon btn-sm" type="button">
             <div class="d-flex align-items-center">
               Anterior
@@ -533,11 +533,11 @@
 
           <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
             <div class="d-flex align-items-center">
-              Paso 3
+              Paso 4
             </div>
           </button>
         
-        <a href="paso4.html">
+        <a href="paso5.html">
           <button class="btn btn-outline-success btn-icon  btn-sm" type="button">
             <div class="d-flex align-items-center">
               Siguiente
