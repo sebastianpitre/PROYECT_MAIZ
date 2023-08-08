@@ -3,18 +3,35 @@ session_start();
 include('funciones.php');
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
       $resulta = consulta($miconexion, "SELECT * FROM `inventario` WHERE id_user1 like '{$_SESSION['id_usuario']}'");
-
+      $resulta1 = consulta($miconexion, "SELECT * FROM `terreno` WHERE id_user like '{$_SESSION['id_usuario']}'");
+      
+      $fila1 = $resulta1->fetch_assoc();
+      $cotizar=$fila1['cotizar_lab'];
+     $cotizar= intval($cotizar);
       $tablaHTML = "<table><thead>";
-      $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
+      $tablaHTML .= "<tr><td colspan='5'><strong>Cotización del laboratorio </strong></td><td colspan='2' id='cotizar'>$cotizar</td></tr>";
+
+      $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Total</th><th>Eliminar</th></tr></thead>";
       $tablaHTML .= "<tbody><tr>";
       $sumar=0;
   
 
       while ($fila = $resulta->fetch_assoc()) {
-        $numero1=$fila['precio_unidad'];
-        $numero2=$fila['cantidad'];
-        $hora=$fila['tiempo_alq'];
-        $producto=intval($numero1)*intval($numero2)*intval($hora);
+        $condicion=$fila['tipo_inventario'];
+        if($condicion=="alquilar"){
+          $numero1=$fila['precio_unidad'];
+          $numero2=$fila['cantidad'];
+          $hora=$fila['tiempo_alq'];
+  
+          $producto=intval($numero1)*intval($numero2)*intval($hora);
+        }
+        if($condicion=="comprar"){
+          $numero1=$fila['precio_unidad'];
+          $numero2=$fila['cantidad'];
+  
+          $producto=intval($numero1)*intval($numero2);
+        }
+        
         $sumar= $sumar+$producto;
         $id=$fila['id'] ;
         $tablaHTML .= "<tr>";
@@ -29,11 +46,13 @@ include('funciones.php');
         $tablaHTML .= "</tr>";
       }
       $tablaHTML .= "</tbody>";
-      $tablaHTML .= "<tfoot><tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Gasto Total:</h4> </strong></td><td id='resultado'>0</td></tr></tfoot>";
-      $tablaHTML .= "<tfoot><tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Gasto Total:</h4> </strong></td><td id='resultadot'>0</td></tr></tfoot>";
       $tablaHTML .= " <tfoot><tr>";
-      $tablaHTML .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
+      $tablaHTML .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Subtotal:</h4> </strong></td>";
       $tablaHTML .= " <td id='totalAmount'>$sumar</td>";
+      $resultado=$sumar+$cotizar;
+      $tablaHTML .= "<tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Gasto Total:</h4> </strong></td><td id='resultado'>$resultado</td></tr>";
+     
+     
       $tablaHTML .= "</tr></tfoot>";
       $tablaHTML .= "</table>";
 

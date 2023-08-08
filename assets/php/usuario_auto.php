@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $resultado=consulta($miconexion,"INSERT INTO `usuario`( `nombre_u`)
     values('$username')");
    $resultado2=consulta($miconexion,"INSERT INTO `terreno`(`surcos`,`distancia`,`id_user`)
-   values(90,25,'$valor')");
+   values(75,25,'$valor')");
     if($resultado){
         $_SESSION['username']=$username;
         $_SESSION['id_usuario']=$valor;

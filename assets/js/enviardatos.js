@@ -115,3 +115,14 @@ function enviarDatosComprar() {
 function sumar (params) {
   
 }
+
+function toggleDiv() {
+  var checkbox = document.getElementById("mostrar_lab");
+  var div = document.getElementById("laboratorio");
+  
+  if (checkbox.checked) {
+    div.style.display = "block";
+  } else {
+    div.style.display = "none";
+  }
+}

@@ -2,6 +2,7 @@
         const hectareas = parseFloat(document.getElementById("hectareas").value);
         const hectarea = document.getElementById("hectareas").value;
         const condicion = document.getElementById("condicion").value;
+        const cotizar = document.getElementById("cotizar").value;
 
         const tipo_transaccion =0;
         
@@ -10,6 +11,8 @@
         formData.append('hectareas', hectarea);
         formData.append('condicion', condicion);
         formData.append('tipo_transaccion', tipo_transaccion);
+        formData.append('cotizar', cotizar);
+
         // Realizar una petición Fetch para enviar los datos al servidor
 
         fetch('../assets/php/guardar.php', {

@@ -2,7 +2,8 @@
 SQLyog Ultimate v11.11 (64 bit)
 MySQL - 5.5.5-10.4.24-MariaDB : Database - bd_cultivomaiz
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -27,6 +28,7 @@ CREATE TABLE `inventario` (
   `cantidad` varchar(255) DEFAULT NULL,
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
+  
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user1` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -51,6 +53,7 @@ CREATE TABLE `terreno` (
   `area` varchar(255) DEFAULT NULL,
   `surcos` varchar(255) DEFAULT NULL,
   `distancia` varchar(255) DEFAULT NULL,
+  `cotizar_lab` varchar(255) DEFAULT NULL,
   `id_user` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_usuario` (`id_user`),
