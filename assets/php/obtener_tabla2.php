@@ -9,8 +9,6 @@ include('funciones.php');
       $cotizar=$fila1['cotizar_lab'];
      $cotizar= intval($cotizar);
       $tablaHTML = "<table><thead>";
-      $tablaHTML .= "<tr><td colspan='5'><strong>Cotización del laboratorio </strong></td><td colspan='2' id='cotizar_lab'>$  $cotizar</td></tr>";
-
       $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
       $tablaHTML .= "<tbody><tr>";
       $sumar=0;
@@ -50,7 +48,7 @@ include('funciones.php');
       $tablaHTML .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
       $tablaHTML .= " <td id='totalAmount'>$ $sumar</td>";
       $resultado=$sumar+$cotizar;
-      $tablaHTML .= "<tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Inversión Global:</h4> </strong></td><td id='resultado'>$ $resultado</td></tr>";
+      $tablaHTML .= "<tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Inversión Global2:</h4> </strong></td><td id='resultado'>$ $resultado</td></tr>";
      
      
       $tablaHTML .= "</tr></tfoot>";
