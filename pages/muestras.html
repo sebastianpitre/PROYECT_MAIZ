@@ -231,7 +231,13 @@
       <div class="container ">
         <div class="row ">
           <p class="mb-3 text-center"><span class=" font-weight-bold" style="font-size: 30px;">Lo que debes saber antes de empezar:</span>  <br>
-            ✔️<a class="font-weight-bold" href="../instructivos/guia1.html">¿como tomar las muestras?</a><br>
+            ✔️<a class="font-weight-bold" href="" onclick="nuevapestaña()" value="">¿como tomar las muestras?
+              <script>
+                function nuevapestaña() {
+                  window.open('../instructivos/guia1.html');
+                }
+                </script>
+            </a><br>
             ✔️<a class="font-weight-bold" href="../instructivos/guia1.html"> Analizar el terreno</a><br>
             ✔️<a class="font-weight-bold" href="../instructivos/guia1.html"> Preparar el terreno</a><br>
             ✔️<a class="font-weight-bold" href="../instructivos/guia1.html"> Sistema de riego</a><br>
@@ -240,6 +246,7 @@
             
         </div>
       </div>
+      
 
 
   <form id="productForm" method="post" action="../assets/php/usuario_auto.php" >

@@ -1,4 +1,6 @@
 
+<!-- AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII -->
+
 <!--
 =========================================================
 * Material Kit 2 - v3.0.4
@@ -21,7 +23,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo_maiz.png">
   <link rel="icon" type="image/png" href="../assets/img/logo_maiz.png">
   <title>
-    Paso 1 - Análisis del terreno
+    Resultado final
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -50,12 +52,10 @@
 
   <script>
     $(document).ready(function() {
-
         // Función para actualizar la tabla con los datos del servidor
         function actualizarTabla() {
-          
             $.ajax({
-                url: '../assets/php/obtener_tabla.php', // Archivo PHP que obtiene los datos del servidor
+                url: '../assets/php/obtener_tabla2.php', // Archivo PHP que obtiene los datos del servidor
                 
                 success: function(data) {
                     $('#tabla').html(data); // Actualizar el contenido de la tabla con los datos recibidos
@@ -95,7 +95,7 @@
      
 </head>
 
-<body class="blog-author" style="background-image: url('../assets/img/fotosmaiz\ \(1\).jpg'); background-size: cover; background-repeat: no-repeat;background-attachment: fixed">
+<body class="blog-author" style="background-image: url('../assets/img/fotosmaiz\ \(2\).jpg'); background-size: cover; background-repeat: no-repeat;background-attachment: fixed">
   <!-- <video src="../assets/video/video (3).mp4" autoplay="true" muted="true" loop="true" poster="../assets/img/fotosmaiz\ \(1\).jpg"></video>
   <style>video {
     position: fixed;
@@ -256,9 +256,7 @@
                   </a>
                 </li>
                 <li class="nav-item my-auto ms-3 ms-lg-0">
-
                   <a id="div1" href="login.html" class="btn btn-sm  bg-gradient-success  mb-0 me-1 mt-2 mt-md-0"></a>
-
                 </li>
               </ul>
             </div>
@@ -296,260 +294,357 @@
   <div class="card1 card-body  mx-3 mx-md-8 mt-8 mb-4">
 
     <!-- CARD -->
-    <section class="row mb-4 card opacity-9">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-10 mx-auto border-radius-lg">
-            <div class="row">
-              <h4 class="text-center mt-3 animate-text" id="animate-text1">ANÁLISIS DEL TERRENO.</h4>
+    <section>
+      <div class="row mb-2 card opacity-9">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-8 mx-auto border-radius-lg">
+              <div class="row mb-3">
+                <h4 class="text-center mt-3 mb-3 animate-text" id="animate-text1">RESULTADO FINAL</h4>
+                  <!-- Estilos de animacion de texto -->
+                  <style>
 
-              <div class="col-xl-6 col-md-5 px-5 z-index-2 position-relative">
-                <div class="row ">
-                  <div class="input-group input-group-static py-3">
-                    <form onsubmit="return false;">
-                      <label for="hectareas">Cuántos metros² desea sembrar?</label>
-                      <input type="number" id="hectareas" value="" class="form-control"
-                        placeholder="Digite la cantidad" min="0" step="0.5" required><br><br>
-                        <button class="btn bg-gradient-success float-lg-end mt-n5" id="condicion" value="hectarea" onclick="calcularHerramientas()">Guardar</button>
-                      </form>
+                    .animate-text {
+                    letter-spacing: 0.075rem;
+                    }
+
+                    /*Para Planear el cursor del teclado usamos la siguiente pseudoclase con una animación que pueden ver en la parte final del código CSS*/
+                    .animate-text::after {
+                    content: "|";
+                    font-size: 1.6rem;
+                    font-family: "Inconsolata", monospace;
+                    animation-name: parpadeo;
+                    animation-duration: 1s;
+                    animation-timing-function: linear;
+                    animation-iteration-count: infinite;
+                    }
+                    .zoom {
+                    animation: zoom 8s 0s;
+                    }
+
+                    /*Esta animación imita el parpadeo del cursor del teclado*/
+                    @keyframes parpadeo {
+                    0% {
+                        opacity: 1;
+                    }
+                    20% {
+                        opacity: 1;
+                    }
+                    25% {
+                        opacity: 0;
+                    }
+                    90% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                    }
+
+                  </style>
+                  <!-- Escript de animacion de texto -->
+                  <script>
+                    //Primero capturamos el elemento del DOM con el id que definimos en el html
+                    const text1 = document.getElementById("animate-text1");
+                    let str = text1.innerHTML;
+                    text1.innerHTML = "";
+
+                    //Declaramos una varible en la que asignaremos un valor para que sea el tiempo en ms que durará la función setTimeout
+                    const speed = 25;
+                    let i = 0;
+
+                    //Esta función recorre todos los caracteres nuestro texto
+                    const typeWriter = () => {
+                    if (i < str.length) {
+                        text1.innerHTML += str.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    }
+                    };
+
+                    //Acá ejecutamos la función
+                    setTimeout(typeWriter, speed);
+
+                  </script>
+                  <div class="card">
+                    <div class="table-responsive">
+                      <table class="table align-items-center mb-0">
+                        <thead>
+                          <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-5">Proceso</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Subtotal</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Editar/Modificar</th>
+                          </tr>
+                        </thead>
+                        <tbody> 
+                          <tr>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+                                <div>
+                                  <i class="fas fa-arrow-right ms-1"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-xs">Análisis del Terreno</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">Valor</p>
+                            </td>
+
+                            <td class="align-middle">
+                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+                                <div>
+                                  <i class="fas fa-arrow-right ms-1"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-xs">Preparación del Terreno</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">Valor</p>
+                            </td>
+
+                            <td class="align-middle">
+                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+                                <div>
+                                  <i class="fas fa-arrow-right ms-1"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-xs">Proceso de siembra</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">Valor</p>
+                            </td>
+
+                            <td class="align-middle">
+                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                            </td>
+                          </tr>
+
+                                  <tr>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+                                <div>
+                                  <i class="fas fa-arrow-right ms-1"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-xs">Análisis del Terreno</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">Valor</p>
+                            </td>
+
+                            <td class="align-middle">
+                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+                                <div>
+                                  <i class="fas fa-arrow-right ms-1"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-xs">Preparación del Terreno</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">Valor</p>
+                            </td>
+
+                            <td class="align-middle">
+                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+                                <div>
+                                  <i class="fas fa-arrow-right ms-1"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-xs">Proceso de siembra</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">Valor</p>
+                            </td>
+
+                            <td class="align-middle">
+                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                            </td>
+                          </tr>
+
+                          <!-- total -->
+                          <tr>
+                            <td>
+                              <div class="d-flex px-2 py-1">
+                                <div class="d-flex flex-column justify-content-center">
+                                  <h6 class="mb-0 text-xs">Total</h6>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              <p class="text-xs font-weight-bold mb-0">Valor</p>
+                            </td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
-                </div>
-              </div> 
-
-              <div class="col-xl-6 col-md-5 px-5 position-relative ">
-                <div class="row mb-3">
-                  <div id="ocultar_lab" class="input-group input-group-static py-3 form-check form-switch">
-                    <label for="mostrar_lab">¿Realizará el analisis en un laboratorio? 
-                    <input type="checkbox" id="mostrar_lab" class="form-check-input" onchange="toggleDiv()"></label>
-                    <div id="laboratorio" style="display: none;">                   
-                      <label for="studyPrice">Digite el Valor de la cotización</label>
-                      <input type="number" class="form-control" placeholder="Digite el precio" id="cotizar" min="0"
-                        step="0.01"  required>
+              </div>
+              <div class="card">
+                <div class="table-responsive">
+                  <div class="card-header pb-0 p-3">
+                    <div class="d-flex align-items-center">
+                      <h6 class="mb-0">Representación gráfica</h6>
+                      <button type="button"
+                        class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
+                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Información">
+                        <i class="fas fa-info" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="card-body p-3">
+                    <div class="row">
+                      <div class="col-7">
+                        <div class="table-responsive">
+                          <table class="table align-items-center mb-0">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="d-flex px-2 py-0">
+                                    <span class="badge bg-gradient-primary me-3"> </span>
+                                    <div class="d-flex flex-column justify-content-center">
+                                      <h6 class="mb-0 text-sm">Análisis del terreno</h6>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 15% </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex px-2 py-0">
+                                    <span class="badge bg-gradient-secondary me-3"> </span>
+                                    <div class="d-flex flex-column justify-content-center">
+                                      <h6 class="mb-0 text-sm">Preparación del terreno</h6>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 20% </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex px-2 py-0">
+                                    <span class="badge bg-gradient-info me-3"> </span>
+                                    <div class="d-flex flex-column justify-content-center">
+                                      <h6 class="mb-0 text-sm">Proceso de siembra</h6>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 13% </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex px-2 py-0">
+                                    <span class="badge bg-gradient-success me-3"> </span>
+                                    <div class="d-flex flex-column justify-content-center">
+                                      <h6 class="mb-0 text-sm">Fertilización</h6>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 32% </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="d-flex px-2 py-0">
+                                    <span class="badge bg-gradient-warning me-3"> </span>
+                                    <div class="d-flex flex-column justify-content-center">
+                                      <h6 class="mb-0 text-sm">Cosecha</h6>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 20% </span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-
               </div>
-
-              <div class="col-14 row" id="">
-                <!-- sugerencias -->
-                <table>
-                  <thead>
-                    <tr>
-                      <td colspan='6' class='mx-auto text-center'>
-                        <strong> Fórmula: <br>Cantidad de plantas de maíz = Area terreno (m²)/(Distancia semillas (m) * Distancia surcos (m))</strong>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <strong>
-                          Área del terreno
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Cantidad en Kg para sembrar
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Distancia entre semillas
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Distancia entre surcos
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Cantidad de plantas
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Toneladas en cosecha
-                        </strong>
-                      </td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <span id="area"></span>
-                      </td>
-                      <td>
-                        <span id="cant_sembrar"></span>
-                      </td>
-                      <td>
-                        <span id="dist_semilla"></span>
-                      </td>
-                      <td>
-                        <span id="dist_surcos"></span>
-                      </td>
-                      <td>
-                        <span id="cant_plantas"></span>
-                      </td>
-                      <td>
-                        <span id="cant_obtenida"></span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="row mb-2 card opacity-9">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <h4 class="text-center mt-3 animate-text" id="animate-text1">SUGERENCIA DE HERRAMIENTAS PARA EL ANALISIS.</h4>
-          <div id="resultado">
-            <div class="container">
-              <div class="col-14 row" id="herramientas-lista">
-                <!-- sugerencias -->
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-3 opacity-9">
-
-      <!-- inventario -->
-      <div class="row me-4 col-md-3 card" style="float: left;">
-        <div class="row my-2 ms-3">
-          <div class="col-md-12">
-            <style>
-              /* Estilos adicionales para mejorar la apariencia */
-              table {
-                border-collapse: collapse;
-                width: 100%;
-              }
-
-              th,
-              td {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-              }
-            </style>
-            <h2>Inventario</h2>
-            <form id="productForm">
-              <div class="col-md-11">
-                <div class="input-group input-group-static">
-                  <label for="transactionType">Tipo de transacción:</label>
-                  <select id="transactionType" onchange="changeForm()"
-                    class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
-                    <option> selecciona </option>
-                    <option value="alquilar">Alquiler</option>
-                    <option value="comprar">Comprar</option>
-                  </select>
-                </div>
-              </div>
-
-              <div id="alquilerForm" style="display: none;">
-                <h4>ALQUILER</h4>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="productNameAlquiler">Nombre del producto:</label>
-                  <input type="text" class="form-control" id="productNameAlquiler" placeholder="Digite nombre" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="quantityAlquiler">Cantidad:</label>
-                  <input type="number" class="form-control" id="quantityAlquiler" min="1" placeholder="Digite" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="pricePerUnitAlquiler">Precio por unidad:</label>
-                  <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
-                    step="0.01" required>
-                </div>
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="rentalTime">Tiempo de alquiler:</label>
-                  <input type="text" class="form-control" placeholder="Digite en horas" id="rentalTime" required>
-                </div>
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosAlquilar()">Agregar
-                  producto</button>
-              </div>
-
-              <div id="comprarForm" style="display: none;">
-                <h4>COMPRAR</h4>
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="productNameComprar">Nombre del producto:</label>
-                  <input type="text" class="form-control" placeholder="Digite" id="productNameComprar" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="quantityComprar">Cantidad:</label>
-                  <input type="number" class="form-control" placeholder="Digite" id="quantityComprar" min="1" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="pricePerUnitComprar">Precio por unidad:</label>
-                  <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitComprar" min="0"
-                    step="0.01" required>
-                </div>
-
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosComprar()">Agregar producto</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- tabla -->
-      <div class="row card">
-        <div class="row">
-          <div class="ms-3 mt-2 col-md-12">
-            <h3>Listado de productos</h3>
-            <div id="tabla"></div>
-            <div id="tabla1"></div>
-            <h1></h1>
-            <br>
-          </div>
-        </div>
-
-      </div>
-      <!-- separador -->
-    </section>
 
     <!-- paginacion -->
     <div class="row card text-center mt-4 page-header opacity-9"
-      style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
-      <div class="col-12 mx-auto " style="padding-top: 7px;">
+        style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
+        <div class="col-12 mx-auto " style="padding-top: 7px;">
 
-        <a href="../index.html">
-          <button class="btn btn-outline-danger btn-icon btn-sm" type="button">
-            <div class="d-flex align-items-center">
-              abandonar
-            </div>
-          </button>
-        </a>
+          <a href="paso1.html">
+            <button class="btn btn-outline-success btn-icon btn-sm" type="button">
+              <div class="d-flex align-items-center">
+                Imprimir
+              </div>
+            </button>
+          </a>
+          
+          <a href="paso3.html">
+            <button class="btn btn-outline-success btn-icon  btn-sm" type="button">
+              <div class="d-flex align-items-center">
+                Guardar
+              </div>
+            </button>
+          </a>
 
-        <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
-          <div class="d-flex align-items-center">
-            Paso 1
-          </div>
-        </button>
-
-        <a href="paso2.html">
-          <button class="btn btn-outline-success btn-icon  btn-sm" type="button">
-            <div class="d-flex align-items-center">
-              Siguiente
-            </div>
-          </button>
-        </a>
-
-      </div>
+        </div>
     </div>
     <!-- paginacion -->
+
 
     <!-- END CARD -->
   </div>
