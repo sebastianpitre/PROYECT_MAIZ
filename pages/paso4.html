@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo_maiz.png">
   <link rel="icon" type="image/png" href="../assets/img/logo_maiz.png">
   <title>
-    Paso 4 - Proceso de siembra
+    Paso 3 - Proceso de siembra
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -299,35 +299,7 @@
         <div class="row">
           <div class="col-10 mx-auto border-radius-lg">
             <div class="row">
-              <h4 class="text-center mt-3 animate-text" id="animate-text1">PROCESO DE SIEMBRA.</h4>
-
-              <!-- <div class="col-xl-6 col-md-5 px-5 z-index-2 position-relative">
-                <div class="row ">
-                  <div class="input-group input-group-static py-3">
-                    <form onsubmit="return false;">
-                      <label for="hectareas">Cuantas hectáreas desea sembrar?</label>
-                      <input type="number" id="hectareas" value="" class="form-control"
-                        placeholder="Digite la cantidad por metros²" min="0" step="0.5" required><br><br>
-                        <button class="btn bg-gradient-success float-lg-end mt-n5" id="condicion" value="hectarea" onclick="calcularHerramientas()">Guardar</button>
-                      </form>
-                  </div>
-                </div>
-              </div> 
-
-              <div class="col-xl-6 col-md-5 px-5 position-relative ">
-                <div class="row mb-3">
-                  <div id="ocultar_lab" class="input-group input-group-static py-3">
-                  
-                  <label for="mostrar_lab">¿Realizará el analisis en un laboratorio? <input type="checkbox" id="mostrar_lab" onchange="toggleDiv()"></label>
-                  <div id="laboratorio" style="display: none;">                   
-                    <label for="studyPrice">Digite el Valor de la cotización</label>
-                    <input type="number" class="form-control" placeholder="Digite el precio" id="cotizar" min="0"
-                      step="0.01"  required>
-                    </div>
-                  </div>
-                </div>
-
-              </div> -->
+              <h4 class="text-center mt-3 animate-text" id="animate-text1">PROCESO DE SIEMBRA Y FERTILIZACIÓN.</h4>
 
               <div class="col-14 row" id="">
                 <!-- sugerencias -->
@@ -402,22 +374,6 @@
       </div>
     </section>
 
-    <section class="row mb-2 card opacity-9">
-      <div class="container-fluid">
-        <div class="row mb-3">
-          <h4 class="text-center mt-3 animate-text" id="animate-text1">SUGERENCIA PARA EL PROCESO DE SIEMBRA.</h4>
-          <div id="resultado">
-            <div class="container">
-              <div class="col-14 row" id="herramientas-lista">
-                <!-- sugerencias -->
-              </div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="mt-3 opacity-9">
 
       <!-- inventario -->
@@ -442,56 +398,46 @@
             <form id="productForm">
               <div class="col-md-11">
                 <div class="input-group input-group-static">
-                  <label for="transactionType">Tipo de transacción:</label>
+                  <label for="transactionType">Semillas y Ferilizantes:</label>
                   <select id="transactionType" onchange="changeForm()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
                     <option> selecciona </option>
-                    <option value="alquilar">Alquiler</option>
-                    <option value="comprar">Comprar</option>
+                    <option value="alquilar">Semillas</option>
+                    <option value="comprar">Proceso de fertilización</option>
                   </select>
                 </div>
               </div>
 
               <div id="alquilerForm" style="display: none;">
-                <h4>ALQUILER</h4>
-
                 <div class="input-group input-group-static w-90 mb-2">
-                  <label for="productNameAlquiler">Nombre del producto:</label>
-                  <input type="text" class="form-control" id="productNameAlquiler" placeholder="Digite nombre" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="quantityAlquiler">Cantidad:</label>
-                  <input type="number" class="form-control" id="quantityAlquiler" min="1" placeholder="Digite" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="pricePerUnitAlquiler">Precio por unidad:</label>
+                  <label for="pricePerUnitAlquiler">Ingrese el valor del kilo:</label>
                   <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
                     step="0.01" required>
-                </div>
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="rentalTime">Tiempo de alquiler:</label>
-                  <input type="text" class="form-control" placeholder="Digite en horas" id="rentalTime" required>
                 </div>
                 <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosAlquilar()">Agregar
                   producto</button>
               </div>
 
               <div id="comprarForm" style="display: none;">
-                <h4>COMPRAR</h4>
                 <div class="input-group input-group-static w-90 mb-2">
                   <label for="productNameComprar">Nombre del producto:</label>
                   <input type="text" class="form-control" placeholder="Digite" id="productNameComprar" required>
                 </div>
 
                 <div class="input-group input-group-static w-90 mb-2">
-                  <label for="quantityComprar">Cantidad:</label>
-                  <input type="number" class="form-control" placeholder="Digite" id="quantityComprar" min="1" required>
+                  <label for="quantityComprar">Unidad de medida:</label>
+                  <select id="transactionType" class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
+                    <option> selecciona </option>
+                    <option value="alquilar">Litros</option>
+                    <option value="comprar">Mililitros</option>
+                    <option value="comprar">Galón</option>
+                    <option value="comprar">Unidad</option>
+                  </select>
+                  <input type="number" class="form-control" placeholder="Digite la Cantidad" id="quantityComprar" min="1" required>
                 </div>
 
                 <div class="input-group input-group-static w-90 mb-2">
-                  <label for="pricePerUnitComprar">Precio por unidad:</label>
+                  <label for="pricePerUnitComprar">Precio:</label>
                   <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitComprar" min="0"
                     step="0.01" required>
                 </div>
@@ -523,7 +469,7 @@
       style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
       <div class="col-12 mx-auto " style="padding-top: 7px;">
 
-        <a href="paso3.html">
+        <a href="paso2.html">
           <button class="btn btn-outline-success btn-icon btn-sm" type="button">
             <div class="d-flex align-items-center">
               Anterior
@@ -533,11 +479,11 @@
 
           <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
             <div class="d-flex align-items-center">
-              Paso 4
+              Paso 3
             </div>
           </button>
         
-        <a href="paso5.html">
+        <a href="paso4.html">
           <button class="btn btn-outline-success btn-icon  btn-sm" type="button">
             <div class="d-flex align-items-center">
               Siguiente
