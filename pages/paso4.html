@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo_maiz.png">
   <link rel="icon" type="image/png" href="../assets/img/logo_maiz.png">
   <title>
-    Paso 3 - Proceso de siembra
+    Cosecha y Pos-Cosecha
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -299,75 +299,7 @@
         <div class="row">
           <div class="col-10 mx-auto border-radius-lg">
             <div class="row">
-              <h4 class="text-center mt-3 animate-text" id="animate-text1">PROCESO DE SIEMBRA Y FERTILIZACIÓN.</h4>
-
-              <div class="col-14 row" id="">
-                <!-- sugerencias -->
-                <table>
-                  <thead>
-                    <tr>
-                      <td colspan='6' class='mx-auto text-center'>
-                        <strong> Fórmula: <br>Cantidad de plantas de maíz = Area terreno (m²)/(Distancia semillas (m) * Distancia surcos (m))</strong>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <strong>
-                          Área del terreno
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Cantidad en Kg para sembrar
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Distancia entre semillas
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Distancia entre surcos
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Cantidad de plantas
-                        </strong>
-                      </td>
-                      <td>
-                        <strong>
-                          Toneladas en cosecha
-                        </strong>
-                      </td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <span id="area"></span>
-                      </td>
-                      <td>
-                        <span id="cant_sembrar"></span>
-                      </td>
-                      <td>
-                        <span id="dist_semilla"></span>
-                      </td>
-                      <td>
-                        <span id="dist_surcos"></span>
-                      </td>
-                      <td>
-                        <span id="cant_plantas"></span>
-                      </td>
-                      <td>
-                        <span id="cant_obtenida"></span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
+              <h4 class="text-center mt-3 animate-text" id="animate-text1">PROCESO DE COSECHA Y POS-COSECHA.</h4>
             </div>
           </div>
         </div>
@@ -398,19 +330,29 @@
             <form id="productForm">
               <div class="col-md-11">
                 <div class="input-group input-group-static">
-                  <label for="transactionType">Semillas y Ferilizantes:</label>
+                  <label for="transactionType">Cosecha y Pos-Cosecha:</label>
                   <select id="transactionType" onchange="changeForm()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
                     <option> selecciona </option>
-                    <option value="alquilar">Semillas</option>
-                    <option value="comprar">Proceso de fertilización</option>
+                    <option value="alquilar">Cosecha</option>
+                    <option value="comprar">Pos-Cosecha</option>
                   </select>
                 </div>
               </div>
 
               <div id="alquilerForm" style="display: none;">
                 <div class="input-group input-group-static w-90 mb-2">
-                  <label for="pricePerUnitAlquiler">Ingrese el valor del kilo:</label>
+                  <label for="productNameAlquiler">Nombre del producto:</label>
+                  <input type="text" class="form-control" id="productNameAlquiler" placeholder="Digite nombre" required>
+                </div>
+
+                <div class="input-group input-group-static w-90 mb-2">
+                  <label for="quantityAlquiler">Cantidad:</label>
+                  <input type="number" class="form-control" id="quantityAlquiler" min="1" placeholder="Digite" required>
+                </div>
+
+                <div class="input-group input-group-static w-90 mb-2">
+                  <label for="pricePerUnitAlquiler">Precio por unidad:</label>
                   <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
                     step="0.01" required>
                 </div>
@@ -422,18 +364,6 @@
                 <div class="input-group input-group-static w-90 mb-2">
                   <label for="productNameComprar">Nombre del producto:</label>
                   <input type="text" class="form-control" placeholder="Digite" id="productNameComprar" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="quantityComprar">Unidad de medida:</label>
-                  <select id="transactionType" class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
-                    <option> selecciona </option>
-                    <option value="alquilar">Litros</option>
-                    <option value="comprar">Mililitros</option>
-                    <option value="comprar">Galón</option>
-                    <option value="comprar">Unidad</option>
-                  </select>
-                  <input type="number" class="form-control" placeholder="Digite la Cantidad" id="quantityComprar" min="1" required>
                 </div>
 
                 <div class="input-group input-group-static w-90 mb-2">
@@ -479,7 +409,7 @@
 
           <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
             <div class="d-flex align-items-center">
-              Paso 3
+              Paso 4
             </div>
           </button>
         
