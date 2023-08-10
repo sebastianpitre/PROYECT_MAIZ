@@ -112,7 +112,7 @@ LOCK TABLES `prepa_terreno` WRITE;
 
 UNLOCK TABLES;
 
-/*Table structure for table `proceso_siembra` */
+/*Table structure for table  `proceso_siembra` */
 
 DROP TABLE IF EXISTS `proceso_siembra`;
 

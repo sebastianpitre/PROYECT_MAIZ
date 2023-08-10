@@ -74,7 +74,7 @@ function enviarDatosComprar() {
 
 //tabla preparacion del terreno
   function prepaTerrenoAlquilar() {
-    // Obtener el valor del campo de entrada de datos
+    // Obtener el valor  del campo de entrada de datos
   const nombre = document.getElementById("productNameAlquiler").value;
   const tipo_transaccion = document.getElementById("transactionType_terreno").value;
   const cantidad = document.getElementById("quantityAlquiler").value;

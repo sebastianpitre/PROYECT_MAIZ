@@ -123,7 +123,7 @@ session_start();
     values('$precio_a','{$_SESSION['id_usuario']}')");
 
       if($resultado){
-  //      echo '<script language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
+  //      echo '<script  language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';
         } 
           else {
             echo "Error al guardar los datos: " . $miconexion->error;
