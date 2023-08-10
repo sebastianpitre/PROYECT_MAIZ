@@ -9,7 +9,7 @@ include('funciones.php');
       $cotizar=$fila1['cotizar_lab'];
      $cotizar= intval($cotizar);
       $tablaHTML = "<table><thead>";
-      $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
+      $tablaHTML .= "<tr class=' bg-gradient-dark text-white'><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th class='text-center'>Eliminar</th></tr></thead>";
       $tablaHTML .= "<tbody><tr>";
       $sumar=0;
   
@@ -34,21 +34,20 @@ include('funciones.php');
         $id=$fila['id'] ;
         $tablaHTML .= "<tr>";
         $tablaHTML .= "<td>" . $fila['nombre_producto'] . "</td>";
-        $tablaHTML .= "<td>" . $fila['tipo_inventario'] . "</td>";
         $tablaHTML .= "<td>" . $fila['cantidad'] . "</td>";
         $tablaHTML .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
         $tablaHTML .= "<td>" . $fila['tiempo_alq'] . "</td>";
         $tablaHTML .= "<td>" ."$ " . $producto . "</td>";
-        $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
+        $tablaHTML .= "<td><center>Clic <input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
 
         $tablaHTML .= "</tr>";
       }
       $tablaHTML .= "</tbody>";
       $tablaHTML .= " <tfoot><tr>";
-      $tablaHTML .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
+      $tablaHTML .= "<td colspan='4'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
       $tablaHTML .= " <td id='totalAmount'>$ $sumar</td>";
       $resultado=$sumar+$cotizar;
-      $tablaHTML .= "<tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Inversión Global4:</h4> </strong></td><td id='resultado'>$ $resultado</td></tr>";
+      $tablaHTML .= "<tr><td colspan='4'><strong><h4 class='mx-auto text-center'>Inversión Global:</h4> </strong></td><td id='resultado'>$ $resultado</td></tr>";
      
      
       $tablaHTML .= "</tr></tfoot>";

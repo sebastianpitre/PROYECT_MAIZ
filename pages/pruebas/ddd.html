@@ -76,10 +76,6 @@
         function calcularHerramientas() {
             const hectareas = parseFloat(document.getElementById("hectareas").value);
 
-            if (isNaN(hectareas) || hectareas < 0) {
-                alert("La cantidad de hectáreas debe ser un número positivo.");
-                return;
-            }
 
             const herramientas = calcularHerramientasPorHectarea(hectareas);
             mostrarResultado(herramientas);
