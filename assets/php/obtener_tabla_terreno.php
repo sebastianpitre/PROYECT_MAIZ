@@ -12,7 +12,7 @@ include('funciones.php');
       $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
       $tablaHTML .= "<tbody><tr>";
       $sumar=0;
-  
+
 
       while ($fila = $resulta->fetch_assoc()) {
         $condicion=$fila['tipo_inventario'];
@@ -55,7 +55,7 @@ include('funciones.php');
       $tablaHTML .= "</table>";
 
      echo $tablaHTML;
-     // Creamos un array con los valores
+     // Creamos un array con los valores ...
 
       
 ?>
