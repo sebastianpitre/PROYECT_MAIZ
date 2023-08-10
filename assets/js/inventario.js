@@ -11,6 +11,13 @@ function changeForm() {
     alquilerForm.style.display = "none";
     comprarForm.style.display = "block";
     }
+    else if (transactionType === "Semillas") {
+        alquilerForm.style.display = "block";
+        comprarForm.style.display = "none";
+        } else if (transactionType === "fertilizacion") {
+        alquilerForm.style.display = "none";
+        comprarForm.style.display = "block";
+        }
 }
 
 // cargar form terreno

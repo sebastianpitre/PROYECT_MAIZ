@@ -402,8 +402,8 @@
                   <select id="transactionType" onchange="changeForm()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
                     <option> selecciona </option>
-                    <option value="alquilar">Semillas</option>
-                    <option value="comprar">Proceso de fertilización</option>
+                    <option value="Semillas">Semillas</option>
+                    <option value="fertilizacion">Proceso de fertilización</option>
                   </select>
                 </div>
               </div>
@@ -414,8 +414,10 @@
                   <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
                     step="0.01" required>
                 </div>
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosAlquilar()">Agregar
-                  producto</button>
+                <button type="button" class="btn bg-gradient-success pt-2" value="paso3_1" id="paso3" 
+                  onclick="proce_Semilla()">Agregar
+                  producto
+                </button>
               </div>
 
               <div id="comprarForm" style="display: none;">
@@ -442,7 +444,8 @@
                     step="0.01" required>
                 </div>
 
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosComprar()">Agregar producto</button>
+                <button type="button" class="btn bg-gradient-success pt-2" value="paso3_2" id="paso3" 
+                  onclick="proce_Fertilizante()">Agregar producto</button>
               </div>
             </form>
           </div>

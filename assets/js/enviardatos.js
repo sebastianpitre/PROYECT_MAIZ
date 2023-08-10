@@ -1,4 +1,5 @@
 function enviarDatosAlquilar() {
+
   // Obtener el valor del campo de entrada de datos
   const nombre = document.getElementById("productNameAlquiler").value;
   const tipo_transaccion = document.getElementById("transactionType").value;
@@ -72,25 +73,96 @@ function enviarDatosComprar() {
 }
 
 //tabla preparacion del terreno
-function prepaTerrenoAlquilar() {
+  function prepaTerrenoAlquilar() {
+    // Obtener el valor del campo de entrada de datos
+  const nombre = document.getElementById("productNameAlquiler").value;
+  const tipo_transaccion = document.getElementById("transactionType_terreno").value;
+  const cantidad = document.getElementById("quantityAlquiler").value;
+  const precio = document.getElementById("pricePerUnitAlquiler").value;
+  const tiempo = document.getElementById("rentalTime").value;
+  const hectarea = 0;
+  const condicion = 0;
+  // Crear un objeto FormData y agregar el dato
+  const formData = new FormData();
+  formData.append('nombre', nombre);
+  formData.append('tipo_transaccion', tipo_transaccion);
+  formData.append('tiempo', tiempo);
+  formData.append('precio', precio);
+  formData.append('cantidad', cantidad);
+  formData.append('condicion', condicion);
+  formData.append('hectareas', hectarea);
+
+    // Realizar una petición Fetch para enviar los datos al servidor
+    fetch('../assets/php/guardar.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data); // Respuesta del servidor (opcional)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  
+  }
+  function prepaTerrenoComprar() {
+      // Obtener el valor del campo de entrada de datos
+      const nombre_c  = document.getElementById("productNameComprar").value;
+      const cantidad_c = document.getElementById("quantityComprar").value;
+      const precio_c  = document.getElementById("pricePerUnitComprar").value;
+      const hectarea = document.getElementById("hectareas").value=0;
+      const condicion = document.getElementById("condicion").value=0;
+    
+    
+      const tipo_transaccion = document.getElementById("transactionType_terreno").value;
+      
+    
+    // Crear un objeto FormData y agregar el dato
+    const formData = new FormData();
+    formData.append('nombre_c', nombre_c);
+    formData.append('tipo_transaccion', tipo_transaccion);
+    formData.append('precio_c', precio_c);
+    formData.append('cantidad_c', cantidad_c);
+    formData.append('condicion', condicion);
+    formData.append('hectareas', hectarea);
+    
+    
+      // Realizar una petición Fetch para enviar los datos al servidor
+      fetch('../assets/php/guardar.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // Respuesta del servidor (opcional)
+        resetForm(transactionType);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+      
+      
+  }
+//tabla preparacion del terreno
+
+// tabla proceso de semilla y fertilizacion
+function proce_Semilla() {
+  
   // Obtener el valor del campo de entrada de datos
-const nombre = document.getElementById("productNameAlquiler").value;
-const tipo_transaccion = document.getElementById("transactionType_terreno").value;
-const cantidad = document.getElementById("quantityAlquiler").value;
-const precio = document.getElementById("pricePerUnitAlquiler").value;
-const tiempo = document.getElementById("rentalTime").value;
-const hectarea = 0;
-const condicion = 0;
+  const tipo_transaccion = document.getElementById("transactionType").value;
+  const precio = document.getElementById("pricePerUnitAlquiler").value;
+  const hectarea =0;
+  const condicion =0;
+
 // Crear un objeto FormData y agregar el dato
 const formData = new FormData();
-formData.append('nombre', nombre);
 formData.append('tipo_transaccion', tipo_transaccion);
-formData.append('tiempo', tiempo);
 formData.append('precio', precio);
-formData.append('cantidad', cantidad);
 formData.append('condicion', condicion);
 formData.append('hectareas', hectarea);
 
+resetForm(transactionType);
   // Realizar una petición Fetch para enviar los datos al servidor
   fetch('../assets/php/guardar.php', {
     method: 'POST',
@@ -105,7 +177,7 @@ formData.append('hectareas', hectarea);
   });
  
 }
-function prepaTerrenoComprar() {
+function proce_Fertilizante() {
     // Obtener el valor del campo de entrada de datos
     const nombre_c  = document.getElementById("productNameComprar").value;
     const cantidad_c = document.getElementById("quantityComprar").value;
@@ -114,7 +186,7 @@ function prepaTerrenoComprar() {
     const condicion = document.getElementById("condicion").value=0;
    
    
-    const tipo_transaccion = document.getElementById("transactionType_terreno").value;
+    const tipo_transaccion = document.getElementById("transactionType").value;
     
   
   // Crear un objeto FormData y agregar el dato
@@ -143,7 +215,7 @@ function prepaTerrenoComprar() {
     
     
 }
-//tabla preparacion del terreno
+// tabla proceso de semilla y fertilizacion
 
 
   function resetForm(transactionType) {
