@@ -7,7 +7,10 @@
         $seleccionados = $_POST["valores"];
         $miconexion=conectar_bd('', 'bd_cultivomaiz');
 
-          $consulta=consulta($miconexion,"DELETE FROM `inventario` WHERE  id like '$seleccionados'");
+        $consulta=consulta($miconexion,"DELETE FROM `inventario` WHERE  id like '$seleccionados'");
+
+        $consulta=consulta($miconexion,"DELETE FROM `prepa_terreno` WHERE  id_terreno like '$seleccionados'");
+
           
      
          

@@ -13,6 +13,22 @@ function changeForm() {
     }
 }
 
+// cargar form terreno
+function changeForm_terreno() {
+    var transactionType = document.getElementById("transactionType_terreno").value;
+    
+    var alquilerForm = document.getElementById("alquilerForm_terreno");
+    var comprarForm = document.getElementById("comprarForm_terreno");
+    
+    if (transactionType === "alquilar_terreno") {
+    alquilerForm.style.display = "block";
+    comprarForm.style.display = "none";
+    } else if (transactionType === "comprar_terreno") {
+    alquilerForm.style.display = "none";
+    comprarForm.style.display = "block";
+    }
+}
+
 function addProduct() {
     var transactionType = document.getElementById("transactionType").value;
     

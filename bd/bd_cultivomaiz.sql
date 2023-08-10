@@ -87,6 +87,59 @@ insert  into `usuario`(`id_usuario`,`nombre_u`,`pss_u`) values (1,'user1',NULL),
 
 UNLOCK TABLES;
 
+/*Table structure for table `prepa_terreno` */
+
+DROP TABLE IF EXISTS `prepa_terreno`;
+
+CREATE TABLE `prepa_terreno` (
+  `id_terreno` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(255) DEFAULT NULL,
+  `tipo_inventario` varchar(255) DEFAULT NULL,
+  `cantidad` varchar(255) DEFAULT NULL,
+  `precio_unidad` varchar(255) DEFAULT NULL,
+  `tiempo_alq` varchar(255) DEFAULT NULL,
+  
+  `subtotal_alquiler` varchar(255) DEFAULT NULL,
+  `id_user2` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_terreno`),
+  KEY `fk_usuario` (`id_user2`),
+  CONSTRAINT `fk_usuario2` FOREIGN KEY (`id_user2`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `prepa_terreno` */
+
+LOCK TABLES `prepa_terreno` WRITE;
+
+UNLOCK TABLES;
+
+/*Table structure for table `proceso_siembra` */
+
+DROP TABLE IF EXISTS `proceso_siembra`;
+
+CREATE TABLE `proceso_siembra` (
+  `id_siembra` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(255) DEFAULT NULL,
+  `tipo_inventario` varchar(255) DEFAULT NULL,
+  `cantidad` varchar(255) DEFAULT NULL,
+  `precio_unidad` varchar(255) DEFAULT NULL,
+  `tiempo_alq` varchar(255) DEFAULT NULL,
+  `precio_semilla` varchar(255) DEFAULT NULL,
+
+  
+  `subtotal_alquiler` varchar(255) DEFAULT NULL,
+  `id_user3` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_siembra`),
+  KEY `fk_usuario` (`id_user3`),
+  CONSTRAINT `fk_usuario3` FOREIGN KEY (`id_user3`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `proceso_siembra` */
+
+LOCK TABLES `proceso_siembra` WRITE;
+
+UNLOCK TABLES;
+
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

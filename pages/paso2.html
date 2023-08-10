@@ -55,7 +55,7 @@
         // Función para actualizar la tabla con los datos del servidor
         function actualizarTabla() {
             $.ajax({
-                url: '../assets/php/obtener_tabla2.php', // Archivo PHP que obtiene los datos del servidor
+                url: '../assets/php/obtener_tabla_terreno.php', // Archivo PHP que obtiene los datos del servidor
                 
                 success: function(data) {
                     $('#tabla').html(data); // Actualizar el contenido de la tabla con los datos recibidos
@@ -407,16 +407,16 @@
             <form id="productForm">
               <div class="col-md-11">
                 <div class="input-group input-group-static">
-                  <label for="transactionType">Tipo de transacción:</label>
-                  <select id="transactionType" onchange="changeForm()"
+                  <label for="transactionType_terreno">Tipo de transacción:</label>
+                  <select id="transactionType_terreno" onchange="changeForm_terreno()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
                     <option> selecciona </option>
-                    <option value="alquilar">Alquiler</option>
-                    <option value="comprar">Comprar</option>
+                    <option value="alquilar_terreno">Alquiler</option>
+                    <option value="comprar_terreno">Comprar</option>
                   </select>
                 </div>
               </div>
-              <div id="alquilerForm" style="display: none;">
+              <div id="alquilerForm_terreno" style="display: none;">
                 <h4>ALQUILER</h4>
 
                 <div class="input-group input-group-static w-90 mb-2">
@@ -438,10 +438,10 @@
                   <label for="rentalTime">Tiempo de alquiler:</label>
                   <input type="text" class="form-control" placeholder="Digite en horas" id="rentalTime" required>
                 </div>
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosAlquilar()">Agregar
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="prepaTerrenoAlquilar()">Agregar
                   producto</button>
               </div>
-              <div id="comprarForm" style="display: none;">
+              <div id="comprarForm_terreno" style="display: none;">
                 <h4>COMPRAR</h4>
                 <div class="input-group input-group-static w-90 mb-2">
                   <label for="productNameComprar">Nombre del producto:</label>
@@ -459,7 +459,7 @@
                     step="0.01" required>
                 </div>
 
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosComprar()">Agregar producto</button>
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="prepaTerrenoComprar()">Agregar producto</button>
               </div>
             </form>
           </div>

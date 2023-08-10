@@ -2,7 +2,7 @@
 session_start();
 include('funciones.php');
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `inventario` WHERE id_user1 like '{$_SESSION['id_usuario']}'");
+      $resulta = consulta($miconexion, "SELECT * FROM `prepa_terreno` WHERE id_user2 like '{$_SESSION['id_usuario']}'");
       $resulta1 = consulta($miconexion, "SELECT * FROM `terreno` WHERE id_user like '{$_SESSION['id_usuario']}'");
       
       $fila1 = $resulta1->fetch_assoc();
@@ -16,14 +16,14 @@ include('funciones.php');
 
       while ($fila = $resulta->fetch_assoc()) {
         $condicion=$fila['tipo_inventario'];
-        if($condicion=="alquilar"){
+        if($condicion=="alquilar_terreno"){
           $numero1=$fila['precio_unidad'];
           $numero2=$fila['cantidad'];
           $hora=$fila['tiempo_alq'];
   
           $producto=intval($numero1)*intval($numero2)*intval($hora);
         }
-        if($condicion=="comprar"){
+        if($condicion=="comprar_terreno"){
           $numero1=$fila['precio_unidad'];
           $numero2=$fila['cantidad'];
   
@@ -31,7 +31,7 @@ include('funciones.php');
         }
         
         $sumar= $sumar+$producto;
-        $id=$fila['id'] ;
+        $id=$fila['id_terreno'] ;
         $tablaHTML .= "<tr>";
         $tablaHTML .= "<td>" . $fila['nombre_producto'] . "</td>";
         $tablaHTML .= "<td>" . $fila['tipo_inventario'] . "</td>";
