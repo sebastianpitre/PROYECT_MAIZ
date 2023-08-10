@@ -217,7 +217,7 @@ function proce_Fertilizante() {
     
 }
 // tabla proceso de semilla y fertilizacion
-
+ 
 
   function resetForm(transactionType) {
     if (transactionType === "alquilar") {

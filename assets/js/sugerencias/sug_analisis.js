@@ -27,10 +27,7 @@
             console.error('Error:', error);
         });
 
-        if (isNaN(hectareas) || hectareas < 0) {
-            alert("La cantidad de hectáreas debe ser un número positivo.");
-            return;
-        }
+
 
         const herramientas = calcularHerramientasPorHectarea(hectareas);
         mostrarResultado(herramientas);
@@ -38,26 +35,26 @@
 
     function calcularHerramientasPorHectarea(hectareas) {
         const palasPorHectarea = 10;
-        const baldesPorHectarea = 1;
-        const palinPorHectarea = 5;
-        const bolsasPorHectarea = 6;
-        const semillasPorHectarea = 20;
-        const personalPorHectarea =2;
+        const baldesPorHectarea = 8;
+        const palinPorHectarea = 8;
+        const bolsasPorHectarea = 12;
+        const kgSemillasPorHectarea = 20;
+        const personalPorHectarea =4;
 
         const palasNecesarias = palasPorHectarea * hectareas / 10000;
         const baldesNecesarios = baldesPorHectarea * hectareas / 10000;
         const palinNecesarios = palinPorHectarea * hectareas / 10000;
         const bolsasNecesarias = bolsasPorHectarea * hectareas / 10000;
-        const semillasNecesarias = semillasPorHectarea * hectareas /10000;
+        const kgSemillasNecesarias = kgSemillasPorHectarea * hectareas /10000;
         const personalNecesarios = personalPorHectarea * hectareas /10000;
 
         return [
-            { nombre: 'Personal', cantidad: personalNecesarios, imagen: '../assets/img/herramientas/006-agricultor.png', medida: ' ' },
+            { nombre: 'Personal', cantidad: personalNecesarios, imagen: '../assets/img/herramientas/006-agricultor.png', medida: ' pers' },
             { nombre: 'Baldes', cantidad: baldesNecesarios, imagen: '../assets/img/herramientas/balde.png', medida: ' und' },
             { nombre: 'Palín', cantidad: palinNecesarios, imagen: '../assets/img/herramientas/001-pala.png', medida: ' und' },
             { nombre: 'Bolsas', cantidad: bolsasNecesarias, imagen: '../assets/img/herramientas/bolsas.png', medida: ' und' },
             { nombre: 'Palas', cantidad: palasNecesarias, imagen: '../assets/img/herramientas/001-pala.png', medida: ' und' },
-            { nombre: 'Semillas', cantidad: semillasNecesarias, imagen: '../assets/img/herramientas/maiz.png', medida: ' kg' },
+            { nombre: 'Semillas', cantidad: kgSemillasNecesarias, imagen: '../assets/img/herramientas/maiz.png', medida: ' kg' },
             
         ];
     }
@@ -68,13 +65,10 @@
 
         herramientas.forEach(herramienta => {
             const herramientaDiv = document.createElement("div");
-            herramientaDiv.classList.add("col-lg-8", "mt-3", "ms-2");
-            herramientaDiv.style.width = "16%";
-            herramientaDiv.style.minWidth = "16%";
-            herramientaDiv.style.maxWidth = "16%";
+            herramientaDiv.classList.add("col", "mt-3");
 
             const card = document.createElement("div");
-            card.classList.add("card", "p-1", "blur");
+            card.classList.add("card", "p-2", "blur", "align-items-center");
 
             const cardBody = document.createElement("div");
             card.classList.add("card");
@@ -131,3 +125,4 @@ function sumar() {
         console.error('Error:', error);
     });*/
 }
+calcularHerramientas()

@@ -293,55 +293,53 @@
     </div>
   </section>
 
-  <div class="card1 card-body  mx-3 mx-md-8 mt-8 mb-4">
+  <div class="card1 mx-3 mx-md-8 mt-8 mb-4">
 
     <!-- CARD -->
-    <section class="row mb-4 card opacity-9">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-10 mx-auto border-radius-lg">
-            <div class="row">
-              <h4 class="text-center mt-3 animate-text" id="animate-text1">ANÁLISIS DEL TERRENO.</h4>
-
-              <div class="col-xl-6 col-md-5 px-5 z-index-2 position-relative">
-                <div class="row ">
-                  <div class="input-group input-group-static py-3">
-                    <form onsubmit="return false;">
-                      <label for="hectareas">Cuántos metros² desea sembrar?</label>
-                      <input type="number" id="hectareas" value="10000" class="form-control"
-                        placeholder="Digite la cantidad" min="0" step="0.5" required><br><br>
-                        <button class="btn bg-gradient-success float-lg-end mt-n5" id="condicion" value="hectarea" onclick="calcularHerramientas()">Guardar</button>
-                      </form>
-                  </div>
-                </div>
-              </div> 
-
-              <div class="col-xl-6 col-md-5 px-5 position-relative ">
-                <div class="row mb-3">
-                  <div id="ocultar_lab" class="input-group input-group-static py-3 form-check form-switch">
-                    <label for="mostrar_lab">¿Realizará el analisis en un laboratorio? 
-                    <input type="checkbox" id="mostrar_lab" class="form-check-input" onchange="toggleDiv()"></label>
-                    <div id="laboratorio" style="display: none;">                   
-                      <label for="studyPrice">Digite el Valor de la cotización</label>
-                      <input type="number" class="form-control" placeholder="Digite el precio" id="cotizar" min="0"
-                        step="0.01"  required>
+    <section class="col-12 mb-4 card opacity-9">
+      <form onsubmit="return false;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <div class="card card-plain">
+                <form id="contact-form" method="post" autocomplete="off">
+                  <div class="card-body">
+                    <div class="row">
+                      <h4 class="text-center  mb-4 animate-text" id="animate-text1">ANÁLISIS DEL TERRENO.</h4>
+                      <div class="col-md-5">
+                        <div class="input-group input-group-static">
+                          <label  for="studyPrice" class="font-weight-bold">Valor de los gastos en laboratorio</label>
+                          <input type="number" class="form-control" placeholder="Digite el valor" id="cotizar" min="0" step="5000" value="0"  required>
+                        </div>
+                      </div>
+                      <div class="col-2"></div>
+                      <div class="col-md-5">
+                        <div class="input-group input-group-static">
+                          <label for="hectareas" class="font-weight-bold">¿Cuántos metros² desea sembrar? </label>
+                          <input type="number" id="hectareas" value="10000" class="form-control"
+                        placeholder="Digite la cantidad por metros²" min="0" step="5000" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mt-3 text-center">
+                        <button class="btn btn-success" id="condicion" value="hectarea" onclick="calcularHerramientas()" >Calcular</button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      </form>
+          <!-- .......... -->
     </section>
 
-    <section class="row mb-2 card opacity-9">
+    <section class=" mb-2 card opacity-9">
       <div class="container-fluid">
         <div class="row mb-3">
           <h4 class="text-center mt-3 animate-text" id="animate-text1">SUGERENCIA DE HERRAMIENTAS PARA EL ANALISIS.</h4>
           <div id="resultado">
             <div class="container">
-              <div class="col-14 row" id="herramientas-lista">
+              <div class="col-12 row" id="herramientas-lista">
                 <!-- sugerencias -->
               </div>
               
