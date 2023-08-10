@@ -40,28 +40,7 @@
   <!-- Boxicons CSS -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="../assets/css/menu_global.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Función para actualizar la tabla con los datos del servidor
-            function actualizarTabla() {
-                $.ajax({
-                    url: 'obtener_datos.php', // Archivo PHP que obtiene los datos del servidor
-                    success: function(data) {
-                        $('#tabla').html(data); // Actualizar el contenido de la tabla con los datos recibidos
-                    }
-                });
-            }
-
-            // Llamar a la función inicialmente para cargar la tabla con los datos actuales
-            actualizarTabla();
-
-            // Escuchar eventos de cambio en el formulario
-            setInterval(actualizarTabla, 1000);
-        });
-    </script>
-     
-
+  <script src="../assets/js/sugerencias/sug_analisis.js"></script>
 </head>
 
 <body class="blog-author" style="background-image: url('../assets/img/fotosmaiz\ \(1\).jpg'); background-size: cover; background-repeat: no-repeat;background-attachment: fixed">
@@ -239,7 +218,7 @@
   </div>
   <!-- fin Navbar -->
 
-  <section class="section" style="z-index: 9999;">
+  <section class="section" style="z-index: 9999; top: 30%;">
     <div class="global-content">
       <div class="toggle-btn">
         <i class='bx bx-plus'></i>
@@ -262,44 +241,43 @@
     </div>
   </section>
 
-  <div class="card1 card-body  mx-3 mx-md-8 mt-8 mb-4">
+  <div class="card1 mx-3 mx-md-8 mt-8 mb-4">
 
     <!-- CARD -->
-    <section class="row mb-4 card opacity-9">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-10 mx-auto border-radius-lg">
-            <div class="row">
-              <h4 class="text-center mt-3 animate-text" id="animate-text1">ANÁLISIS DEL TERRENO.</h4>
-
-              <div class="col-xl-6 col-md-5 px-5 z-index-2 position-relative">
-                <div class="row ">
-                  <div class="input-group input-group-static py-3">
-                    <form onsubmit="return false;">
-                      <label for="hectareas">Cuantas hectáreas desea sembrar?</label>
-                      <input type="number" id="hectareas" value="3" class="form-control"
-                        placeholder="Digite la cantidad por metros²" min="0" step="0.5" required>
-                      <button onclick="calcularHerramientas()">Calcular</button>
-                    </form>
+    <section class="col-12 mb-4 card opacity-9">
+      <form onsubmit="return false;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="card card-plain">
+                <form id="contact-form" method="post" autocomplete="off">
+                  <div class="card-body">
+                    <div class="row">
+                      <h4 class="text-center mt-3 mb-5 animate-text" id="animate-text1">ANÁLISIS DEL TERRENO.</h4>
+                      <div class="col-md-5">
+                        <div class="input-group input-group-static mb-4">
+                          <label  for="studyPrice" class="font-weight-bold">Gastos en laboratorio</label>
+                          <input type="number" class="form-control" placeholder="Digite el precio" id="studyPrice" min="0" step="0.01" required>
+                        </div>
+                      </div>
+                      <div class="col-2"></div>
+                      <div class="col-md-5">
+                        <div class="input-group input-group-static">
+                          <label for="hectareas" class="font-weight-bold">¿Cuantas hectáreas desea sembrar?</label>
+                          <input type="number" id="hectareas" value="10000" class="form-control" placeholder="Digite la cantidad por metros²" min="0" step="0.5" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-center">
+                        <button class="btn btn-success" onclick="calcularHerramientas()" >Calcular</button>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </form>
               </div>
-
-              <div class="col-xl-6 col-md-5 px-5 position-relative ">
-                <div class="row mb-3">
-                  <div class="input-group input-group-static py-3">
-                    <label for="studyPrice">Digite el Valor de la cotización</label>
-                    <input type="number" class="form-control" placeholder="Digite el precio" id="studyPrice" min="0"
-                      step="0.01" required>
-                  </div>
-                </div>
-
-              </div>
-
             </div>
           </div>
-        </div>
-      </div>
+      </form>
+          <!-- .......... -->
     </section>
 
     <section class="row mb-2 card opacity-9">
@@ -308,7 +286,7 @@
           <h4 class="text-center mt-3 animate-text" id="animate-text1">SUGERENCIA DE HERRAMIENTAS PARA EL ANALISIS.</h4>
           <div id="resultado">
             <div class="container">
-              <div class="col-14 row" id="herramientas-lista">
+              <div class="row" id="herramientas-lista">
                 <!-- sugerencias -->
               </div>
             </div>
@@ -373,7 +351,7 @@
                   <label for="rentalTime">Tiempo de alquiler:</label>
                   <input type="text" class="form-control" placeholder="Digite" id="rentalTime" required>
                 </div>
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatos()">Agregar
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="addProduct()">Agregar
                   producto</button>
               </div>
 
@@ -395,7 +373,7 @@
                     step="0.01" required>
                 </div>
 
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatos1()">Agregar producto</button>
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="addProduct()">Agregar producto</button>
               </div>
             </form>
           </div>
@@ -406,7 +384,28 @@
         <div class="row">
           <div class="ms-3 mt-2 col-md-12">
             <h3>Listado de productos</h3>
-            <div id="tabla"></div>
+            <table id="productTable">
+              <thead>
+                <tr>
+                  <th>Nombre del producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio por unidad</th>
+                  <th>Tipo de transacción</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">
+                    <strong>
+                      <h4 class="mx-auto">Total:</h4>
+                    </strong></td>
+                  <td id="totalAmount">0</td>
+                </tr>
+              </tfoot>
+            </table>
             <h1></h1>
             <br>
           </div>
@@ -418,7 +417,7 @@
 
     <!-- paginacion -->
     <div class="row card text-center mt-4 page-header opacity-9"
-      style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
+      style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; align-self: center; bottom: 5px; z-index: 100;">
       <div class="col-12 mx-auto " style="padding-top: 7px;">
 
         <a href="../index.html">
@@ -529,11 +528,8 @@
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
   <script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
-  <script src="../assets/js/sugerencias/sugerencias/sug_analisis.js"></script>
+  
   <script src="../assets/js/menu_global.js"></script>
- 
-  <script src="../pages/inventarios/enviardatos.js"></script>
-
 </body>
 
 </html>
