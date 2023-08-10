@@ -31,8 +31,8 @@ session_start();
     $precio_c=$_POST['precio_c'];
     
   
-    $verificaci=consulta($miconexion,"ALTER TABLE inventario AUTO_INCREMENT=1");
-    $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user1`)
+    $verificaci=consulta($miconexion,"ALTER TABLE analisis_terreno AUTO_INCREMENT=1");
+    $resultado=consulta($miconexion,"INSERT INTO `analisis_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user1`)
     values('$nombre_c','$tipo','$cantidad_c','$precio_c','{$_SESSION['id_usuario']}')");
 
     if($resultado){
@@ -53,9 +53,9 @@ session_start();
 
   
     //hay que incrementar  desde donde elimina el usuario y asi aprobechar  todo los espacios de la tabla
-    $verificacion=consulta($miconexion,"ALTER TABLE inventario AUTO_INCREMENT=1");
+    $verificacion=consulta($miconexion,"ALTER TABLE analisis_terreno AUTO_INCREMENT=1");
     //codigo por realizar cambiandoel 1 por un valor de la consulta cuando se valide cuales el valor max
-    $resultado=consulta($miconexion,"INSERT INTO `inventario`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`,`id_user1`)
+    $resultado=consulta($miconexion,"INSERT INTO `analisis_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`,`id_user1`)
     values('$nombre_a','$tipo','$cantidad_a','$precio_a','$tiempo_a','{$_SESSION['id_usuario']}')");
 
       if($resultado){

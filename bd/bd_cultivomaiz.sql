@@ -17,11 +17,11 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`bd_cultivomaiz` /*!40100 DEFAULT CHARAC
 
 USE `bd_cultivomaiz`;
 
-/*Table structure for table `inventario` */
+/*Table structure for table `analisis_terreno` */
 
-DROP TABLE IF EXISTS `inventario`;
+DROP TABLE IF EXISTS `analisis_terreno`;
 
-CREATE TABLE `inventario` (
+CREATE TABLE `analisis_terreno` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_producto` varchar(255) DEFAULT NULL,
   `tipo_inventario` varchar(255) DEFAULT NULL,
@@ -36,11 +36,11 @@ CREATE TABLE `inventario` (
   CONSTRAINT `fk_usuario1` FOREIGN KEY (`id_user1`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
-/*Data for the table `inventario` */
+/*Data for the table `analisis_terreno` */
 
-LOCK TABLES `inventario` WRITE;
+LOCK TABLES `analisis_terreno` WRITE;
 
-insert  into `inventario`(`id`,`nombre_producto`,`tipo_inventario`,`cantidad`,`precio_unidad`,`tiempo_alq`,`subtotal_alquiler`,`id_user1`) values (1,'Tractor','alquilar','1','100000','2',NULL,2),(2,'Mangueras','comprar','12','20000',NULL,NULL,2);
+insert  into `analisis_terreno`(`id`,`nombre_producto`,`tipo_inventario`,`cantidad`,`precio_unidad`,`tiempo_alq`,`subtotal_alquiler`,`id_user1`) values (1,'Tractor','alquilar','1','100000','2',NULL,2),(2,'Mangueras','comprar','12','20000',NULL,NULL,2);
 
 UNLOCK TABLES;
 

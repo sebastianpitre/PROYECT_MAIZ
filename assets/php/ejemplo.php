@@ -45,7 +45,7 @@
 php
 <?php
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `inventario`");
+      $resulta = consulta($miconexion, "SELECT * FROM `analisis_terreno`");
 
       $tablaHTML = "<table><thead>";
       $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>sub total</th><th>seleccionar</th></tr></thead>";
