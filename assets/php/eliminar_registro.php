@@ -9,7 +9,7 @@
 
         $consulta=consulta($miconexion,"DELETE FROM `inventario` WHERE  id like '$seleccionados'");
 
-        $consulta=consulta($miconexion,"DELETE FROM `prepa_terreno` WHERE  id_terreno like '$seleccionados'");
+        $consulta=consulta($miconexion,"DELETE FROM `preparacion_terreno` WHERE  id_terreno like '$seleccionados'");
 
           
      

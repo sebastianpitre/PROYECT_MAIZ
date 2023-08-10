@@ -2,7 +2,7 @@
 session_start();
 include('funciones.php');
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `prepa_terreno` WHERE id_user2 like '{$_SESSION['id_usuario']}'");
+      $resulta = consulta($miconexion, "SELECT * FROM `preparacion_terreno` WHERE id_user2 like '{$_SESSION['id_usuario']}'");
       $resulta1 = consulta($miconexion, "SELECT * FROM `terreno` WHERE id_user like '{$_SESSION['id_usuario']}'");
       
       $fila1 = $resulta1->fetch_assoc();

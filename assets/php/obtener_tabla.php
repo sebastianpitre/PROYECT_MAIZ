@@ -11,7 +11,7 @@ include('funciones.php');
       $tablaHTML = "<table><thead>";
       $tablaHTML .= "<tr><td colspan='5'><strong>Cotización del laboratorio </strong></td><td colspan='2' id='cotizar_lab'>$  $cotizar</td></tr>";
 
-      $tablaHTML .= "<tr><th>Nombre Producto</th><th>Tipo Inventario</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
+      $tablaHTML .= "<tr><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
       $tablaHTML .= "<tbody><tr>";
       $sumar=0;
   
@@ -36,7 +36,6 @@ include('funciones.php');
         $id=$fila['id'] ;
         $tablaHTML .= "<tr>";
         $tablaHTML .= "<td>" . $fila['nombre_producto'] . "</td>";
-        $tablaHTML .= "<td>" . $fila['tipo_inventario'] . "</td>";
         $tablaHTML .= "<td>" . $fila['cantidad'] . "</td>";
         $tablaHTML .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
         $tablaHTML .= "<td>" . $fila['tiempo_alq'] . "</td>";

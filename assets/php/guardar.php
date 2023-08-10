@@ -77,9 +77,9 @@ session_start();
 
   
     //hay que incrementar  desde donde elimina el usuario y asi aprobechar  todo los espacios de la tabla
-    $verificacion=consulta($miconexion,"ALTER TABLE prepa_terreno AUTO_INCREMENT=1");
+    $verificacion=consulta($miconexion,"ALTER TABLE preparacion_terreno AUTO_INCREMENT=1");
     //codigo por realizar cambiandoel 1 por un valor de la consulta cuando se valide cuales el valor max
-    $resultado=consulta($miconexion,"INSERT INTO `prepa_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`,`id_user2`)
+    $resultado=consulta($miconexion,"INSERT INTO `preparacion_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`,`id_user2`)
     values('$nombre_a','$tipo','$cantidad_a','$precio_a','$tiempo_a','{$_SESSION['id_usuario']}')");
 
       if($resultado){
@@ -98,8 +98,8 @@ session_start();
     $precio_c=$_POST['precio_c'];
     
   
-    $verificaci=consulta($miconexion,"ALTER TABLE prepa_terreno AUTO_INCREMENT=1");
-    $resultado=consulta($miconexion,"INSERT INTO `prepa_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user2`)
+    $verificaci=consulta($miconexion,"ALTER TABLE preparacion_terreno AUTO_INCREMENT=1");
+    $resultado=consulta($miconexion,"INSERT INTO `preparacion_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user2`)
     values('$nombre_c','$tipo','$cantidad_c','$precio_c','{$_SESSION['id_usuario']}')");
 
     if($resultado){
@@ -117,9 +117,9 @@ session_start();
 
   
     //hay que incrementar  desde donde elimina el usuario y asi aprobechar  todo los espacios de la tabla
-    $verificacion=consulta($miconexion,"ALTER TABLE prepa_terreno AUTO_INCREMENT=1");
+    $verificacion=consulta($miconexion,"ALTER TABLE preparacion_terreno AUTO_INCREMENT=1");
     //codigo por realizar cambiandoel 1 por un valor de la consulta cuando se valide cuales el valor max
-    $resultado=consulta($miconexion,"INSERT INTO `prepa_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`,`id_user2`)
+    $resultado=consulta($miconexion,"INSERT INTO `preparacion_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`,`id_user2`)
     values('$precio_a','{$_SESSION['id_usuario']}')");
 
       if($resultado){
@@ -139,8 +139,8 @@ session_start();
     $precio_c=$_POST['precio_c'];
     
   
-    $verificaci=consulta($miconexion,"ALTER TABLE prepa_terreno AUTO_INCREMENT=1");
-    $resultado=consulta($miconexion,"INSERT INTO `prepa_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user2`)
+    $verificaci=consulta($miconexion,"ALTER TABLE preparacion_terreno AUTO_INCREMENT=1");
+    $resultado=consulta($miconexion,"INSERT INTO `preparacion_terreno`( `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`,`id_user2`)
     values('$nombre_c','$tipo','$cantidad_c','$precio_c','{$_SESSION['id_usuario']}')");
 
     if($resultado){
