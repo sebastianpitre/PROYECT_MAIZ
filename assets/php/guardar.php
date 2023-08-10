@@ -9,7 +9,7 @@ session_start();
   $hectarea = $_POST['hectareas'];
   $condicion = $_POST['condicion'];
   $cotizar = $_POST['cotizar'];
-  echo"hola cartacol .$hectarea";
+  echo"hola cartacol .$condicion";
   /* Guarda al seleccionar el Botón comprar 909 =hectareas*/
   if( $condicion==="hectarea"){
     $hectarea=$_POST['hectareas'];
