@@ -38,25 +38,25 @@
 
     function calcularHerramientasPorHectarea(hectareas) {
         const palasPorHectarea = 10;
-        const baldesPorHectarea = 2;
-        const palinPorHectarea = 2;
+        const baldesPorHectarea = 1;
+        const palinPorHectarea = 5;
         const bolsasPorHectarea = 6;
         const semillasPorHectarea = 20;
-        const operariosPorHectarea =2;
+        const personalPorHectarea =2;
 
-        const palasNecesarias = palasPorHectarea * hectareas;
-        const baldesNecesarios = baldesPorHectarea * hectareas;
-        const palinNecesarios = palinPorHectarea * hectareas;
-        const bolsasNecesarias = bolsasPorHectarea * hectareas;
-        const semillasNecesarias = semillasPorHectarea * hectareas;
-        const operariosNecesarios = operariosPorHectarea * hectareas;
+        const palasNecesarias = palasPorHectarea * hectareas / 10000;
+        const baldesNecesarios = baldesPorHectarea * hectareas / 10000;
+        const palinNecesarios = palinPorHectarea * hectareas / 10000;
+        const bolsasNecesarias = bolsasPorHectarea * hectareas / 10000;
+        const semillasNecesarias = semillasPorHectarea * hectareas /10000;
+        const personalNecesarios = personalPorHectarea * hectareas /10000;
 
         return [
-            { nombre: 'Operarios', cantidad: operariosNecesarios, imagen: '../assets/img/herramientas/001-pala.png', medida: ' ' },
+            { nombre: 'Personal', cantidad: personalNecesarios, imagen: '../assets/img/herramientas/006-agricultor.png', medida: ' ' },
             { nombre: 'Baldes', cantidad: baldesNecesarios, imagen: '../assets/img/herramientas/balde.png', medida: ' und' },
             { nombre: 'Palín', cantidad: palinNecesarios, imagen: '../assets/img/herramientas/001-pala.png', medida: ' und' },
             { nombre: 'Bolsas', cantidad: bolsasNecesarias, imagen: '../assets/img/herramientas/bolsas.png', medida: ' und' },
-            { nombre: 'Palín', cantidad: palinNecesarios, imagen: '../assets/img/herramientas/001-pala.png', medida: ' und' },
+            { nombre: 'Palas', cantidad: palasNecesarias, imagen: '../assets/img/herramientas/001-pala.png', medida: ' und' },
             { nombre: 'Semillas', cantidad: semillasNecesarias, imagen: '../assets/img/herramientas/maiz.png', medida: ' kg' },
             
         ];
