@@ -181,10 +181,10 @@ function proce_Fertilizante() {
     // Obtener el valor del campo de entrada de datos
     const nombre_c  = document.getElementById("productNameComprar").value;
     const cantidad_c = document.getElementById("quantityComprar").value;
+    const unidad_medida = document.getElementById("unidad_medida").value;
     const precio_c  = document.getElementById("pricePerUnitComprar").value;
-    const hectarea = document.getElementById("hectareas").value=0;
-    const condicion = document.getElementById("condicion").value=0;
-   
+    const hectarea =0;
+    const condicion =0;
    
     const tipo_transaccion = document.getElementById("transactionType").value;
     
@@ -194,6 +194,7 @@ function proce_Fertilizante() {
   formData.append('nombre_c', nombre_c);
   formData.append('tipo_transaccion', tipo_transaccion);
   formData.append('precio_c', precio_c);
+  formData.append('unidad_medida', unidad_medida);
   formData.append('cantidad_c', cantidad_c);
   formData.append('condicion', condicion);
   formData.append('hectareas', hectarea);
