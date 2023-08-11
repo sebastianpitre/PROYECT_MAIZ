@@ -125,3 +125,4 @@ function sumar() {
         console.error('Error:', error);
     });*/
 }
+calcularHerramientas()
