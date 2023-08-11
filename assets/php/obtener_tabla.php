@@ -1,9 +1,7 @@
 <?php
 session_start();
 include('funciones.php');
-   
-//
-$miconexion = conectar_bd('', 'bd_cultivomaiz');
+      $miconexion = conectar_bd('', 'bd_cultivomaiz');
       $resulta = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user1 like '{$_SESSION['id_usuario']}'");
       $resulta0 = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user1 like '{$_SESSION['id_usuario']}'");
 
@@ -20,17 +18,16 @@ $miconexion = conectar_bd('', 'bd_cultivomaiz');
      $fila3 = $resulta3->fetch_assoc();
      $condicion3=$fila3['tipo_inventario'];
 
-//
       $tablaHTML1 = "<table><thead>";
       $tablaHTML1 .= "<tr><td colspan='5'><strong>Cotización del laboratorio </strong></td><td colspan='2' id='cotizar_lab'>$  $cotizar</td></tr>";
+      $tablaHTML1 .= "<tr><td colspan='5'><strong>tipo de inversión </strong></td><td colspan='2' id='cotizar_lab'>$condicion3</td></tr>";
 
-      $tablaHTML1 .= "<tr class=' bg-gradient-dark text-white'><th colspan='5'>tipo de inversión </th><th colspan='2' id='cotizar_lab'>$condicion3</th></tr>";
-
-      $tablaHTML1 .= "<tr class=' bg-gradient-dark text-white'><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th class='text-center'>Eliminar</th></tr></thead>";
-
+      $tablaHTML1 .= "<tr><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
+      
       $tablaHTML1 .= "<tbody><tr>";
       $sumar1=0;
       $sumar2=0;
+  
 
       while ($fila = $resulta->fetch_assoc()) {
         $condicion=$fila['tipo_inventario'];
@@ -68,13 +65,13 @@ $miconexion = conectar_bd('', 'bd_cultivomaiz');
       $tablaHTML1 .= "</table>";
       $tablaHTML1 .= "<br>";
      echo $tablaHTML1;
-     // Creamos un array con los valores
+    
 
      $tablaHTML = "<table><thead>";
-     $tablaHTML .= "<tr class=' bg-gradient-dark text-white'><th colspan='4'>tipo de inversión </th><th colspan='2' id='cotizar_lab'>$condicion2</th></tr>";
+     $tablaHTML .= "<tr><td colspan='5'><strong>tipo de inversión </strong></td><td colspan='2' id='cotizar_lab'>$condicion2</td></tr>";
 
-     $tablaHTML .= "<tr class=' bg-gradient-dark text-white'><th colspan='2' >Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Subtotal</th><th class='text-center'>Eliminar</th></tr></thead>";
-  $tablaHTML .= "<tbody><tr>";
+     $tablaHTML .= "<tr><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
+     $tablaHTML .= "<tbody><tr>";
      $sumar=0;
  
 
