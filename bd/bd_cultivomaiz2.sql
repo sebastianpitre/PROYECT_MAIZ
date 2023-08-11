@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inventario`
+-- Estructura de tabla para la tabla `analisis_terreno`
 --
 
-CREATE TABLE `inventario` (
+CREATE TABLE `analisis_terreno` (
   `id` int(11) NOT NULL,
   `nombre_producto` varchar(255) DEFAULT NULL,
   `tipo_inventario` varchar(255) DEFAULT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `inventario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `inventario`
+-- Volcado de datos para la tabla `analisis_terreno`
 --
 
-INSERT INTO `inventario` (`id`, `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`, `subtotal_alquiler`, `id_user1`) VALUES
+INSERT INTO `analisis_terreno` (`id`, `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`, `subtotal_alquiler`, `id_user1`) VALUES
 (1, 'hjh', 'alquilar', '6', '6567', '5', NULL, 4),
 (2, 'hjuigufguikm', 'alquilar', '89', '65', '5', NULL, 4),
 (3, 'yuhbi', 'comprar', '766', '9', NULL, NULL, 4),
@@ -134,9 +134,9 @@ INSERT INTO `usuario` (`id_usuario`, `nombre_u`, `pss_u`) VALUES
 --
 
 --
--- Indices de la tabla `inventario`
+-- Indices de la tabla `analisis_terreno`
 --
-ALTER TABLE `inventario`
+ALTER TABLE `analisis_terreno`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_usuario` (`id_user1`);
 
@@ -172,9 +172,9 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de la tabla `inventario`
+-- AUTO_INCREMENT de la tabla `analisis_terreno`
 --
-ALTER TABLE `inventario`
+ALTER TABLE `analisis_terreno`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
@@ -206,9 +206,9 @@ ALTER TABLE `usuario`
 --
 
 --
--- Filtros para la tabla `inventario`
+-- Filtros para la tabla `analisis_terreno`
 --
-ALTER TABLE `inventario`
+ALTER TABLE `analisis_terreno`
   ADD CONSTRAINT `fk_usuario1` FOREIGN KEY (`id_user1`) REFERENCES `usuario` (`id_usuario`);
 
 --
