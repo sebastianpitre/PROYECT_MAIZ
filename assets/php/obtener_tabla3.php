@@ -2,7 +2,7 @@
 session_start();
 include('funciones.php');
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user1 like '{$_SESSION['id_usuario']}'");
+      $resulta = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user_analisis like '{$_SESSION['id_usuario']}'");
       $resulta1 = consulta($miconexion, "SELECT * FROM `terreno` WHERE id_user like '{$_SESSION['id_usuario']}'");
       
       $fila1 = $resulta1->fetch_assoc();
@@ -39,7 +39,7 @@ include('funciones.php');
         $tablaHTML .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
         $tablaHTML .= "<td>" . $fila['tiempo_alq'] . "</td>";
         $tablaHTML .= "<td>" ."$ " . $producto . "</td>";
-        $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
+        $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar_datos()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
 
         $tablaHTML .= "</tr>";
       }

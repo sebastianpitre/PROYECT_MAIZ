@@ -34,14 +34,14 @@ CREATE TABLE `analisis_terreno` (
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
-  `id_user1` int(255) DEFAULT NULL
+  `id_user_analisis` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `analisis_terreno`
 --
 
-INSERT INTO `analisis_terreno` (`id`, `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`, `subtotal_alquiler`, `id_user1`) VALUES
+INSERT INTO `analisis_terreno` (`id`, `nombre_producto`, `tipo_inventario`, `cantidad`, `precio_unidad`, `tiempo_alq`, `subtotal_alquiler`, `id_user_analisis`) VALUES
 (1, 'hjh', 'alquilar', '6', '6567', '5', NULL, 4),
 (2, 'hjuigufguikm', 'alquilar', '89', '65', '5', NULL, 4),
 (3, 'yuhbi', 'comprar', '766', '9', NULL, NULL, 4),
@@ -61,7 +61,7 @@ CREATE TABLE `prepa_terreno` (
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
-  `id_user2` int(255) DEFAULT NULL
+  `id_user_preparacion` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -79,7 +79,7 @@ CREATE TABLE `proceso_siembra` (
   `tiempo_alq` varchar(255) DEFAULT NULL,
   `precio_semilla` varchar(255) DEFAULT NULL,
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
-  `id_user3` int(255) DEFAULT NULL
+  `id_user_siembra` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -138,21 +138,21 @@ INSERT INTO `usuario` (`id_usuario`, `nombre_u`, `pss_u`) VALUES
 --
 ALTER TABLE `analisis_terreno`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_usuario` (`id_user1`);
+  ADD KEY `fk_usuario` (`id_user_analisis`);
 
 --
 -- Indices de la tabla `prepa_terreno`
 --
 ALTER TABLE `prepa_terreno`
   ADD PRIMARY KEY (`id_terreno`),
-  ADD KEY `fk_usuario` (`id_user2`);
+  ADD KEY `fk_usuario` (`id_user_preparacion`);
 
 --
 -- Indices de la tabla `proceso_siembra`
 --
 ALTER TABLE `proceso_siembra`
   ADD PRIMARY KEY (`id_siembra`),
-  ADD KEY `fk_usuario` (`id_user3`);
+  ADD KEY `fk_usuario` (`id_user_siembra`);
 
 --
 -- Indices de la tabla `terreno`
@@ -209,19 +209,19 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `analisis_terreno`
 --
 ALTER TABLE `analisis_terreno`
-  ADD CONSTRAINT `fk_usuario1` FOREIGN KEY (`id_user1`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `fk_usuario1` FOREIGN KEY (`id_user_analisis`) REFERENCES `usuario` (`id_usuario`);
 
 --
 -- Filtros para la tabla `prepa_terreno`
 --
 ALTER TABLE `prepa_terreno`
-  ADD CONSTRAINT `fk_usuario2` FOREIGN KEY (`id_user2`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `fk_usuario2` FOREIGN KEY (`id_user_preparacion`) REFERENCES `usuario` (`id_usuario`);
 
 --
 -- Filtros para la tabla `proceso_siembra`
 --
 ALTER TABLE `proceso_siembra`
-  ADD CONSTRAINT `fk_usuario3` FOREIGN KEY (`id_user3`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `fk_usuario3` FOREIGN KEY (`id_user_siembra`) REFERENCES `usuario` (`id_usuario`);
 
 --
 -- Filtros para la tabla `terreno`

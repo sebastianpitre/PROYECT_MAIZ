@@ -7,10 +7,21 @@ $(document).ready(function() {
             url: '../assets/php/obtener_tabla_analisis.php', // Archivo PHP que obtiene los datos del servidor
             
             success: function(data) {
-                $('#tabla').html(data); // Actualizar el contenido de la tabla con los datos recibidos
+                $('#tabla_paso1').html(data); // Actualizar el contenido de la tabla con los datos recibidos
+            }
+        });
+
+        $.ajax({
+            url: '../assets/php/obtener_tabla_preparacion.php', // Archivo PHP que obtiene los datos del servidor
+            
+            success: function(data) {
+                $('#tabla_paso2').html(data); // Actualizar el contenido de la tabla con los datos recibidos
             }
         });
     }
+
+
+
     function actualizardatos() {
         $.ajax({
             url: '../assets/php/obtener_datos.php',

@@ -2,8 +2,8 @@
 session_start();
 include('funciones.php');
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user1 like '{$_SESSION['id_usuario']}'");
-      $resulta0 = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user1 like '{$_SESSION['id_usuario']}'");
+      $resulta = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user_analisis like '{$_SESSION['id_usuario']}'");
+      $resulta0 = consulta($miconexion, "SELECT * FROM `analisis_terreno` WHERE id_user_analisis like '{$_SESSION['id_usuario']}'");
 
       $resulta1 = consulta($miconexion, "SELECT * FROM `terreno` WHERE id_user like '{$_SESSION['id_usuario']}'");
       $resulta2 = consulta($miconexion, "SELECT  DISTINCT `tipo_inventario` FROM `analisis_terreno` WHERE tipo_inventario LIKE '%comprar%' ");
@@ -49,7 +49,7 @@ include('funciones.php');
         $tablaHTML3 .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
         $tablaHTML3 .= "<td>" . $fila['tiempo_alq'] . "</td>";
         $tablaHTML3 .= "<td>" ."$ " . $producto . "</td>";
-        $tablaHTML3 .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
+        $tablaHTML3 .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar_datos()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
 
         $tablaHTML3 .= "</tr>";
       }
@@ -95,7 +95,7 @@ include('funciones.php');
        $tablaHTML .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
        
        $tablaHTML .= "<td>" ."$ " . $producto . "</td>";
-       $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
+       $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar_datos()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
 
        $tablaHTML .= "</tr>";
       }

@@ -366,11 +366,11 @@
               <div class="col-md-11">
                 <div class="input-group input-group-static">
                   <label for="transactionType_terreno">Tipo de transacción:</label>
-                  <select id="transactionType_terreno" onchange="changeForm_terreno()"
+                  <select id="transactionType_terreno" onchange="changeForm_preparacion()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
                     <option> selecciona </option>
-                    <option value="alquilar_terreno">Alquiler</option>
-                    <option value="comprar_terreno">Comprar</option>
+                    <option value="alquilar_preparacion">Alquiler</option>
+                    <option value="comprar_preparacion">Comprar</option>
                   </select>
                 </div>
               </div>
@@ -396,7 +396,7 @@
                   <label for="rentalTime">Tiempo de alquiler:</label>
                   <input type="text" class="form-control" placeholder="Digite en horas" id="rentalTime" required>
                 </div>
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="prepaTerrenoAlquilar()">Agregar
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="PreparacionAlquilar()">Agregar
                   producto</button>
               </div>
               <div id="comprarForm_terreno" style="display: none;">
@@ -417,7 +417,7 @@
                     step="0.01" required>
                 </div>
 
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="prepaTerrenoComprar()">Agregar producto</button>
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="PreparacionComprar()">Agregar producto</button>
               </div>
             </form>
           </div>
@@ -428,8 +428,7 @@
         <div class="row">
           <div class="ms-3 mt-2 col-md-12">
             <h3>Listado de productos</h3>
-            <div id="tabla"></div>
-            <div id="tabla1"></div>
+            <div id="tabla_paso2" class="table-responsive"></div>
             <h1></h1>
             <br>
           </div>

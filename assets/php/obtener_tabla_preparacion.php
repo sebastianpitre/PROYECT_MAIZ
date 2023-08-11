@@ -2,7 +2,7 @@
 session_start();
 include('funciones.php');
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `preparacion_terreno` WHERE id_user2 like '{$_SESSION['id_usuario']}'");
+      $resulta = consulta($miconexion, "SELECT * FROM `preparacion_terreno` WHERE id_user_preparacion like '{$_SESSION['id_usuario']}'");
       $resulta1 = consulta($miconexion, "SELECT * FROM `terreno` WHERE id_user like '{$_SESSION['id_usuario']}'");      
       $fila1 = $resulta1->fetch_assoc();
       $cotizar=$fila1['cotizar_lab'];
@@ -14,13 +14,13 @@ include('funciones.php');
 
       while ($fila = $resulta->fetch_assoc()) {
         $condicion=$fila['tipo_inventario'];
-        if($condicion=="alquilar_terreno"){
+        if($condicion=="alquilar_preparacion"){
           $numero1=$fila['precio_unidad'];
           $numero2=$fila['cantidad'];
           $hora=$fila['tiempo_alq'];
           $producto=intval($numero1)*intval($numero2)*intval($hora);
         }
-          if($condicion=="comprar_terreno"){
+          if($condicion=="comprar_preparacion"){
             $numero1=$fila['precio_unidad'];
             $numero2=$fila['cantidad'];
             $producto=intval($numero1)*intval($numero2);
@@ -35,7 +35,7 @@ include('funciones.php');
           $tablaHTML .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
           $tablaHTML .= "<td>" . $fila['tiempo_alq'] . "</td>";
           $tablaHTML .= "<td>" ."$ " . $producto . "</td>";
-          $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
+          $tablaHTML .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar_datos()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
 
           $tablaHTML .= "</tr>";
         }

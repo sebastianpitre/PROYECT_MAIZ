@@ -31,17 +31,17 @@ CREATE TABLE `analisis_terreno` (
   `tiempo_alq` varchar(255) DEFAULT NULL,
   
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
-  `id_user1` int(255) DEFAULT NULL,
+  `id_user_analisis` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_usuario` (`id_user1`),
-  CONSTRAINT `fk_usuario1` FOREIGN KEY (`id_user1`) REFERENCES `usuario` (`id_usuario`)
+  KEY `fk_usuario` (`id_user_analisis`),
+  CONSTRAINT `fk_usuario1` FOREIGN KEY (`id_user_analisis`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `analisis_terreno` */
 
 LOCK TABLES `analisis_terreno` WRITE;
 
-insert  into `analisis_terreno`(`id`,`nombre_producto`,`tipo_inventario`,`cantidad`,`precio_unidad`,`tiempo_alq`,`subtotal_alquiler`,`id_user1`) values (1,'Tractor','alquilar','1','100000','2',NULL,2),(2,'Mangueras','comprar','12','20000',NULL,NULL,2);
+insert  into `analisis_terreno`(`id`,`nombre_producto`,`tipo_inventario`,`cantidad`,`precio_unidad`,`tiempo_alq`,`subtotal_alquiler`,`id_user_analisis`) values (1,'Tractor','alquilar','1','100000','2',NULL,2),(2,'Mangueras','comprar','12','20000',NULL,NULL,2);
 
 UNLOCK TABLES;
 
@@ -101,10 +101,10 @@ CREATE TABLE `preparacion_terreno` (
   `tiempo_alq` varchar(255) DEFAULT NULL,
   
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
-  `id_user2` int(255) DEFAULT NULL,
+  `id_user_preparacion` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_terreno`),
-  KEY `fk_usuario` (`id_user2`),
-  CONSTRAINT `fk_usuario2` FOREIGN KEY (`id_user2`) REFERENCES `usuario` (`id_usuario`)
+  KEY `fk_usuario` (`id_user_preparacion`),
+  CONSTRAINT `fk_usuario2` FOREIGN KEY (`id_user_preparacion`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `preparacion_terreno` */
@@ -128,10 +128,10 @@ CREATE TABLE `proceso_siembra` (
 
   
   `subtotal_alquiler` varchar(255) DEFAULT NULL,
-  `id_user3` int(255) DEFAULT NULL,
+  `id_user_siembra` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_siembra`),
-  KEY `fk_usuario` (`id_user3`),
-  CONSTRAINT `fk_usuario3` FOREIGN KEY (`id_user3`) REFERENCES `usuario` (`id_usuario`)
+  KEY `fk_usuario` (`id_user_siembra`),
+  CONSTRAINT `fk_usuario3` FOREIGN KEY (`id_user_siembra`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 /*Data for the table `proceso_siembra` */
