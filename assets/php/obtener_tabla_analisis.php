@@ -41,7 +41,7 @@ $miconexion = conectar_bd('', 'bd_cultivomaiz');
           $tablaHTML1 .= "<td >" . $fila['nombre_producto'] . "</td>";
           $tablaHTML1 .= "<td>" . $fila['cantidad'] . "</td>";
           $tablaHTML1 .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
-          $tablaHTML1 .= "<td>" . $fila['tiempo_alq'] . "</td>";
+          $tablaHTML1 .= "<td>" . $fila['tiempo_alq'] .' Horas'. "</td>";
           $tablaHTML1 .= "<td>" ."$ " . $producto . "</td>";
           $tablaHTML1 .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
           $tablaHTML1 .= "</tr>";
