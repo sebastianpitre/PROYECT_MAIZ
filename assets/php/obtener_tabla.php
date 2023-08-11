@@ -18,13 +18,13 @@ include('funciones.php');
      $fila3 = $resulta3->fetch_assoc();
      $condicion3=$fila3['tipo_inventario'];
 
-      $tablaHTML1 = "<table><thead>";
-      $tablaHTML1 .= "<tr><td colspan='5'><strong>Cotización del laboratorio </strong></td><td colspan='2' id='cotizar_lab'>$  $cotizar</td></tr>";
-      $tablaHTML1 .= "<tr><td colspan='5'><strong>tipo de inversión </strong></td><td colspan='2' id='cotizar_lab'>$condicion3</td></tr>";
+      $tablaHTML3 = "<table><thead>";
+      $tablaHTML3 .= "<tr><td colspan='5'><strong>Cotización del laboratorio </strong></td><td colspan='2' id='cotizar_lab'>$  $cotizar</td></tr>";
+      $tablaHTML3 .= "<tr><td colspan='5'><strong>tipo de inversión </strong></td><td colspan='2' id='cotizar_lab'>$condicion3</td></tr>";
 
-      $tablaHTML1 .= "<tr><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
+      $tablaHTML3 .= "<tr><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
       
-      $tablaHTML1 .= "<tbody><tr>";
+      $tablaHTML3 .= "<tbody><tr>";
       $sumar1=0;
       $sumar2=0;
   
@@ -42,29 +42,29 @@ include('funciones.php');
         
         $sumar1= $sumar1+$producto;
         $id=$fila['id'] ;
-        $tablaHTML1 .= "<tr>";
-        $tablaHTML1 .= "<td>" . $fila['nombre_producto'] . "</td>";
-      //  $tablaHTML1 .= "<td>" . $fila['tipo_inventario'] . "</td>";
-        $tablaHTML1 .= "<td>" . $fila['cantidad'] . "</td>";
-        $tablaHTML1 .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
-        $tablaHTML1 .= "<td>" . $fila['tiempo_alq'] . "</td>";
-        $tablaHTML1 .= "<td>" ."$ " . $producto . "</td>";
-        $tablaHTML1 .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
+        $tablaHTML3 .= "<tr>";
+        $tablaHTML3 .= "<td>" . $fila['nombre_producto'] . "</td>";
+      //  $tablaHTML3 .= "<td>" . $fila['tipo_inventario'] . "</td>";
+        $tablaHTML3 .= "<td>" . $fila['cantidad'] . "</td>";
+        $tablaHTML3 .= "<td>" . "$ " . $fila['precio_unidad']. "</td>";
+        $tablaHTML3 .= "<td>" . $fila['tiempo_alq'] . "</td>";
+        $tablaHTML3 .= "<td>" ."$ " . $producto . "</td>";
+        $tablaHTML3 .= "<td><center><input type='checkbox' class='checkbox'onclick='eliminar1()' id='checkbox' name='checkbox[]' value='$id'></center></td>";
 
-        $tablaHTML1 .= "</tr>";
+        $tablaHTML3 .= "</tr>";
       }
       }
-      $tablaHTML1 .= "</tbody>";
-      $tablaHTML1 .= " <tfoot><tr>";
-      $tablaHTML1 .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
-      $tablaHTML1 .= " <td id='totalAmount'>$ $sumar1</td>";
+      $tablaHTML3 .= "</tbody>";
+      $tablaHTML3 .= " <tfoot><tr>";
+      $tablaHTML3 .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
+      $tablaHTML3 .= " <td id='totalAmount'>$ $sumar1</td>";
       
      
      
-      $tablaHTML1 .= "</tr></tfoot>";
-      $tablaHTML1 .= "</table>";
-      $tablaHTML1 .= "<br>";
-     echo $tablaHTML1;
+      $tablaHTML3 .= "</tr></tfoot>";
+      $tablaHTML3 .= "</table>";
+      $tablaHTML3 .= "<br>";
+     echo $tablaHTML3;
     
 
      $tablaHTML = "<table><thead>";

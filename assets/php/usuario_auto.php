@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $fila0=$verificacion0->fetch_object(); 
     $valor=$fila0->max_id;
     $valor=$valor+1;
-    $username="Invitado";
+    $username="User" . $valor;
     
 
   }else{
