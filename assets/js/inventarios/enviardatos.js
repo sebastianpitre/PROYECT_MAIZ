@@ -79,7 +79,7 @@ function enviarDatosAlquilar() {
   function PreparacionAlquilar() {
     // Obtener el valor  del campo de entrada de datos
     const nombre = document.getElementById("productNameAlquiler").value;
-    const tipo_transaccion = document.getElementById("transactionType_terreno").value;
+    const tipo_transaccion = document.getElementById("transactionType").value;
     const cantidad = document.getElementById("quantityAlquiler").value;
     const precio = document.getElementById("pricePerUnitAlquiler").value;
     const tiempo = document.getElementById("rentalTime").value;
@@ -114,11 +114,11 @@ function enviarDatosAlquilar() {
       const nombre_c  = document.getElementById("productNameComprar").value;
       const cantidad_c = document.getElementById("quantityComprar").value;
       const precio_c  = document.getElementById("pricePerUnitComprar").value;
-      const hectarea = document.getElementById("hectareas").value=0;
-      const condicion = document.getElementById("condicion").value=0;
+      const hectarea = 0;
+      const condicion = 0;
     
     
-      const tipo_transaccion = document.getElementById("transactionType_terreno").value;
+      const tipo_transaccion = document.getElementById("transactionType").value;
       
     
     // Crear un objeto FormData y agregar el dato

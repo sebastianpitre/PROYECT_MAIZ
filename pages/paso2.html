@@ -48,7 +48,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/inventarios/enviardatos.js"></script>
-  <script src="../assets/js/sugerencias/sug_analisis.js"></script>
+  <script src="../assets/js/inventarios/select_ocultar_mostrar.js"></script>
+  
   <script src="../assets/js/login_auto.js"></script>
      
 </head>
@@ -365,16 +366,18 @@
             <form id="productForm">
               <div class="col-md-11">
                 <div class="input-group input-group-static">
-                  <label for="transactionType_terreno">Tipo de transacción:</label>
-                  <select id="transactionType_terreno" onchange="changeForm_preparacion()"
+                
+                  <label for="transactionType">Tipo de transacción:</label>
+                  <select id="transactionType" onchange="changeForm()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
-                    <option> selecciona </option>
+                    <option value="selecciona"> selecciona </option>
                     <option value="alquilar_preparacion">Alquiler</option>
                     <option value="comprar_preparacion">Comprar</option>
                   </select>
+               
                 </div>
               </div>
-              <div id="alquilerForm_terreno" style="display: none;">
+              <div id="alquilerForm" style="display: none;">
                 <h4>ALQUILER</h4>
 
                 <div class="input-group input-group-static w-90 mb-2">
@@ -399,7 +402,7 @@
                 <button type="button" class="btn bg-gradient-success pt-2" onclick="PreparacionAlquilar()">Agregar
                   producto</button>
               </div>
-              <div id="comprarForm_terreno" style="display: none;">
+              <div id="comprarForm" style="display: none;">
                 <h4>COMPRAR</h4>
                 <div class="input-group input-group-static w-90 mb-2">
                   <label for="productNameComprar">Nombre del producto:</label>
