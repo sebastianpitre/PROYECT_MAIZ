@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo_maiz.png">
   <link rel="icon" type="image/png" href="../assets/img/logo_maiz.png">
   <title>
-    Paso 1 - Análisis del terreno
+    Cosecha y Pos-Cosecha
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -45,6 +45,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/jquery-3.6.0.min.js"></script>
+  <script src="../assets/js/inventarios/enviardatos.js"></script>
+  <script src="../assets/js/sugerencias/sug_analisis.js"></script>
   <script src="../assets/js/login_auto.js"></script>
      
 </head>
@@ -247,21 +249,15 @@
     </div>
   </section>
 
-  <div class="card1 mx-3 mx-md-8 mt-8 mb-4">
+  <div class="card1 card-body  mx-3 mx-md-8 mt-8 mb-4">
 
     <!-- CARD -->
-
-
-    <section class=" mb-2 card opacity-9">
+    <section class="row mb-4 card opacity-9">
       <div class="container-fluid">
-        <div class="row mb-3">
-          <h4 class="text-center mt-3 animate-text" id="animate-text1">FERTILIZACIÓN</h4>
-          <div id="resultado">
-            <div class="container">
-              <div class="col-12 row" id="herramientas-lista">
-                <!-- sugerencias -->
-              </div>
-              
+        <div class="row">
+          <div class="col-10 mx-auto border-radius-lg">
+            <div class="row">
+              <h4 class="text-center mt-3 animate-text" id="animate-text1">PROCESO DE COSECHA Y POS-COSECHA.</h4>
             </div>
           </div>
         </div>
@@ -271,7 +267,7 @@
     <section class="mt-3 opacity-9">
 
       <!-- inventario -->
-      <div class="row me-4 col-auto card" style="float: left;">
+      <div class="row me-4 col-md-3 card" style="float: left;">
         <div class="row my-2 ms-3">
           <div class="col-md-12">
             <style>
@@ -292,19 +288,17 @@
             <form id="productForm">
               <div class="col-md-11">
                 <div class="input-group input-group-static">
-                  <label for="transactionType">Tipo de transacción:</label>
+                  <label for="transactionType">Cosecha y Pos-Cosecha:</label>
                   <select id="transactionType" onchange="changeForm()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
                     <option> selecciona </option>
-                    <option value="alquilar_fertilizacion">Alquiler</option>
-                    <option value="comprar_fertilizacion">Comprar</option>
+                    <option value="alquilar">Cosecha</option>
+                    <option value="comprar">Pos-Cosecha</option>
                   </select>
                 </div>
               </div>
 
               <div id="alquilerForm" style="display: none;">
-                <h4>ALQUILER</h4>
-
                 <div class="input-group input-group-static w-90 mb-2">
                   <label for="productNameAlquiler">Nombre del producto:</label>
                   <input type="text" class="form-control" id="productNameAlquiler" placeholder="Digite nombre" required>
@@ -319,12 +313,8 @@
                   <label for="pricePerUnitAlquiler">Precio por unidad:</label>
                   <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
                     step="0.01" required>
-                </div>  
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="rentalTime">Tiempo de alquiler:</label>
-                  <input type="text" class="form-control" placeholder="Digite en horas" id="rentalTime" required>
                 </div>
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="fertilizacion_Alquilar()">Agregar
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosAlquilar()">Agregar
                   producto</button>
               </div>
 
@@ -335,35 +325,24 @@
                 </div>
 
                 <div class="input-group input-group-static w-90 mb-2">
-                  <label for="unidad_medida">Unidad de medida:</label>
-                  <select id="unidad_medida" class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
-                    <option> selecciona </option>
-                    <option value="L">Litros</option>
-                    <option value="ml">Mililitros</option>
-                    <option value="Gl">Galón</option>
-                  </select>
-                  <input type="number" class="form-control" placeholder="Digite la Cantidad" id="quantityComprar" min="1" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
                   <label for="pricePerUnitComprar">Precio:</label>
                   <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitComprar" min="0"
                     step="0.01" required>
                 </div>
 
-                <button type="button" class="btn bg-gradient-success pt-2" value="paso3_2" id="paso3" 
-                  onclick="fertilizacion_Comprar()">Agregar producto</button>
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="enviarDatosComprar()">Agregar producto</button>
               </div>
             </form>
           </div>
         </div>
       </div>
       <!-- tabla -->
-      <div class="row col-auto card">
+      <div class="row card">
         <div class="row">
-          <div class="mt-2 ms-3 col">
+          <div class="ms-3 mt-2 col-md-12">
             <h3>Listado de productos</h3>
-            <div id="tabla_paso4" class="table-responsive"></div>
+            <div id="tabla"></div>
+            <div id="tabla1"></div>
             <h1></h1>
             <br>
           </div>
@@ -378,7 +357,7 @@
       style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
       <div class="col-12 mx-auto " style="padding-top: 7px;">
 
-        <a href="paso3.html">
+        <a href="paso2.html">
           <button class="btn btn-outline-success btn-icon btn-sm" type="button">
             <div class="d-flex align-items-center">
               Anterior
@@ -386,13 +365,13 @@
           </button>
         </a>
 
-        <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
-          <div class="d-flex align-items-center">
-            Paso 4
-          </div>
-        </button>
-
-        <a href="paso2.html">
+          <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
+            <div class="d-flex align-items-center">
+              Paso 4
+            </div>
+          </button>
+        
+        <a href="resultado.html">
           <button class="btn btn-outline-success btn-icon  btn-sm" type="button">
             <div class="d-flex align-items-center">
               Siguiente
@@ -481,14 +460,12 @@
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/inventarios/select_ocultar_mostrar.js"></script>
+  <script src="../assets/js/inventario.js"></script>
   <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
   <script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
   <script src="../assets/js/menu_global.js"></script>
-  <script src="../assets/js/inventarios/enviardatos.js"></script>
-  <script src="../assets/js/sugerencias/sug_analisis.js"></script>
  
 
 </body>

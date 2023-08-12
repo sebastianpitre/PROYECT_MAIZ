@@ -18,6 +18,25 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`bd_cultivomaiz` /*!40100 DEFAULT CHARAC
 
 USE `bd_cultivomaiz`;
 
+/*Table structure for table `usuario` */
+
+DROP TABLE IF EXISTS `usuario`;
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_u` varchar(255) DEFAULT NULL,
+  `pss_u` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `usuario` */
+
+LOCK TABLES `usuario` WRITE;
+
+insert  into `usuario`(`id_usuario`,`nombre_u`,`pss_u`) values (1,'user1',NULL),(2,'user2',NULL);
+
+UNLOCK TABLES;
+
 /*Table structure for table `analisis_terreno` */
 
 DROP TABLE IF EXISTS `analisis_terreno`;
@@ -69,25 +88,6 @@ insert  into `terreno`(`id`,`area`,`surcos`,`distancia`,`id_user`) values (1,'10
 
 UNLOCK TABLES;
 
-/*Table structure for table `usuario` */
-
-DROP TABLE IF EXISTS `usuario`;
-
-CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_u` varchar(255) DEFAULT NULL,
-  `pss_u` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
-/*Data for the table `usuario` */
-
-LOCK TABLES `usuario` WRITE;
-
-insert  into `usuario`(`id_usuario`,`nombre_u`,`pss_u`) values (1,'user1',NULL),(2,'user2',NULL);
-
-UNLOCK TABLES;
-
 /*Table structure for table `preparacion_terreno` */
 
 DROP TABLE IF EXISTS `preparacion_terreno`;
@@ -120,14 +120,7 @@ DROP TABLE IF EXISTS `proceso_siembra`;
 CREATE TABLE `proceso_siembra` (
   `id_siembra` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_producto` varchar(255) DEFAULT NULL,
-  `tipo_inventario` varchar(255) DEFAULT NULL,
-  `cantidad` varchar(255) DEFAULT NULL,
-  `precio_unidad` varchar(255) DEFAULT NULL,
-  `tiempo_alq` varchar(255) DEFAULT NULL,
   `precio_semilla` varchar(255) DEFAULT NULL,
-
-  
-  `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user_siembra` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_siembra`),
   KEY `fk_usuario` (`id_user_siembra`),
@@ -139,6 +132,32 @@ CREATE TABLE `proceso_siembra` (
 LOCK TABLES `proceso_siembra` WRITE;
 
 UNLOCK TABLES;
+
+/*Table structure for table `fertilizacion` */
+
+DROP TABLE IF EXISTS `fertilizacion`;
+
+CREATE TABLE `fertilizacion` (
+  `id_fertilizacion` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(255) DEFAULT NULL,
+  `tipo_inventario` varchar(255) DEFAULT NULL,
+  `cantidad` varchar(255) DEFAULT NULL,
+  `precio_unidad` varchar(255) DEFAULT NULL,
+  `tiempo_alq` varchar(255) DEFAULT NULL,
+  
+  `subtotal_alquiler` varchar(255) DEFAULT NULL,
+  `id_user_fertilizacion` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_fertilizacion`),
+  KEY `fk_usuario` (`id_user_fertilizacion`),
+  CONSTRAINT `fk_usuario4` FOREIGN KEY (`id_user_fertilizacion`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `fertilizacion` */
+
+LOCK TABLES `fertilizacion` WRITE;
+
+UNLOCK TABLES;
+
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

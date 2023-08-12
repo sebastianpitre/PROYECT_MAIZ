@@ -52,16 +52,6 @@
 </head>
 
 <body class="blog-author" style="background-image: url('../assets/img/fotosmaiz\ \(1\).jpg'); background-size: cover; background-repeat: no-repeat;background-attachment: fixed">
-  <!-- <video src="../assets/video/video (3).mp4" autoplay="true" muted="true" loop="true" poster="../assets/img/fotosmaiz\ \(1\).jpg"></video>
-  <style>video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 105%;
-    min-height: 100%;
-    transform: translateX(calc((100% - 100vw) / 2));
-    z-index: -2;
-  }</style> -->
 
   <!-- Navbar -->
   <div class="container position-sticky z-index-sticky top-0">
@@ -258,6 +248,8 @@
           <div class="col-10 mx-auto border-radius-lg">
             <div class="row">
               <h4 class="text-center mt-3 animate-text" id="animate-text1">PROCESO DE SIEMBRA Y FERTILIZACIÓN.</h4>
+              <label for="transactionType">Recuerda que las semillas deben ser certificadas para obtener una buena cosecha</label>
+
 
               <div class="col-14 row" id="">
                 <!-- sugerencias -->
@@ -333,7 +325,6 @@
     </section>
 
     <section class="mt-3 opacity-9">
-
       <!-- inventario -->
       <div class="row me-4 col-md-3 card" style="float: left;">
         <div class="row my-2 ms-3">
@@ -356,54 +347,24 @@
             <form id="productForm">
               <div class="col-md-11">
                 <div class="input-group input-group-static">
-                  <label for="transactionType">Semillas y Ferilizantes:</label>
-                  <select id="transactionType" onchange="changeForm()"
-                    class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
-                    <option> selecciona </option>
-                    <option value="Semillas">Semillas</option>
-                    <option value="fertilizacion">Proceso de fertilización</option>
-                  </select>
+                  <div id="alquilerForm">
+                    <div class="input-group input-group-static w-90 mb-2">
+                      <label for="pricePerUnitnombre">Tipo de maíz:</label>
+                      <input type="text" class="form-control" placeholder="Ingrese el nombre" id="pricePerUnitnombre"
+                        required>
+                    </div>
+                      <label for="pricePerUnitAlquiler">Ingrese el valor del kilo:</label>
+                      <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
+                        step="0.01" required>
+                    </div>
+                    <button type="button" class="btn bg-gradient-success pt-2" value="paso3" id="paso3" 
+                      onclick="enviar_Semilla()">Agregar
+                      producto
+                    </button>
+                  </div>
                 </div>
               </div>
 
-              <div id="alquilerForm" style="display: none;">
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="pricePerUnitAlquiler">Ingrese el valor del kilo:</label>
-                  <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
-                    step="0.01" required>
-                </div>
-                <button type="button" class="btn bg-gradient-success pt-2" value="paso3_1" id="paso3" 
-                  onclick="proce_Semilla()">Agregar
-                  producto
-                </button>
-              </div>
-
-              <div id="comprarForm" style="display: none;">
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="productNameComprar">Nombre del producto:</label>
-                  <input type="text" class="form-control" placeholder="Digite" id="productNameComprar" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="unidad_medida">Unidad de medida:</label>
-                  <select id="unidad_medida" class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
-                    <option> selecciona </option>
-                    <option value="L">Litros</option>
-                    <option value="ml">Mililitros</option>
-                    <option value="Gl">Galón</option>
-                  </select>
-                  <input type="number" class="form-control" placeholder="Digite la Cantidad" id="quantityComprar" min="1" required>
-                </div>
-
-                <div class="input-group input-group-static w-90 mb-2">
-                  <label for="pricePerUnitComprar">Precio:</label>
-                  <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitComprar" min="0"
-                    step="0.01" required>
-                </div>
-
-                <button type="button" class="btn bg-gradient-success pt-2" value="paso3_2" id="paso3" 
-                  onclick="proce_Fertilizante()">Agregar producto</button>
-              </div>
             </form>
           </div>
         </div>
@@ -413,8 +374,8 @@
         <div class="row">
           <div class="ms-3 mt-2 col-md-12">
             <h3>Listado de productos</h3>
-            <div id="tabla"></div>
-            <div id="tabla1"></div>
+            <div id="precio_sembrar"></div>
+            <div id="respuesta"></div>
             <h1></h1>
             <br>
           </div>

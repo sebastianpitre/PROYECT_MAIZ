@@ -12,6 +12,10 @@ function changeForm() {
     alquilerForm.style.display = "none";
     comprarForm.style.display = "block";
     }
+    else if (transactionType === "selecciona") {
+    alquilerForm.style.display = "none";
+    comprarForm.style.display = "none";
+    }
 
     else if (transactionType === "alquilar_preparacion") { //se compara con el value seleccionado
     alquilerForm.style.display = "block";
@@ -26,12 +30,16 @@ function changeForm() {
     }
 
 
-    else if (transactionType === "Semillas") {
+    else if (transactionType === "alquilar_fertilizacion") {
     alquilerForm.style.display = "block";
     comprarForm.style.display = "none";
-    } else if (transactionType === "fertilizacion") {
+    } else if (transactionType === "comprar_fertilizacion") {
     alquilerForm.style.display = "none";
     comprarForm.style.display = "block";
+    }
+    else if (transactionType === "selecciona") {
+    alquilerForm.style.display = "none";
+    comprarForm.style.display = "none";
     }
 
    

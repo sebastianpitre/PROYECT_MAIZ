@@ -18,6 +18,14 @@ $(document).ready(function() {
                 $('#tabla_paso2').html(data); // Actualizar el contenido de la tabla con los datos recibidos
             }
         });
+
+        $.ajax({
+            url: '../assets/php/obtener_tabla_fertilizacion.php', // Archivo PHP que obtiene los datos del servidor
+            
+            success: function(data) {
+                $('#tabla_paso4').html(data); // Actualizar el contenido de la tabla con los datos recibidos
+            }
+        });
     }
 
 
@@ -34,6 +42,8 @@ $(document).ready(function() {
               $('#cant_plantas').html(data.valor5);
               $('#cant_obtenida').html(data.valor6);
               $('#cant_sembrar').html(data.valor7);
+              $('#precio_sembrar').html(data.valor8);
+              $('#respuesta').html(data.valor9);
 
 
             }
