@@ -115,8 +115,9 @@ session_start();
     //hay que incrementar  desde donde elimina el usuario y asi aprobechar  todo los espacios de la tabla
     $verificacion=consulta($miconexion,"ALTER TABLE proceso_siembra AUTO_INCREMENT=1");
     //codigo por realizar cambiandoel 1 por un valor de la consulta cuando se valide cuales el valor max
-    $resultado=consulta($miconexion,"INSERT INTO `proceso_siembra`( `nombre_producto`,  `precio_semilla`,`id_user_siembra`)
-    values('$nombre','$precio_a','{$_SESSION['id_usuario']}')");
+    $resultado=consulta($miconexion,"UPDATE `proceso_siembra` SET `nombre_producto`='$nombre',`precio_semilla`='$precio_a' WHERE `id_user_siembra`LIKE '{$_SESSION['id_usuario']}'");
+
+
 
       if($resultado){
   //      echo '<script  language="javascript">alert("para confirmar presione aceptar");window.location.href="paso1.php"</script>';

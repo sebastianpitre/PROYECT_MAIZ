@@ -36,7 +36,9 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     values('$username')");
    $resultado2=consulta($miconexion,"INSERT INTO `terreno`(`surcos`,`distancia`,`id_user`)
    values(75,25,'$valor')");
-    if($resultado){
+   $resultado3=consulta($miconexion,"INSERT INTO `proceso_siembra`(`precio_semilla`,`id_user_siembra`)
+  values(0,'$valor')");
+if($resultado){
         $_SESSION['username']=$username;
         $_SESSION['id_usuario']=$valor;
         echo"inciciando sesion  '{$_SESSION['id_usuario']}'";

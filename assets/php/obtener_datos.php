@@ -12,11 +12,12 @@ include('funciones.php');
   $id_usuario = $fila1->id_usuario;
 
   $busqueda1=consulta($miconexion,"SELECT * FROM terreno WHERE id_user like $id_usuario");
-  $busqueda2=consulta($miconexion,"SELECT * FROM proceso_siembra WHERE id_user_siembra like $id_usuario");
 
   $fila2 = $busqueda1->fetch_object(); 
-  $fila3 = $busqueda2->fetc_object(); 
+  $busqueda2=consulta($miconexion,"SELECT * FROM proceso_siembra WHERE id_user_siembra like $id_usuario");
 
+  $fila3 = $busqueda2->fetch_object(); 
+  $precio_sembrar=$fila3->precio_semilla;
   $area = $fila2->area;
   $dist_surcos = $fila2->surcos;
   $dist_semillas = $fila2->distancia;
@@ -25,14 +26,17 @@ include('funciones.php');
   $cant_plantas = round(intval($area)/($dist_semillasm*$dist_surcosm));
   $cant_obtenida = (($cant_plantas*300)/1000);
   $cant_sembrar = intval($cant_plantas*3*4)/(10000)." Kg";
+  
+  $cant_sembrar1 = intval($cant_plantas*3*4)/(10000);
   $area=$area = intval($area*1);
   $area=$area ." m²";
   $dist_semillas = $dist_semillas ." cm";
   $dist_surcos = $dist_surcos ." cm";
   $cant_obtenida = round($cant_obtenida/1000)." T";
 
-  $precio_sembrar = intval($precio_sembrar);
-  $respuesta = $cant_sembrar * $precio_sembrar;
+  $precio_sembrar1 = intval($precio_sembrar);
+  $precio_sembrar ="$". intval($precio_sembrar);
+  $respuesta = "$".$cant_sembrar1 * $precio_sembrar1;
 
   // Creamos un array con los valores
   $valores = array(
