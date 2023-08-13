@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
     $resultado=consulta($miconexion,"INSERT INTO `usuario`( `nombre_u`)
     values('$username')");
    $resultado2=consulta($miconexion,"INSERT INTO `terreno`(`surcos`,`distancia`,`id_user`)
-   values(75,25,'$valor')");
+   values(90,15,'$valor')");
    $resultado3=consulta($miconexion,"INSERT INTO `proceso_siembra`(`precio_semilla`,`id_user_siembra`)
   values(0,'$valor')");
 if($resultado){

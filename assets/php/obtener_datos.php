@@ -26,19 +26,19 @@ include('funciones.php');
   $dist_semillasm = intval($dist_semillas)/100;
   $dist_surcosm = intval($dist_surcos)/100;
   $cant_plantas = round(intval($area)/($dist_semillasm*$dist_surcosm));
-  $cant_obtenida = (($cant_plantas*300)/1000);
-  $cant_sembrar = intval($cant_plantas*3*4)/(10000)." Kg";
+  $cant_obtenida = (($cant_plantas*100)/1000);
+  $cant_sembrar = number_format(intval($cant_plantas*3)/(10000),2)." Kg";
   
-  $cant_sembrar1 = intval($cant_plantas*3*4)/(10000);
+  $cant_sembrar1 = intval($cant_plantas*3)/(10000);
   $area=$area = intval($area*1);
   $area=$area ." m²";
   $dist_semillas = $dist_semillas ." cm";
   $dist_surcos = $dist_surcos ." cm";
-  $cant_obtenida = round($cant_obtenida/1000)." T";
+  $cant_obtenida = number_format($cant_obtenida/1000,2) ." T - ". number_format(($cant_obtenida/1000)*.75,2)." T" ;
 
   $precio_sembrar1 = intval($precio_sembrar);
   $precio_sembrar ="$". intval($precio_sembrar);
-  $respuesta_valor_maiz_valor_maiz = "$".$cant_sembrar1 * $precio_sembrar1;
+  $respuesta_valor_maiz_valor_maiz = "$ ". number_format($cant_sembrar1 * $precio_sembrar1,2);
 
   // Creamos un array con los valores
   $valores = array(
