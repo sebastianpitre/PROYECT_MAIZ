@@ -15,7 +15,7 @@ function Cerrarsesion(){
           
         } else if (result.isDenied) {
             // Acción a realizar al hacer clic en "No guardar" elimina la informasion del  usuario incluyendo la bd
-            alert('Has seleccionado No guardar'); window.location.href=("../assets/php/cerrarsesion.php");
+            window.location.href=("../assets/php/cerrarsesion.php");
         } else {
             // Acción a realizar al hacer clic en "Cancelar"
             alert('Has seleccionado Cancelar');//continua el proceso 

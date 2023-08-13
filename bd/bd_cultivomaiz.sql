@@ -158,7 +158,77 @@ LOCK TABLES `fertilizacion` WRITE;
 
 UNLOCK TABLES;
 
+/*Table structure for table `cosecha` */
 
+DROP TABLE IF EXISTS `cosecha`;
+
+CREATE TABLE `cosecha` (
+  `id_cosecha` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(255) DEFAULT NULL,
+  `tipo_inventario` varchar(255) DEFAULT NULL,
+  `cantidad` varchar(255) DEFAULT NULL,
+  `precio_unidad` varchar(255) DEFAULT NULL,
+  `tiempo_alq` varchar(255) DEFAULT NULL,
+  
+  `subtotal_alquiler` varchar(255) DEFAULT NULL,
+  `id_user_cosecha` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_cosecha`),
+  KEY `fk_usuario` (`id_user_cosecha`),
+  CONSTRAINT `fk_usuario5` FOREIGN KEY (`id_user_cosecha`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `cosecha` */
+
+LOCK TABLES `cosecha` WRITE;
+UNLOCK TABLES;
+
+/*Table structure for table `pos_cosecha` */
+
+DROP TABLE IF EXISTS `pos_cosecha`;
+
+CREATE TABLE `pos_cosecha` (
+  `id_pos_cosecha` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(255) DEFAULT NULL,
+  `tipo_inventario` varchar(255) DEFAULT NULL,
+  `cantidad` varchar(255) DEFAULT NULL,
+  `precio_unidad` varchar(255) DEFAULT NULL,
+  `tiempo_alq` varchar(255) DEFAULT NULL,
+  
+  `subtotal_alquiler` varchar(255) DEFAULT NULL,
+  `id_user_pos_cosecha` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_pos_cosecha`),
+  KEY `fk_usuario` (`id_user_pos_cosecha`),
+  CONSTRAINT `fk_usuario6` FOREIGN KEY (`id_user_pos_cosecha`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `pos_cosecha` */
+
+LOCK TABLES `pos_cosecha` WRITE;
+UNLOCK TABLES;
+
+/*Table structure for table `comercializar` */
+
+DROP TABLE IF EXISTS `comercializar`;
+
+CREATE TABLE `comercializar` (
+  `id_comercializar` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_producto` varchar(255) DEFAULT NULL,
+  `tipo_inventario` varchar(255) DEFAULT NULL,
+  `cantidad` varchar(255) DEFAULT NULL,
+  `precio_unidad` varchar(255) DEFAULT NULL,
+  `tiempo_alq` varchar(255) DEFAULT NULL,
+  
+  `subtotal_alquiler` varchar(255) DEFAULT NULL,
+  `id_user_comercializar` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_comercializar`),
+  KEY `fk_usuario` (`id_user_comercializar`),
+  CONSTRAINT `fk_usuario7` FOREIGN KEY (`id_user_comercializar`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+/*Data for the table `comercializar` */
+
+LOCK TABLES `comercializar` WRITE;
+UNLOCK TABLES;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

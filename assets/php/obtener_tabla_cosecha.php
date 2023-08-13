@@ -2,7 +2,7 @@
 session_start();
 include('funciones.php');
       $miconexion = conectar_bd('', 'bd_cultivomaiz');
-      $resulta = consulta($miconexion, "SELECT * FROM `fertilizacion` WHERE id_user_fertilizacion like '{$_SESSION['id_usuario']}'");
+      $resulta = consulta($miconexion, "SELECT * FROM `cosecha` WHERE id_user_cosecha like '{$_SESSION['id_usuario']}'");
   
       $tablaHTML = "<table><thead>";
       $tablaHTML .= "<tr><th>Nombre Producto</th><th>Cantidad</th><th>Precio Unidad</th><th>Tiempo Alquiler</th><th>Subtotal</th><th>Eliminar</th></tr></thead>";
@@ -11,20 +11,20 @@ include('funciones.php');
 
       while ($fila = $resulta->fetch_assoc()) {
         $condicion=$fila['tipo_inventario'];
-        if($condicion=="alquilar_fertilizacion"){
+        if($condicion=="alquilar_cosecha"){
           $numero1=$fila['precio_unidad'];
           $numero2=$fila['cantidad'];
           $hora=$fila['tiempo_alq'];
           $producto=intval($numero1)*intval($numero2)*intval($hora);
         }
-          if($condicion=="comprar_fertilizacion"){
+          if($condicion=="comprar_cosecha"){
             $numero1=$fila['precio_unidad'];
             $numero2=$fila['cantidad'];
             $producto=intval($numero1)*intval($numero2);
           }
         
           $sumar= $sumar+$producto;
-          $id=$fila['id_fertilizacion'] ;
+          $id=$fila['id_cosecha'] ;
           $tablaHTML .= "<tr>";
           $tablaHTML .= "<td>" . $fila['nombre_producto'] . "</td>";
           $tablaHTML .= "<td>" . $fila['cantidad'] . "</td>";

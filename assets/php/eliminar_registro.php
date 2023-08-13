@@ -13,9 +13,12 @@
         
         $consulta=consulta($miconexion,"DELETE FROM `fertilizacion` WHERE  id_fertilizacion like '$seleccionados'");
 
+        $consulta=consulta($miconexion,"DELETE FROM `cosecha` WHERE  id_cosecha like '$seleccionados'");
 
-          
-     
+        $consulta=consulta($miconexion,"DELETE FROM `pos_cosecha` WHERE  id_pos_cosecha like '$seleccionados'");
+  
+        $consulta=consulta($miconexion,"DELETE FROM `comercializar` WHERE  id_comercializar like '$seleccionados'");
+
          
        
 

@@ -2,9 +2,6 @@
 
 session_start();
 
-   
-echo $_SESSION['username'];
-
 
 if(isset ($_SESSION['username'])==false){
   
@@ -52,9 +49,8 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
 if($resultado){
         $_SESSION['username']=$username;
         $_SESSION['id_usuario']=$valor;
-        echo"inciciando sesion  '{$_SESSION['id_usuario']}'";
+        //echo"inciciando sesion  '{$_SESSION['id_usuario']}'";
         echo '<script language="javascript">window.location.href="../../pages/paso1.html"</script>';
-        echo"inciciando sesion";
       } else {
           echo "Error al guardar los datos: " . $miconexion->error;
       }

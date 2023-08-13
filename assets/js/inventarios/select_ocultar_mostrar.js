@@ -12,10 +12,6 @@ function changeForm() {
     alquilerForm.style.display = "none";
     comprarForm.style.display = "block";
     }
-    else if (transactionType === "selecciona") {
-    alquilerForm.style.display = "none";
-    comprarForm.style.display = "none";
-    }
 
     else if (transactionType === "alquilar_preparacion") { //se compara con el value seleccionado
     alquilerForm.style.display = "block";
@@ -24,11 +20,6 @@ function changeForm() {
     alquilerForm.style.display = "none";
     comprarForm.style.display = "block";
     }
-    else if (transactionType === "selecciona") {
-    alquilerForm.style.display = "none";
-    comprarForm.style.display = "none";
-    }
-
 
     else if (transactionType === "alquilar_fertilizacion") {
     alquilerForm.style.display = "block";
@@ -37,12 +28,37 @@ function changeForm() {
     alquilerForm.style.display = "none";
     comprarForm.style.display = "block";
     }
+
+    else if (transactionType === "alquilar_cosecha") {
+    alquilerForm.style.display = "block";
+    comprarForm.style.display = "none";
+    } else if (transactionType === "comprar_cosecha") {
+    alquilerForm.style.display = "none";
+    comprarForm.style.display = "block";
+    }
+
+    else if (transactionType === "alquilar_pos_cosecha") {
+    alquilerForm.style.display = "block";
+    comprarForm.style.display = "none";
+    } else if (transactionType === "comprar_pos_cosecha") {
+    alquilerForm.style.display = "none";
+    comprarForm.style.display = "block";
+    }
+
+    else if (transactionType === "alquilar_comercializar") {
+    alquilerForm.style.display = "block";
+    comprarForm.style.display = "none";
+    } else if (transactionType === "comprar_comercializar") {
+    alquilerForm.style.display = "none";
+    comprarForm.style.display = "block";
+    } 
+        
+
+    // oculta cuando no hay una seleccion
     else if (transactionType === "selecciona") {
     alquilerForm.style.display = "none";
     comprarForm.style.display = "none";
     }
-
-   
 }
 
 
@@ -59,3 +75,28 @@ function resetForm(transactionType) {
     document.getElementById("pricePerUnitComprar").value = "";
     }
 }
+
+
+function mostrar_nav2() {
+    var iframe = document.getElementById("mostrar_navbar");
+    
+    iframe.src = "../pages/navbar.html"; // carga la página HTML en el iframe
+
+    console.log('HOLAAAAA');
+  }
+  mostrar_nav2();
+
+
+
+function mostrar_nav() {
+  var navarScript = document.createElement('script');
+  navarScript.src = '../pages/navbar.html';
+  document.head.appendChild(navarScript);
+  
+  // Creando el elemento navar
+  var navarElement = document.createElement('navar');
+  
+  // Agregando el elemento al HTML
+  document.body.appendChild(navarElement);
+}
+mostrar_nav();

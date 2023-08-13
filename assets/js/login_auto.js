@@ -26,8 +26,33 @@ $(document).ready(function() {
                 $('#tabla_paso4').html(data); // Actualizar el contenido de la tabla con los datos recibidos
             }
         });
-    }
 
+        $.ajax({
+            url: '../assets/php/obtener_tabla_cosecha.php', // Archivo PHP que obtiene los datos del servidor
+            
+            success: function(data) {
+                $('#tabla_paso5').html(data); // Actualizar el contenido de la tabla con los datos recibidos
+            }
+        });
+
+        $.ajax({
+            url: '../assets/php/obtener_tabla_pos_cosecha.php', // Archivo PHP que obtiene los datos del servidor
+            
+            success: function(data) {
+                $('#tabla_paso6').html(data); // Actualizar el contenido de la tabla con los datos recibidos
+            }
+        });
+
+        $.ajax({
+            url: '../assets/php/obtener_tabla_comercializar.php', // Archivo PHP que obtiene los datos del servidor
+            
+            success: function(data) {
+                $('#tabla_paso7').html(data); // Actualizar el contenido de la tabla con los datos recibidos
+            }
+        });
+
+    }
+    
 
 
     function actualizardatos() {

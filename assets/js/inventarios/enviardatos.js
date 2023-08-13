@@ -263,6 +263,247 @@ function fertilizacion_Alquilar() {
 // 4--------------Fin paso4.html  -----------------------------------
 
  
+// 5 Funciones relacionadas a la pagina paso5.html 
+
+function Cosecha_Alquilar() {
+
+  // Obtener el valor del campo de entrada de datos
+  const nombre = document.getElementById("productNameAlquiler").value;
+  const tipo_transaccion = document.getElementById("transactionType").value;
+  const cantidad = document.getElementById("quantityAlquiler").value;
+  const precio = document.getElementById("pricePerUnitAlquiler").value;
+  const tiempo = document.getElementById("rentalTime").value;
+  const hectarea = 0;
+  const condicion = 0;
+  // Crear un objeto FormData y agregar el dato
+  const formData = new FormData();
+  formData.append('nombre', nombre);
+  formData.append('tipo_transaccion', tipo_transaccion);
+  formData.append('tiempo', tiempo);
+  formData.append('precio', precio);
+  formData.append('cantidad', cantidad);
+  formData.append('condicion', condicion);
+  formData.append('hectareas', hectarea);
+
+  resetForm(transactionType);
+    // Realizar una petición Fetch para enviar los datos al servidor
+    fetch('../assets/php/guardar.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data); // respuesta_valor_maiz del servidor (opcional)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  
+  }
+  function Cosecha_Comprar() {
+      // Obtener el valor del campo de entrada de datos
+      const nombre_c  = document.getElementById("productNameComprar").value;
+      const cantidad_c = document.getElementById("quantityComprar").value;
+      const precio_c  = document.getElementById("pricePerUnitComprar").value;
+      const hectarea = 0;
+      const condicion = 0;
+    
+    
+      const tipo_transaccion = document.getElementById("transactionType").value;
+      
+    
+    // Crear un objeto FormData y agregar el dato
+    const formData = new FormData();
+    formData.append('nombre_c', nombre_c);
+    formData.append('tipo_transaccion', tipo_transaccion);
+    formData.append('precio_c', precio_c);
+    formData.append('cantidad_c', cantidad_c);
+    formData.append('condicion', condicion);
+    formData.append('hectareas', hectarea);
+    
+    
+      // Realizar una petición Fetch para enviar los datos al servidor
+      fetch('../assets/php/guardar.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
+        resetForm(transactionType);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });  
+}
+// tabla proceso de cosecha
+// 5--------------Fin paso5.html  -----------------------------------
+
+// 5 Funciones relacionadas a la pagina paso6.html 
+
+function Pos_Cosecha_Alquilar() {
+
+  // Obtener el valor del campo de entrada de datos
+  const nombre = document.getElementById("productNameAlquiler").value;
+  const tipo_transaccion = document.getElementById("transactionType").value;
+  const cantidad = document.getElementById("quantityAlquiler").value;
+  const precio = document.getElementById("pricePerUnitAlquiler").value;
+  const tiempo = document.getElementById("rentalTime").value;
+  const hectarea = 0;
+  const condicion = 0;
+  // Crear un objeto FormData y agregar el dato
+  const formData = new FormData();
+  formData.append('nombre', nombre);
+  formData.append('tipo_transaccion', tipo_transaccion);
+  formData.append('tiempo', tiempo);
+  formData.append('precio', precio);
+  formData.append('cantidad', cantidad);
+  formData.append('condicion', condicion);
+  formData.append('hectareas', hectarea);
+
+  resetForm(transactionType);
+    // Realizar una petición Fetch para enviar los datos al servidor
+    fetch('../assets/php/guardar.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data); // respuesta_valor_maiz del servidor (opcional)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  
+  }
+  function Pos_Cosecha_Comprar() {
+      // Obtener el valor del campo de entrada de datos
+      const nombre_c  = document.getElementById("productNameComprar").value;
+      const cantidad_c = document.getElementById("quantityComprar").value;
+      const precio_c  = document.getElementById("pricePerUnitComprar").value;
+      const hectarea = 0;
+      const condicion = 0;
+    
+    
+      const tipo_transaccion = document.getElementById("transactionType").value;
+      
+    
+    // Crear un objeto FormData y agregar el dato
+    const formData = new FormData();
+    formData.append('nombre_c', nombre_c);
+    formData.append('tipo_transaccion', tipo_transaccion);
+    formData.append('precio_c', precio_c);
+    formData.append('cantidad_c', cantidad_c);
+    formData.append('condicion', condicion);
+    formData.append('hectareas', hectarea);
+    
+    
+      // Realizar una petición Fetch para enviar los datos al servidor
+      fetch('../assets/php/guardar.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
+        resetForm(transactionType);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });  
+}
+// tabla proceso de pos - cosecha
+// 6--------------Fin paso6.html  -----------------------------------
+
+
+// 7 Funciones relacionadas a la pagina paso7.html 
+
+function comercializar_Alquilar() {
+
+  // Obtener el valor del campo de entrada de datos
+  const nombre = document.getElementById("productNameAlquiler").value;
+  const tipo_transaccion = document.getElementById("transactionType").value;
+  const cantidad = document.getElementById("quantityAlquiler").value;
+  const precio = document.getElementById("pricePerUnitAlquiler").value;
+  const tiempo = document.getElementById("rentalTime").value;
+  const hectarea = 0;
+  const condicion = 0;
+  // Crear un objeto FormData y agregar el dato
+  const formData = new FormData();
+  formData.append('nombre', nombre);
+  formData.append('tipo_transaccion', tipo_transaccion);
+  formData.append('tiempo', tiempo);
+  formData.append('precio', precio);
+  formData.append('cantidad', cantidad);
+  formData.append('condicion', condicion);
+  formData.append('hectareas', hectarea);
+
+  resetForm(transactionType);
+    // Realizar una petición Fetch para enviar los datos al servidor
+    fetch('../assets/php/guardar.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+      console.log(data); // respuesta_valor_maiz del servidor (opcional)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  
+  }
+  function comercializar_Comprar() {
+      // Obtener el valor del campo de entrada de datos
+      const nombre_c  = document.getElementById("productNameComprar").value;
+      const cantidad_c = document.getElementById("quantityComprar").value;
+      const precio_c  = document.getElementById("pricePerUnitComprar").value;
+      const hectarea = 0;
+      const condicion = 0;
+    
+    
+      const tipo_transaccion = document.getElementById("transactionType").value;
+      
+    
+    // Crear un objeto FormData y agregar el dato
+    const formData = new FormData();
+    formData.append('nombre_c', nombre_c);
+    formData.append('tipo_transaccion', tipo_transaccion);
+    formData.append('precio_c', precio_c);
+    formData.append('cantidad_c', cantidad_c);
+    formData.append('condicion', condicion);
+    formData.append('hectareas', hectarea);
+    
+    
+      // Realizar una petición Fetch para enviar los datos al servidor
+      fetch('../assets/php/guardar.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
+        resetForm(transactionType);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });  
+}
+// tabla proceso de pos - cosecha
+// 7--------------Fin paso7.html  -----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   function resetForm(transactionType) {
     if (transactionType === "alquilar") {

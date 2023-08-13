@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo_maiz.png">
   <link rel="icon" type="image/png" href="../assets/img/logo_maiz.png">
   <title>
-    Paso 5 - Cosecha
+    Paso 6 - Pos - Cosecha
   </title>
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css"
@@ -255,7 +255,7 @@
     <section class=" mb-2 card opacity-9">
       <div class="container-fluid">
         <div class="row mb-3">
-          <h4 class="text-center mt-3 animate-text" id="animate-text1">COSECHA.</h4>
+          <h4 class="text-center mt-3 animate-text" id="animate-text1">POS - COSECHA.</h4>
           <div id="resultado">
             <div class="container">
               <div class="col-12 row" id="herramientas-lista">
@@ -296,8 +296,8 @@
                   <select id="transactionType" onchange="changeForm()"
                     class="form-select form-select-lg mb-2 form-control" aria-label=".form-select-lg example">
                     <option> selecciona </option>
-                    <option value="alquilar_cosecha">Alquiler</option>
-                    <option value="comprar_cosecha">Comprar</option>
+                    <option value="alquilar_pos_cosecha">Alquiler</option>
+                    <option value="comprar_pos_cosecha">Comprar</option>
                   </select>
                 </div>
               </div>
@@ -324,7 +324,7 @@
                     <label for="rentalTime">Tiempo de alquiler:</label>
                     <input type="text" class="form-control" placeholder="Digite en horas" id="rentalTime" required>
                   </div>
-                  <button type="button" class="btn bg-gradient-success pt-2" onclick="Cosecha_Alquilar()">Agregar
+                  <button type="button" class="btn bg-gradient-success pt-2" onclick="Pos_Cosecha_Alquilar()">Agregar
                     producto</button>
               </div>
 
@@ -346,7 +346,7 @@
                     step="0.01" required>
                 </div>
 
-                <button type="button" class="btn bg-gradient-success pt-2" onclick="Cosecha_Comprar()">Agregar producto</button>
+                <button type="button" class="btn bg-gradient-success pt-2" onclick="Pos_Cosecha_Comprar()">Agregar producto</button>
               </div>
             </form>
           </div>
@@ -357,7 +357,7 @@
         <div class="row">
           <div class="mt-2 ms-3 col">
             <h3>Listado de productos</h3>
-            <div id="tabla_paso5" class="table-responsive"></div>
+            <div id="tabla_paso6" class="table-responsive"></div>
             <h1></h1>
             <br>
           </div>
@@ -372,7 +372,7 @@
     style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
     <div class="col-12 mx-auto " style="padding-top: 7px;">
 
-      <a href="paso4.html">
+      <a href="paso5.html">
         <button class="btn btn-outline-success btn-icon btn-sm" type="button">
           <div class="d-flex align-items-center">
             Anterior
@@ -382,11 +382,11 @@
 
         <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
           <div class="d-flex align-items-center">
-            Paso 5
+            Paso 6
           </div>
         </button>
       
-      <a href="paso6.html">
+      <a href="paso7.html">
         <button class="btn btn-outline-success btn-icon  btn-sm" type="button">
           <div class="d-flex align-items-center">
             Siguiente
