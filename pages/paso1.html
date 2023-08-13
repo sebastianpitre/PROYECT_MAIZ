@@ -46,7 +46,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/login_auto.js"></script>
-     
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+ 
+   
 </head>
 
 <body class="blog-author" style="background-image: url('../assets/img/fotosmaiz\ \(1\).jpg'); background-size: cover; background-repeat: no-repeat;background-attachment: fixed">
@@ -60,7 +62,7 @@
     transform: translateX(calc((100% - 100vw) / 2));
     z-index: -2;
   }</style> -->
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
   <!-- Navbar -->
   <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
@@ -407,13 +409,13 @@
       style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
       <div class="col-12 mx-auto " style="padding-top: 7px;">
 
-        <a href="../index.html">
-          <button class="btn btn-outline-danger btn-icon btn-sm" type="button">
+        
+          <button  class="btn btn-outline-danger btn-icon btn-sm" type="button" onclick="Cerrarsesion()">
             <div class="d-flex align-items-center">
               abandonar
             </div>
           </button>
-        </a>
+        
 
         <button class="btn bg-gradient-success btn-icon btn-sm" type="button">
           <div class="d-flex align-items-center">
@@ -428,7 +430,7 @@
             </div>
           </button>
         </a>
-
+     
       </div>
     </div>
     <!-- paginacion -->
@@ -518,7 +520,9 @@
   <script src="../assets/js/menu_global.js"></script>
   <script src="../assets/js/inventarios/enviardatos.js"></script>
   <script src="../assets/js/sugerencias/sug_analisis.js"></script>
- 
+  <script src="../assets/js/Cerrarsesion/cerrarsesion.js"></script>
+  
+  
 
 </body>
 

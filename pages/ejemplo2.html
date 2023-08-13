@@ -1,0 +1,38 @@
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alerta con SweetAlert</title>
+    
+</head>
+<body>
+    <button onclick="mostrarAlerta()">Mostrar Alerta</button>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function mostrarAlerta() {
+            Swal.fire({
+                type: 'success',
+                title: '<h4>Ejemplo de Alerta</h4>',
+                text: 'Esto es una alerta de ejemplo',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'Guardar',
+                denyButtonText: `No guardar`
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Acción a realizar al hacer clic en "Guardar"
+                    alert('Has seleccionado Guardar');
+                } else if (result.isDenied) {
+                    // Acción a realizar al hacer clic en "No guardar"
+                    alert('Has seleccionado No guardar');
+                } else {
+                    // Acción a realizar al hacer clic en "Cancelar"
+                    alert('Has seleccionado Cancelar');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

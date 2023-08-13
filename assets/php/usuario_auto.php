@@ -2,6 +2,17 @@
 
 session_start();
 
+   
+echo $_SESSION['username'];
+
+
+if(isset ($_SESSION['username'])==false){
+  
+
+ 
+
+
+
 include('funciones.php');
 $enviar=0;
 $eliminar=0;
@@ -49,4 +60,8 @@ if($resultado){
       }
   }
 }
+}else{
+  echo '<script language="javascript">window.location.href="../../pages/paso1.html"</script>';
+}
+
 ?>
