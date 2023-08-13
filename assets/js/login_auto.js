@@ -43,7 +43,9 @@ $(document).ready(function() {
               $('#cant_obtenida').html(data.valor6);
               $('#cant_sembrar').html(data.valor7);
               $('#precio_sembrar').html(data.valor8);
-              $('#respuesta').html(data.valor9);
+              $('#respuesta_valor_maiz').html(data.valor9);
+              $('#nombre_producto').html(data.valor10);
+
 
 
             }

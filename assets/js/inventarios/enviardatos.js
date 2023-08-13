@@ -28,7 +28,7 @@ function enviarDatosAlquilar() {
     })
     .then(response => response.text())
     .then(data => {
-      console.log(data); // Respuesta del servidor (opcional)
+      console.log(data); // respuesta_valor_maiz del servidor (opcional)
     })
     .catch(error => {
       console.error('Error:', error);
@@ -64,7 +64,7 @@ function enviarDatosAlquilar() {
       })
       .then(response => response.text())
       .then(data => {
-        console.log(data); // Respuesta del servidor (opcional)
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
         resetForm(transactionType);
       })
       .catch(error => {
@@ -102,7 +102,7 @@ function enviarDatosAlquilar() {
       })
       .then(response => response.text())
       .then(data => {
-        console.log(data); // Respuesta del servidor (opcional)
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
       })
       .catch(error => {
         console.error('Error:', error);
@@ -138,7 +138,7 @@ function enviarDatosAlquilar() {
       })
       .then(response => response.text())
       .then(data => {
-        console.log(data); // Respuesta del servidor (opcional)
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
         resetForm(transactionType);
       })
       .catch(error => {
@@ -176,7 +176,7 @@ formData.append('hectareas', hectarea);
   })
   .then(response => response.text())
   .then(data => {
-    console.log(data); // Respuesta del servidor (opcional)
+    console.log(data); // respuesta_valor_maiz del servidor (opcional)
   })
   .catch(error => {
     console.error('Error:', error);
@@ -216,7 +216,7 @@ function fertilizacion_Alquilar() {
     })
     .then(response => response.text())
     .then(data => {
-      console.log(data); // Respuesta del servidor (opcional)
+      console.log(data); // respuesta_valor_maiz del servidor (opcional)
     })
     .catch(error => {
       console.error('Error:', error);
@@ -252,7 +252,7 @@ function fertilizacion_Alquilar() {
       })
       .then(response => response.text())
       .then(data => {
-        console.log(data); // Respuesta del servidor (opcional)
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
         resetForm(transactionType);
       })
       .catch(error => {
@@ -298,7 +298,7 @@ function fertilizacion_Alquilar() {
     })
     .then(response => response.text())
     .then(data => {
-      console.log(data); // Respuesta del servidor (opcional)
+      console.log(data); // respuesta_valor_maiz del servidor (opcional)
     })
     .catch(error => {
       console.error('Error:', error);

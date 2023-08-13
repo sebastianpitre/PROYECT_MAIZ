@@ -268,7 +268,7 @@
                       </td>
                       <td>
                         <strong>
-                          Cantidad en Kg para sembrar
+                          Kg de Maíz para Comprar
                         </strong>
                       </td>
                       <td>
@@ -356,36 +356,64 @@
                       <label for="pricePerUnitAlquiler">Ingrese el valor del kilo:</label>
                       <input type="number" class="form-control" placeholder="Digite" id="pricePerUnitAlquiler" min="0"
                         step="0.01" required>
-                    </div>
-                    <button type="button" class="btn bg-gradient-success pt-2" value="paso3" id="paso3" 
-                      onclick="enviar_Semilla()">Agregar
-                      producto
-                    </button>
                   </div>
+                  <button type="button" class="btn bg-gradient-success pt-2" value="paso3" id="paso3" 
+                    onclick="enviar_Semilla()">Agregar
+                    producto
+                  </button>
                 </div>
               </div>
-
-            </form>
-            
-          </div>
-          
+            </form>            
+          </div>          
         </div>
-         <!-- tabla -->
-      <div class="row me-2 col-md-3 card" style="float: right;">
+      </div>
+
+        <!-- tabla -->
+      <div class="row col-auto card">
         <div class="row">
-          <div class="ms-3 mt-2 col-md-12">
+          <div class="mt-2 ms-3 col">
             <h3>Listado de productos</h3>
-             <div ><label>PRECIO</label><label id="precio_sembrar" ></label></div>
-             <div ><label>COSTO</label><label id="respuesta" ></label></div>
-             
+            <table>
+              <thead>
+                <tr>
+                  <td>
+                    <strong>
+                      Nombre del Maíz
+                    </strong>
+                  </td>
+                  <td>
+                    <strong>
+                      Precio del Kg de Maíz 
+                    </strong>
+                  </td>
+                  <td>
+                    <strong>
+                      Total
+                    </strong>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span id="nombre_producto"></span>
+                  </td>
+                  <td>
+                    <span id="precio_sembrar" ></span>
+                  </td>
+                  <td>
+                    <span id="respuesta_valor_maiz"></span>
+                  </td>
+                 
+                </tr>
+              </tbody>
+            </table>
+          
             <h1></h1>
             <br>
           </div>
         </div>
-
       </div>
-      </div>
-     
       <!-- separador -->
     </section>
 

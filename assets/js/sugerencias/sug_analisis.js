@@ -21,7 +21,7 @@ function calcularHerramientas() {
     })
     .then(response => response.text())
     .then(data => {
-        console.log(data); // Respuesta del servidor (opcional)
+        console.log(data); // respuesta_valor_maiz del servidor (opcional)
     })
     .catch(error => {
         console.error('Error:', error);
@@ -119,7 +119,7 @@ document.getElementById("resultadot").innerHTML = "$ " + (resultadot).toFixed(2)
 })
 .then(response => response.text())
 .then(data => {
-    console.log(data); // Respuesta del servidor (opcional)
+    console.log(data); // respuesta_valor_maiz del servidor (opcional)
 })
 .catch(error => {
     console.error('Error:', error);

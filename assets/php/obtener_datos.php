@@ -18,6 +18,8 @@ include('funciones.php');
 
   $fila3 = $busqueda2->fetch_object(); 
   $precio_sembrar=$fila3->precio_semilla;
+  $nombre_producto=$fila3->nombre_producto;
+
   $area = $fila2->area;
   $dist_surcos = $fila2->surcos;
   $dist_semillas = $fila2->distancia;
@@ -36,7 +38,7 @@ include('funciones.php');
 
   $precio_sembrar1 = intval($precio_sembrar);
   $precio_sembrar ="$". intval($precio_sembrar);
-  $respuesta = "$".$cant_sembrar1 * $precio_sembrar1;
+  $respuesta_valor_maiz_valor_maiz = "$".$cant_sembrar1 * $precio_sembrar1;
 
   // Creamos un array con los valores
   $valores = array(
@@ -48,7 +50,9 @@ include('funciones.php');
     'valor6' => $cant_obtenida,
     'valor7' => $cant_sembrar,
     'valor8' => $precio_sembrar,
-    'valor9' => $respuesta
+    'valor9' => $respuesta_valor_maiz_valor_maiz,
+    'valor10' => $nombre_producto
+
 
   );
 
