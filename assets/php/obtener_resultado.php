@@ -2,7 +2,7 @@
     session_start();
         $analisis_terreno = $_SESSION['analisis_terreno'];
         $preparacion = $_SESSION['preparacion'];
-        $siembra = 0;
+        $siembra =  $_SESSION['siembra'];
         $fertilizacion = $_SESSION['fertilizacion'];
         $cosecha = $_SESSION['cosecha'];
         $pos_cosecha = $_SESSION['pos_cosecha'];
@@ -10,7 +10,24 @@
 
         //resultado de TODOS los procesod
         $total_proceso = $analisis_terreno+$preparacion+$siembra+$fertilizacion+$cosecha+$pos_cosecha+$comercializar;
-       
+       if($total_proceso>0){
+        $porcentaje_analisis_terreno=($analisis_terreno/$total_proceso)*100 ."%";
+        $porcentaje_preparacion=($preparacion/$total_proceso)*100 ."%";
+        $porcentaje_siembra=($siembra/$total_proceso)*100 ."%";
+        $porcentaje_fertilizacion=($fertilizacion/$total_proceso)*100 ."%";
+        $porcentaje_cosecha=($cosecha/$total_proceso)*100 ."%" ;
+        $porcentaje_pos_cosecha=($pos_cosecha/$total_proceso)*100 ."%";
+        $porcentaje_comencializar=($comercializar/$total_proceso)*100 ."%";
+        }else{
+            $porcentaje_analisis_terreno=0 ."%";
+            $porcentaje_preparacion=0 ."%";
+            $porcentaje_siembra=0 ."%";
+            $porcentaje_fertilizacion=0 ."%";
+            $porcentaje_cosecha=0 ."%" ;
+            $porcentaje_pos_cosecha=0 ."%";
+            $porcentaje_comencializar=0 ."%";
+
+        }
         $valores_resultado = array(
             'valor_analisis' => $analisis_terreno,
             'valor_preparacion' => $preparacion,
@@ -19,11 +36,16 @@
             'valor_cosecha' => $cosecha ,
             'valor_pos_cosecha' => $pos_cosecha ,
             'valor_comercializar' => $comercializar,
-            'valor_total_proceso' => $total_proceso
-
+            'valor_total_proceso' => $total_proceso,
+            'v_analisis' => $porcentaje_analisis_terreno,
+            'v_preparacion' => $porcentaje_preparacion,
+            'v_siembra' => $porcentaje_siembra,
+            'v_fertilizacion' => $porcentaje_fertilizacion ,
+            'v_cosecha' => $porcentaje_cosecha ,
+            'v_pos_cosecha' => $porcentaje_pos_cosecha ,
+            'v_comercializar' => $porcentaje_comencializar
         
-        
-          );
+          ); 
         
           // Devolvemos los valores como un JSON
           header('Content-Type: application/json');

@@ -99,6 +99,13 @@ $(document).ready(function() {
               $('#valor_pos_cosecha').html(data.valor_pos_cosecha);
               $('#valor_comercializar').html(data.valor_comercializar);
               $('#valor_total_proceso').html(data.valor_total_proceso);
+              $('#v_analisis').html(data.v_analisis);
+              $('#v_preparacion').html(data.v_preparacion);
+              $('#v_siembra').html(data.v_siembra);
+              $('#v_fertilizacion').html(data.v_fertilizacion);
+              $('#v_cosecha').html(data.v_cosecha);
+              $('#v_pos_cosecha').html(data.v_pos_cosecha);
+              $('#v_comercializar').html(data.v_comercializar);
              
 
             }

@@ -49,10 +49,10 @@ include('funciones.php');
     'valor4' => $dist_semillas,
     'valor5' => $cant_plantas,
     'valor6' => $cant_obtenida,
-    'valor7' => $cant_sembrar,
+    'valor7' => $cant_sembrar/*,
     'valor8' => $precio_sembrar,
     'valor9' => $respuesta_valor_maiz,
-    'valor10' => $nombre_producto
+    'valor10' => $nombre_producto*/
 
 
   );

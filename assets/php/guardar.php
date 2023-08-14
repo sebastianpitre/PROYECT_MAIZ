@@ -132,8 +132,8 @@ session_start();
     $precio_sembrar1 = intval($precio_a);
    
     $respuesta_valor_maiz1 =  number_format($cant_sembrar1 * $precio_sembrar1,2);
-    $_SESSION['siembra']=$respuesta_valor_maiz1;
-    echo $_SESSION['siembra'];
+   
+ 
     $resultado=consulta($miconexion,"UPDATE `proceso_siembra` SET `nombre_producto`='$nombre',`precio_semilla`='$precio_a',`valor_semilla`='$respuesta_valor_maiz1' WHERE `id_user_siembra`LIKE '{$_SESSION['id_usuario']}'");
 
 
