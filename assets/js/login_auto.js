@@ -18,7 +18,13 @@ $(document).ready(function() {
                 $('#tabla_paso2').html(data); // Actualizar el contenido de la tabla con los datos recibidos
             }
         });
-
+        $.ajax({
+            url: '../assets/php/obtener_tabla_siembra.php', // Archivo PHP que obtiene los datos del servidor
+            
+            success: function(data) {
+                $('#tabla_paso3').html(data); // Actualizar el contenido de la tabla con los datos recibidos
+            }
+        });
         $.ajax({
             url: '../assets/php/obtener_tabla_fertilizacion.php', // Archivo PHP que obtiene los datos del servidor
             

@@ -183,3 +183,17 @@ Guardar
 
 <!-- END CARD -->
 </div>
+
+
+$tablaHTML = "<table><thead><tr>";
+  $tablaHTML = "<td><strong>Nombre del Maíz</strong></td>";
+  $tablaHTML = "<td><strong>Precio del Kg de Maíz</strong></td>";
+  $tablaHTML = "<td><strong>Total</strong></td>";
+  $tablaHTML = "</tr></thead>";
+  $tablaHTML = "<tbody><tr>";
+    $tablaHTML = "<td><span id='nombre_producto'>$nombre_producto</span></td>";
+    $tablaHTML = "<td><span id='precio_sembrar' >$precio_sembrar</span></td>";
+    $tablaHTML = "<td><span id='respuesta_valor_maiz'>$respuesta_valor_maiz</span></td>";
+    $tablaHTML = "</tr></tbody>";
+    $tablaHTML .= " <tfoot><tr>";
+    $tablaHTML .= " </tr></tfoot></table>";
