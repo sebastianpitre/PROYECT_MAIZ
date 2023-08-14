@@ -244,99 +244,118 @@
 
   <div class="card1 card-body  mx-3 mx-md-8 mt-8 mb-4">
     <!-- CARD -->
-    <section>
-      <div class="row mb-2 card opacity-9">
-        <div class="container-fluid">
+    <section class="col-12 mb-4 card opacity-9">
+      <form onsubmit="return false;">
+        <div class="container">
           <div class="row">
-            <div class="col-8 mx-auto border-radius-lg">
-              <div class="row mb-3">
-                <h4 class="text-center mt-3 mb-3 animate-text" id="animate-text1">PREPARACIÓN DEL TERRENO.</h4>
-                  <!-- Estilos de animacion de texto -->
-                  <style>
-
-                    .animate-text {
-                    letter-spacing: 0.075rem;
-                    }
-
-                    /*Para Planear el cursor del teclado usamos la siguiente pseudoclase con una animación que pueden ver en la parte final del código CSS*/
-                    .animate-text::after {
-                    content: "|";
-                    font-size: 1.6rem;
-                    font-family: "Inconsolata", monospace;
-                    animation-name: parpadeo;
-                    animation-duration: 1s;
-                    animation-timing-function: linear;
-                    animation-iteration-count: infinite;
-                    }
-                    .zoom {
-                    animation: zoom 8s 0s;
-                    }
-
-                    /*Esta animación imita el parpadeo del cursor del teclado*/
-                    @keyframes parpadeo {
-                    0% {
-                        opacity: 1;
-                    }
-                    20% {
-                        opacity: 1;
-                    }
-                    25% {
-                        opacity: 0;
-                    }
-                    90% {
-                        opacity: 0;
-                    }
-                    100% {
-                        opacity: 1;
-                    }
-                    }
-
-                  </style>
-                  <!-- Escript de animacion de texto -->
-                  <script>
-                    //Primero capturamos el elemento del DOM con el id que definimos en el html
-                    const text1 = document.getElementById("animate-text1");
-                    let str = text1.innerHTML;
-                    text1.innerHTML = "";
-
-                    //Declaramos una varible en la que asignaremos un valor para que sea el tiempo en ms que durará la función setTimeout
-                    const speed = 25;
-                    let i = 0;
-
-                    //Esta función recorre todos los caracteres nuestro texto
-                    const typeWriter = () => {
-                    if (i < str.length) {
-                        text1.innerHTML += str.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, speed);
-                    }
-                    };
-
-                    //Acá ejecutamos la función
-                    setTimeout(typeWriter, speed);
-
-                  </script>
-                  <div class="col-xl col-md px position-relative ">
-                    <label for="hectareas">Conoce cómo puedes preparar tu terreno</label>
-                    <button type="button" class="btn bg-gradient-success" data-container="body" data-bs-toggle="popover" data-color="success" data-bs-placement="top" data-bs-content="This is a very beautiful popover, show some love.">
-                      Más información
-                    </button>
+            <div class="col-lg-10 mx-auto">
+              <div class="card card-plain">
+                    <div class="row">
+                      <h4 class="text-center mt-3 mb-4 animate-text" id="animate-text1">PREPARACIÓN DEL TERRENO.</h4>
+                      <div class="col-md-5">
+                        <div class="input-group input-group-static">
+                          <label  for="studyPrice" class="font-weight-bold">Valor de los gastos en laboratorio 
+                            <button type="button" class="btn ms-3 btn-icon-only btn-rounded pt-0 btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="digite el costo de los gastos de laboratorio"><i class="fas fa-info" aria-hidden="true"></i></button>
+                          </label>
+                          <input type="number" class="form-control" placeholder="Digite el valor" id="cotizar" min="0" step="5000"   required>
+                        </div>
+                      </div>
+                      <div class="col-2"></div>
+                      <div class="col-md-5">
+                        <div class="input-group input-group-static">
+                          <label for="hectareas" class="font-weight-bold">¿Cuántos metros² desea sembrar? 
+                            <button type="button" class="btn ms-3 btn-icon-only btn-rounded pt-0 btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="digite el costo de los gastos de laboratorio"><i class="fas fa-info" aria-hidden="true"></i></button>
+                          </label>
+                          <input type="number" id="hectareas"  class="form-control"
+                        placeholder="Digite la cantidad por metros²" min="0" step="5000" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mt-3 text-center">
+                        <button class="btn btn-success" id="condicion" value="hectarea" onclick="calcularHerramientas()" >Calcular</button>
+                      </div>
+                    </div>
                   </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+      </form>
+          <!-- Estilos de animacion de texto -->
+          <style>
+
+            .animate-text {
+            letter-spacing: 0.075rem;
+            }
+
+            /*Para Planear el cursor del teclado usamos la siguiente pseudoclase con una animación que pueden ver en la parte final del código CSS*/
+            .animate-text::after {
+            content: "|";
+            font-size: 1.6rem;
+            font-family: "Inconsolata", monospace;
+            animation-name: parpadeo;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            }
+            .zoom {
+            animation: zoom 8s 0s;
+            }
+
+            /*Esta animación imita el parpadeo del cursor del teclado*/
+            @keyframes parpadeo {
+            0% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 1;
+            }
+            25% {
+                opacity: 0;
+            }
+            90% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+            }
+
+          </style>
+          <!-- Escript de animacion de texto -->
+          <script>
+            //Primero capturamos el elemento del DOM con el id que definimos en el html
+            const text1 = document.getElementById("animate-text1");
+            let str = text1.innerHTML;
+            text1.innerHTML = "";
+
+            //Declaramos una varible en la que asignaremos un valor para que sea el tiempo en ms que durará la función setTimeout
+            const speed = 25;
+            let i = 0;
+
+            //Esta función recorre todos los caracteres nuestro texto
+            const typeWriter = () => {
+            if (i < str.length) {
+                text1.innerHTML += str.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+            };
+
+            //Acá ejecutamos la función
+            setTimeout(typeWriter, speed);
+
+          </script>
     </section>
 
-    <section>
-      <div class="row mb-2 card opacity-9">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-8 mx-auto border-radius-lg">
-              <div class="row mb-3">
-                <h4 class="text-center">Ingrese los elementos que utilizará para preparar su terreno</h4>
+    <section class=" mb-2 card opacity-9">
+      <div class="container-fluid">
+        <div class="row mb-3">
+          <h4 class="text-center mt-3">SUGERENCIA DE HERRAMIENTAS PARA EL ANALISIS.</h4>
+          <div id="resultado">
+            <div class="container">
+              <div class="col-12 row" id="herramientas-lista">
+                <!-- sugerencias -->
               </div>
+              
             </div>
           </div>
         </div>
@@ -553,7 +572,7 @@
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/inventarios/inventario_preparacion.js"></script>
+  <script src="../assets/js/sugerencias/sug_preparacion.js"></script>
   <!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
