@@ -90,7 +90,12 @@ $(document).ready(function() {
             url: '../assets/php/obtener_resultado.php',
             dataType: 'json',
             success: function(data) {
+                var alto=300;
+                var tamaño1=alto*data.v_analisis/100+"px" ;
+                var tamaño2=alto*data.v_preparacion/100+"px" ;
+                var tamaño3=alto*data.v_siembra/100+"px" ;
                 
+               
               $('#valor_analisis').html(data.valor_analisis);
               $('#valor_preparacion').html(data.valor_preparacion);
               $('#valor_siembra').html(data.valor_siembra);
@@ -99,6 +104,7 @@ $(document).ready(function() {
               $('#valor_pos_cosecha').html(data.valor_pos_cosecha);
               $('#valor_comercializar').html(data.valor_comercializar);
               $('#valor_total_proceso').html(data.valor_total_proceso);
+             
               $('#v_analisis').html(data.v_analisis);
               $('#v_preparacion').html(data.v_preparacion);
               $('#v_siembra').html(data.v_siembra);
@@ -107,10 +113,17 @@ $(document).ready(function() {
               $('#v_pos_cosecha').html(data.v_pos_cosecha);
               $('#v_comercializar').html(data.v_comercializar);
              
+              $('#bar1').height(tamaño1);
+              $('#bar2').height(tamaño2);
+              $('#bar3').height(tamaño3);
+            console.log(tamaño3);
+             
+             
 
             }
         });
     }
+    
 
 
     // Llamar a la función inicialmente para cargar la tabla con los datos actuales
@@ -126,3 +139,11 @@ $(document).ready(function() {
 
     //edité la actualización de la tabla
 });
+
+function grafico(){
+    const myDiv = document.getElementById("myDiv");
+    myDiv.style.backgroundColor = "blue";
+    myDiv.style.width = "200px";
+    myDiv.style.height = "150px";
+
+}
