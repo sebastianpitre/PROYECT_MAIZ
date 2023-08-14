@@ -38,7 +38,9 @@ include('funciones.php');
 
   $precio_sembrar1 = intval($precio_sembrar);
   $precio_sembrar ="$". intval($precio_sembrar);
-  $respuesta_valor_maiz_valor_maiz = "$ ". number_format($cant_sembrar1 * $precio_sembrar1,2);
+  $respuesta_valor_maiz = "$ ". number_format($cant_sembrar1 * $precio_sembrar1,2);
+  $respuesta_valor_maiz1 =  number_format($cant_sembrar1 * $precio_sembrar1,2);
+  $_SESSION['siembra']=$respuesta_valor_maiz1;
 
   // Creamos un array con los valores
   $valores = array(
@@ -50,7 +52,7 @@ include('funciones.php');
     'valor6' => $cant_obtenida,
     'valor7' => $cant_sembrar,
     'valor8' => $precio_sembrar,
-    'valor9' => $respuesta_valor_maiz_valor_maiz,
+    'valor9' => $respuesta_valor_maiz,
     'valor10' => $nombre_producto
 
 

@@ -50,9 +50,9 @@ include('funciones.php');
       $resultado=$sumar+$cotizar;
       $tablaHTML .= "<tr><td colspan='4'><strong><h4 class='mx-auto text-center'>Inversión Global:</h4> </strong></td><td id='resultado'>$ $resultado</td><td></td></tr>";
      
-     
       $tablaHTML .= "</tr></tfoot>";
       $tablaHTML .= "</table>";
+      $_SESSION['analisis_terreno']=$resultado;
 
      echo $tablaHTML;
      // Creamos un array con los valores

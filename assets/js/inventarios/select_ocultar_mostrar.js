@@ -75,28 +75,3 @@ function resetForm(transactionType) {
     document.getElementById("pricePerUnitComprar").value = "";
     }
 }
-
-
-function mostrar_nav2() {
-    var iframe = document.getElementById("mostrar_navbar");
-    
-    iframe.src = "../pages/navbar.html"; // carga la página HTML en el iframe
-
-    console.log('HOLAAAAA');
-  }
-  mostrar_nav2();
-
-
-
-function mostrar_nav() {
-  var navarScript = document.createElement('script');
-  navarScript.src = '../pages/navbar.html';
-  document.head.appendChild(navarScript);
-  
-  // Creando el elemento navar
-  var navarElement = document.createElement('navar');
-  
-  // Agregando el elemento al HTML
-  document.body.appendChild(navarElement);
-}
-mostrar_nav();

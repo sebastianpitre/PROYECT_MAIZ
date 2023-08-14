@@ -72,18 +72,44 @@ $(document).ready(function() {
               $('#nombre_producto').html(data.valor10);
 
 
+            }
+        });
+    }
+
+
+    // resultados de cada proceso
+    function resultados_procesos() {
+      
+        $.ajax({
+            url: '../assets/php/obtener_resultado.php',
+            dataType: 'json',
+            success: function(data) {
+                
+              $('#valor_analisis').html(data.valor_analisis);
+              $('#valor_preparacion').html(data.valor_preparacion);
+              $('#valor_siembra').html(data.valor_siembra);
+              $('#valor_fertilizacion').html(data.valor_fertilizacion);
+              $('#valor_cosecha').html(data.valor_cosecha);
+              $('#valor_pos_cosecha').html(data.valor_pos_cosecha);
+              $('#valor_comercializar').html(data.valor_comercializar);
+              $('#valor_total_proceso').html(data.valor_total_proceso);
+             
 
             }
         });
     }
 
+
     // Llamar a la función inicialmente para cargar la tabla con los datos actuales
     actualizarTabla();
     actualizardatos();
+    resultados_procesos();
 
     // Escuchar eventos de cambio en el formulario
     setInterval(actualizarTabla, 1000); 
     setInterval(actualizardatos, 1000);
+    setInterval(resultados_procesos, 1000);
+
 
     //edité la actualización de la tabla
 });

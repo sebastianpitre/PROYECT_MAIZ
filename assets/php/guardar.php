@@ -107,7 +107,7 @@ session_start();
       }   
 
   }
-  elseif( $tipo==="paso3"){
+  elseif( $tipo==="siembra"){
    
     $precio_a=$_POST['precio'];
     $nombre=$_POST['nombre'];

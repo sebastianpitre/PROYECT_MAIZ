@@ -155,7 +155,7 @@ function enviarDatosAlquilar() {
 function enviar_Semilla() {
   
   // Obtener el valor del campo de entrada de datos
-  const tipo_transaccion = document.getElementById("paso3").value;
+  const tipo_transaccion = document.getElementById("siembra").value;
   const nombre = document.getElementById("pricePerUnitnombre").value;
   const precio = document.getElementById("pricePerUnitAlquiler").value;
   const hectarea =0;
