@@ -36,3 +36,150 @@ html
     </script>
 </body>
 </html>
+
+
+
+$porcentaje_analisis_terreno=number_format(($analisis_terreno/$total_proceso)*100,2) ."%";
+$porcentaje_preparacion=number_format(($preparacion/$total_proceso)*100,2) ."%";
+$porcentaje_siembra=number_format(($siembra/$total_proceso)*100,2) ."%";
+$porcentaje_fertilizacion=number_format(($fertilizacion/$total_proceso)*100,2) ."%";
+$porcentaje_cosecha=number_format(($cosecha/$total_proceso)*100,2) ."%" ;
+$porcentaje_pos_cosecha=number_format(($pos_cosecha/$total_proceso)*100,2) ."%";
+$porcentaje_comencializar=number_format(($comercializar/$total_proceso)*100,2) ."%";
+
+$valores_resultado = array(
+    'valor_analisis' => $analisis_terreno,
+    'valor_preparacion' => $preparacion,
+    'valor_siembra' => $siembra,
+    'valor_fertilizacion' => $fertilizacion ,
+    'valor_cosecha' => $cosecha ,
+    'valor_pos_cosecha' => $pos_cosecha ,
+    'valor_comercializar' => $comercializar,
+    'valor_total_proceso' => $total_proceso,
+    'v_porcentage_analisis' => $porcentaje_analisis_terreno,
+    'v_porcentage_preparacion' => $porcentaje_preparacion,
+    'v_porcentage_siembra' => $porcentaje_siembra,
+    'v_porcentage_fertilizacion' => $porcentaje_fertilizacion ,
+    'v_porcentage_cosecha' => $porcentaje_cosecha ,
+    'v_porcentage_pos_cosecha' => $porcentaje_pos_cosecha ,
+    'v_porcentage_comercializar' => $porcentaje_comencializar
+
+  );        
+
+
+
+
+
+
+
+
+  <table class="table align-items-center mb-0">
+    <tbody>
+      <tr>
+        <td>
+          <div class="d-flex px-2 py-0">
+            <span class="badge bg-gradient-primary me-3 "id="v_porcentage_analisis"> </span>
+            <div class="d-flex flex-column justify-content-center">
+              <h6 class="mb-0 text-sm">Análisis del terreno</h6>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs"id="v_porcentage_analisis">  </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="d-flex px-2 py-0">
+            <span class="badge bg-gradient-secondary me-3" id="v_porcentage_preparacion"> 15%</span>
+            <div class="d-flex flex-column justify-content-center">
+              <h6 class="mb-0 text-sm">Preparación del terreno</h6>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs" id="v_porcentage_preparacion"> 20% </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="d-flex px-2 py-0">
+            <span class="badge bg-gradient-info me-3" id="v_porcentage_siembra"> </span>
+            <div class="d-flex flex-column justify-content-center">
+              <h6 class="mb-0 text-sm">Proceso de siembra</h6>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs" id="v_porcentage_siembra"> 13% </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="d-flex px-2 py-0">
+            <span class="badge bg-gradient-success me-3" id="v_porcentage_fertilizacion"> </span>
+            <div class="d-flex flex-column justify-content-center">
+              <h6 class="mb-0 text-sm">Fertilización</h6>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs" id="v_porcentage_fertilizacion"> 32% </span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="d-flex px-2 py-0">
+            <span class="badge bg-gradient-warning me-3 "id="v_porcentage_cosecha"> </span>
+            <div class="d-flex flex-column justify-content-center">
+              <h6 class="mb-0 text-sm">Cosecha</h6>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs"  id="v_porcentage_cosecha"> 20% </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- paginacion -->
+<div class="row card text-center mt-4 page-header opacity-9"
+style=" width: 20rem; min-width: 20rem; height: 50px; min-height: 50px; position: sticky; left: 40.6%; bottom: 5px; z-index: 100;">
+<div class="col-12 mx-auto " style="padding-top: 7px;">
+
+<a href="paso7.html">
+<button class="btn btn-outline-success btn-icon btn-sm" type="button">
+<div class="d-flex align-items-center">
+Imprimir
+</div>
+</button>
+</a>
+
+<a href="">
+<button class="btn btn-outline-success btn-icon  btn-sm" type="button">
+<div class="d-flex align-items-center">
+Guardar
+</div>
+</button>
+</a>
+
+</div>
+</div>
+<!-- paginacion -->
+
+
+<!-- END CARD -->
+</div>

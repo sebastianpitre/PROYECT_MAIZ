@@ -2,7 +2,7 @@
     session_start();
         $analisis_terreno = $_SESSION['analisis_terreno'];
         $preparacion = $_SESSION['preparacion'];
-        $siembra = $_SESSION['siembra'];
+        $siembra = 0;
         $fertilizacion = $_SESSION['fertilizacion'];
         $cosecha = $_SESSION['cosecha'];
         $pos_cosecha = $_SESSION['pos_cosecha'];

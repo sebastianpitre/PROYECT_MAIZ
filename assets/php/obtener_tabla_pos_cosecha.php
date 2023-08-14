@@ -40,7 +40,7 @@ include('funciones.php');
       $tablaHTML .= "<td colspan='5'><strong><h4 class='mx-auto text-center'>Total:</h4> </strong></td>";
       $tablaHTML .= " <td id='totalAmount'>$ $sumar</td>";
       $resultado=$sumar;
-      $tablaHTML .= "<tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Inversión Global2:</h4> </strong></td><td id='resultado'>$ </td></tr>";
+      $tablaHTML .= "<tr><td colspan='5'><strong><h4 class='mx-auto text-center'>Inversión Global2:</h4> </strong></td><td id='resultado'>$resultado </td></tr>";
       $tablaHTML .= "</tr></tfoot>";
       $tablaHTML .= "</table>";
       $_SESSION['pos_cosecha']=$resultado;

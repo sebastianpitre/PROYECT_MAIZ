@@ -8,10 +8,10 @@ session_start();
   // Obtener el dato enviado desde JavaScript
   $hectarea = $_POST['hectareas'];
   $condicion = $_POST['condicion'];
-  $cotizar = $_POST['cotizar'];
-  echo"hola cartacol .$condicion";
+ 
   /* Guarda al seleccionar el Botón comprar 909 =hectareas*/
   if( $condicion==="hectarea"){
+    $cotizar = $_POST['cotizar'];
     $hectarea=$_POST['hectareas'];   
     $resultado=consulta($miconexion,"UPDATE `terreno` SET `area`='$hectarea',`cotizar_lab`='$cotizar' WHERE `id_user`LIKE '{$_SESSION['id_usuario']}'");
  
@@ -115,7 +115,26 @@ session_start();
     //hay que incrementar  desde donde elimina el usuario y asi aprobechar  todo los espacios de la tabla
     $verificacion=consulta($miconexion,"ALTER TABLE proceso_siembra AUTO_INCREMENT=1");
     //codigo por realizar cambiandoel 1 por un valor de la consulta cuando se valide cuales el valor max
-    $resultado=consulta($miconexion,"UPDATE `proceso_siembra` SET `nombre_producto`='$nombre',`precio_semilla`='$precio_a' WHERE `id_user_siembra`LIKE '{$_SESSION['id_usuario']}'");
+    $busqueda1=consulta($miconexion,"SELECT * FROM terreno WHERE id_user like '{$_SESSION['id_usuario']}'");
+    $fila2 = $busqueda1->fetch_object();
+    $area = $fila2->area;
+    $dist_surcos = $fila2->surcos;
+    $dist_semillas = $fila2->distancia;
+
+    $dist_semillasm = intval($dist_semillas)/100;
+    $dist_surcosm = intval($dist_surcos)/100;
+    $cant_plantas = round(intval($area)/($dist_semillasm*$dist_surcosm));
+    $cant_obtenida = (($cant_plantas*100)/1000);
+    $cant_sembrar = number_format(intval($cant_plantas*3)/(10000),2)." Kg";
+    
+    $cant_sembrar1 = intval($cant_plantas*3)/(10000);
+   
+    $precio_sembrar1 = intval($precio_a);
+   
+    $respuesta_valor_maiz1 =  number_format($cant_sembrar1 * $precio_sembrar1,2);
+    $_SESSION['siembra']=$respuesta_valor_maiz1;
+    echo $_SESSION['siembra'];
+    $resultado=consulta($miconexion,"UPDATE `proceso_siembra` SET `nombre_producto`='$nombre',`precio_semilla`='$precio_a',`valor_semilla`='$respuesta_valor_maiz1' WHERE `id_user_siembra`LIKE '{$_SESSION['id_usuario']}'");
 
 
 
