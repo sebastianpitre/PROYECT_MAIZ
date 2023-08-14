@@ -125,3 +125,4 @@ document.getElementById("resultadot").innerHTML = "$ " + (resultadot).toFixed(2)
     console.error('Error:', error);
 });*/
 }
+calcularHerramientas()
