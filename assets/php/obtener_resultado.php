@@ -1,5 +1,18 @@
 <?php
     session_start();
+    include('funciones.php');
+
+  // Creamos un array con los valores
+  $miconexion = conectar_bd('', 'bd_cultivomaiz');
+  $busqueda=consulta($miconexion,"SELECT * FROM proceso_siembra WHERE id_user_siembra like '{$_SESSION['id_usuario']}'");
+  
+  /*         echo"***************+++++++++++++++++++++++*****************************",$_SESSION['nusuario'];*/
+  $fila1 = $busqueda->fetch_object(); 
+ 
+  $tonelada = $fila1->valor_tonelada;
+  $precio_maiz=$fila1->precio_semilla;
+
+
         $analisis_terreno = $_SESSION['analisis_terreno'];
         $preparacion = $_SESSION['preparacion'];
         $siembra =  $_SESSION['siembra'];
@@ -10,7 +23,8 @@
 
         //resultado de TODOS los procesod
         $total_proceso = $analisis_terreno+$preparacion+$siembra+$fertilizacion+$cosecha+$pos_cosecha+$comercializar;
-       if($total_proceso>0){
+       $ganancias=intval($tonelada)*intval($precio_maiz);
+        if($total_proceso>0){
         $porcentaje_analisis_terreno=number_format(($analisis_terreno/$total_proceso)*100,2) ;
         $porcentaje_preparacion=number_format(($preparacion/$total_proceso)*100,2) ;
         $porcentaje_siembra=number_format(($siembra/$total_proceso)*100,2) ;
@@ -43,7 +57,8 @@
             'v_fertilizacion' => $porcentaje_fertilizacion ,
             'v_cosecha' => $porcentaje_cosecha ,
             'v_pos_cosecha' => $porcentaje_pos_cosecha ,
-            'v_comercializar' => $porcentaje_comencializar
+            'v_comercializar' => $porcentaje_comencializar,
+            'ganancias' => $ganancias
         
           ); 
         

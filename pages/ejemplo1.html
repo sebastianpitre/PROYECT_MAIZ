@@ -4,6 +4,9 @@ html
 <head>
   <title class="text-center">Ejemplo de Mostrar Divs</title>
   <title class="text-center">Ejemplo de Mostrar Divs</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+
+  
   <style>
 .modal {
   display: none; /* ocultar el modal por defecto */
@@ -74,6 +77,32 @@ function closeModal() {
   modal.style.display = "none"; // oculta el modal
 }
 </script>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
   
 </body>
 </html>
@@ -83,52 +112,29 @@ function closeModal() {
 
 
 
-
-
-
-
-
-html
 <!DOCTYPE html>
-<html>
+<html lang="es">
+
 <head>
-<style>
-    .container {
-        width: 400px;
-        height: 300px;
-        border: 1px solid black;
-        position: relative;
-        background: rgb(12, 224, 94);
-    }
-
-    .bar {
-        width: 20px;
-        background-color: blue;
-        position: absolute;
-        bottom: 0;
-    }
-
-    .bar1 {
-        height: 100px;
-        left: 50px;
-    }
-
-    .bar2 {
-        height: 200px;
-        left: 100px;
-    }
-
-    .bar3 {
-        height: 150px;
-        left: 150px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficas con chart.js | By Parzibyte</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="bar bar1"></div>
-        <div class="bar bar2"></div>
-        <div class="bar bar3"></div>
+    <h1>Ejemplo 1 - Gráfica de líneas</h1>
+    <a href="https://parzibyte.me/blog">By Parzibyte</a>
+    <a href="../index.html">| Ir al inicio</a>
+
+
+    <div style="display: block; width: 1349px; height: 674px;">
+      <canvas id="grafica"    style=" max-width: 500px;"></canvas>
     </div>
+    
+    <script src="../assets/js/login_auto.js"></script>
+
 </body>
+
+
 </html>
