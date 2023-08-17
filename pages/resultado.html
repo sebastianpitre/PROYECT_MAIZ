@@ -46,8 +46,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
-
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
 
@@ -364,8 +362,7 @@
                             </td>
 
                             <td class="align-middle">
-                              <a href="paso2.html">                              
-                                <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                              <a href="paso2.html">                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
                               data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
                               </a>
                             
@@ -506,12 +503,11 @@
                     </div>
                   </div>
               </div>
-              <!-- resultados en porcentajes -->
               <div class="card">
                 <div class="table-responsive">
                   <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
-                      <h6 class="mb-0">Ánalisis de datos (%)</h6>
+                      <h6 class="mb-0">Representación gráfica</h6>
                       <button type="button"
                         class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Información">
@@ -528,144 +524,121 @@
                               <tr>
                                 <td>
                                   <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(0 183 105)" id="v_analisis"> </span>
+                                    <span class="badge bg-gradient-primary me-3" id="v_analisis"> </span>
                                     <div class="d-flex flex-column justify-content-center">
                                       <h6 class="mb-0 text-sm">Análisis del terreno</h6>
                                     </div>
                                   </div>
                                 </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 15% </span>
+                                </td>
                               </tr>
                               <tr>
                                 <td>
                                   <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(131, 166, 3)" id="v_preparacion"> </span>
+                                    <span class="badge bg-gradient-secondary me-3" id="v_preparacion"> </span>
                                     <div class="d-flex flex-column justify-content-center">
                                       <h6 class="mb-0 text-sm">Preparación del terreno</h6>
                                     </div>
                                   </div>
                                 </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 20% </span>
+                                </td>
                               </tr>
                               <tr>
                                 <td>
                                   <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(255 150 0)" id="v_siembra"> </span>
+                                    <span class="badge bg-gradient-info me-3 "id="v_siembra"> </span>
                                     <div class="d-flex flex-column justify-content-center">
                                       <h6 class="mb-0 text-sm">Proceso de siembra</h6>
                                     </div>
                                   </div>
                                 </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 13% </span>
+                                </td>
                               </tr>
                               <tr>
                                 <td>
                                   <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(70, 89, 2)" id="v_fertilizacion"> </span>
+                                    <span class="badge bg-gradient-success me-3"id="v_fertilizacion"> </span>
                                     <div class="d-flex flex-column justify-content-center">
                                       <h6 class="mb-0 text-sm">Fertilización</h6>
                                     </div>
                                   </div>
                                 </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 32% </span>
+                                </td>
                               </tr>
                               <tr>
                                 <td>
                                   <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(191, 73, 4)" id="v_cosecha"> </span>
+                                    <span class="badge bg-gradient-warning me-3" id="v_cosecha"> </span>
                                     <div class="d-flex flex-column justify-content-center">
                                       <h6 class="mb-0 text-sm">Cosecha</h6>
                                     </div>
                                   </div>
                                 </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 20% </span>
+                                </td>
                               </tr>
                               <tr>
                                 <td>
                                   <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(140, 28, 3)"  id="v_pos_cosecha"> </span>
+                                    <span class="badge bg-gradient-warning me-3" id="v_pos_cosecha"> </span>
                                     <div class="d-flex flex-column justify-content-center">
                                       <h6 class="mb-0 text-sm">Pos-Cosecha</h6>
                                     </div>
                                   </div>
                                 </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 20% </span>
+                                </td>
                               </tr>
                               <tr>
                                 <td>
                                   <div class="d-flex px-2 py-0">
-                                    <span class="badge  me-3" style="background-color: rgb(216 245 0)" id="v_comercializar"> </span>
+                                    <span class="badge bg-gradient-warning me-3" id="v_comercializar"> </span>
                                     <div class="d-flex flex-column justify-content-center">
                                       <h6 class="mb-0 text-sm">Comercializacion</h6>
                                     </div>
                                   </div>
                                 </td>
+                                <td class="align-middle text-center text-sm">
+                                  <span class="text-xs"> 20% </span>
+                                </td>
                               </tr>
                             </tbody>
                           </table>
-                        </div>               
+                          
+                       
+                            
+                        
+                        </div>
+                        <div class="container1 id=container1">
+                          <div class="bar bar_analisis" id="bar_analisis"></div>
+                          <div class="bar bar_preparacion" id="bar_preparacion"></div>
+                          <div class="bar bar_siembra" id="bar_siembra"></div>
+                          <div class="bar bar_fertilizacion" id="bar_fertilizacion"></div>
+                          <div class="bar bar_cosecha" id="bar_cosecha"></div>
+                          <div class="bar bar_pos_cosecha" id="bar_pos_cosecha"></div>
+                          <div class="bar bar_comercializar" id="bar_comercializar"><h2 id="v_comercializar"></h2></div>
+
+                      </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <button onclick="openModal()" class="btn bg-gradient-success">Ver resultados</button>
-
             </div>
           </div>
         </div>
       </div>
     </section>
-
- 
-
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <!-- ---------------Gráfico de barras de los procesos----------------------------- -->
-      <div class="card">
-        <div class="card-header pb-0 p-3">
-        </div>
-        <div class="card p-3">
-          <div class="row">
-            <div id="primera_grafica" class="col-7" style="width: 100%; background-color: bisque;">
-              <canvas id="grafica_grande"></canvas>
-            </div>
-            <div id="segunda_grafica" class="col-7" style="width: 100%; background-color: bisque;">
-              <canvas id="grafica2_grande"></canvas>
-            </div>
-          </div>
-        </div>
-        <div class="container text-center">
-          <div class="row align-items-start">
-            <a type="button" id="grafica_primerboton" onclick="mostrar_ocultar('grafica_grande', 'grafica2_grande')"
-              value="mostrar_grafica_primerboton" class="col">
-              <div id="grafica_botones">
-                <div class="d-flex align-items-center">
-                  <h6 class="mb-0">Gráfica de botón BARRAS</h6>
-                </div>
-                <div class="col-7" id="grafica_botones" style="width: 100%; background-color: bisque;">
-                  <canvas id="grafica_boton" class="grafica_botones">
-                  </canvas>
-                </div>
-              </div>
-            </a>
-            <a type="button" id="grafica_segundoboton" onclick="mostrar_ocultar('grafica2_grande', 'grafica_grande')"
-              value="mostrar_grafica_segundoboton" class="col">
-              <div id="grafica_botones2">
-                <div class="d-flex align-items-center">
-                  <h6 class="mb-0">Gráfica de botón PASTEL</h6>
-                </div>
-                <div class="col-7" id="grafica_botones2" style="width: 100%; background-color: bisque;">
-                  <canvas id="grafica2_boton" class="grafica_botones2"></canvas>
-                </div>
-              </div>
-            </a>
-            <a type="button" class="col" id="grafica1">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
 
 
     <!-- paginacion -->
@@ -782,7 +755,3 @@
 </body>
 
 </html>
-
-
-
-
