@@ -122,6 +122,7 @@ CREATE TABLE `proceso_siembra` (
   `nombre_producto` varchar(255) DEFAULT NULL,
   `precio_semilla` varchar(255) DEFAULT NULL,
   `valor_semilla` varchar(255) DEFAULT NULL,
+  `valor_tonelada` varchar(255) DEFAULT NULL,
   `id_user_siembra` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_siembra`),
   KEY `fk_usuario` (`id_user_siembra`),

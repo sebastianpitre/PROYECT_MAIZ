@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Draggable globaligation Menu | Codinglab</title>
+  <style>
+.section{
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 80px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+}
+.section .global-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg);
+}
+.global-content .toggle-btn,
+.global-content span a{
+  height: 60px;
+  width: 60px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+.global-content .toggle-btn{
+  font-size: 35px;
+  color: #0e2431;
+  z-index: 100;
+  cursor: pointer;
+  transform: rotate(-225deg);
+  transition: all 0.6s ease;
+}
+section.open .toggle-btn{
+  transform: rotate(0deg);
+}
+.global-content span{
+  position: absolute;
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+section.open .global-content span{
+  transform: rotate(calc(var(--i) * (360deg/8))) translateY(120px);
+  opacity: 1;
+}
+.global-content span a{
+  text-decoration: none;
+  transform: rotate(45deg);
+}
+.global-content span a i{
+  font-size: 24px;
+  color: #0e2431;
+  transform: rotate(calc(var(--i) * (360deg/ -8)));
+  opacity: 0.8;
+  transition: 0.2s;
+}
+.global-content span a:hover i{
+  opacity: 1;
+}
+  </style>
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <section class="section">
+    <div class="global-content">
+      <div class="toggle-btn">
+        <i class='bx bx-plus'></i>
+      </div>
+      <span style="--i:1;">
+        <a href="#"><i class='bx bxs-home'></i></a>
+      </span>
+      <span style="--i:2;">
+        <a href="#"><i class='bx bxs-camera'></i></a>
+      </span>
+      <span style="--i:3;">
+        <a href="#"><i class='bx bxs-alarm' ></i></a>
+      </span>
+      <span style="--i:4;">
+        <a href="#"><i class='bx bxs-map' ></i></a>
+      </span>
+      <span style="--i:5;">
+        <a href="#"><i class='bx bxs-cog' ></i></a>
+      </span>
+    </div>
+  </section>
+
+  <script>
+
+  // getting HTML elements
+  const section = document.querySelector("section"),
+        toggleBtn = section.querySelector(".toggle-btn");
+
+    toggleBtn.addEventListener("click" , () =>{
+      section.classList.toggle("open");
+    });
+
+  // js code to make draggable section
+  function onDrag({movementY}) { //movementY gets mouse vertical value
+    const sectionStyle = window.getComputedStyle(section), //getting all css style of section
+          sectionTop = parseInt(sectionStyle.top), // getting section top value & convert it into string
+          sectionHeight = parseInt(sectionStyle.height), // getting section height value & convert it into string
+          windHeight = window.innerHeight; // getting window height
+
+    section.style.top = sectionTop > 0 ? `${sectionTop + movementY}px` : "1px";
+    if(sectionTop > windHeight - sectionHeight){
+      section.style.top = `${windHeight - sectionHeight}px`;
+    }
+  }
+
+  //this function will call when user click mouse's button and  move mouse on section
+  section.addEventListener("mousedown", () =>{
+    section.addEventListener("mousemove", onDrag);
+  });
+
+  //these function will call when user relase mouse button and leave mouse from section
+  section.addEventListener("mouseup", () =>{
+    section.removeEventListener("mousemove", onDrag);
+  });
+  section.addEventListener("mouseleave", () =>{
+    section.removeEventListener("mousemove", onDrag);
+  });
+
+  </script>
+
+</body>
+</html>

@@ -30,7 +30,7 @@ include('funciones.php');
   $cant_sembrar = number_format(intval($cant_plantas*3)/(10000),2)." Kg";
   
   $cant_sembrar1 = intval($cant_plantas*3)/(10000);
-  $area=$area = intval($area*1);
+  $area=$area = intval($area);
   $area=$area ." m²";
   $dist_semillas = $dist_semillas ." cm";
   $dist_surcos = $dist_surcos ." cm";
@@ -40,7 +40,7 @@ include('funciones.php');
   $precio_sembrar ="$". intval($precio_sembrar);
   $respuesta_valor_maiz = "$ ". number_format($cant_sembrar1 * $precio_sembrar1,2);
   $respuesta_valor_maiz1 = $cant_sembrar1 * $precio_sembrar1;
-
+  $_SESSION['valormaiz']= $precio_sembrar;
   
   $tablaHTML = "<table><thead>";
   $tablaHTML .= "<tr><th>Nombre MAIZ</th><th>PRECIO MAiZ</th><th>TOTAL</th></tr></thead>";

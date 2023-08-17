@@ -1,5 +1,4 @@
-function calcularHerramientas() {
-    const hectareas = parseFloat(document.getElementById("hectareas").value);
+function calcularHerramienta1() {
     const hectarea = document.getElementById("hectareas").value;
     const condicion = document.getElementById("condicion").value;
     const cotizar = document.getElementById("cotizar").value;
@@ -22,11 +21,20 @@ function calcularHerramientas() {
     .then(response => response.text())
     .then(data => {
         console.log(data); // respuesta_valor_maiz del servidor (opcional)
+        console.log("aqui");
+        
+
     })
     .catch(error => {
         console.error('Error:', error);
     });
+    
+    calcularHerramientas();
+}
 
+function calcularHerramientas() {
+    const hectareas = parseFloat(document.getElementById("hectareas").value);
+    
 
 
     const herramientas = calcularHerramientasPorHectarea(hectareas);
