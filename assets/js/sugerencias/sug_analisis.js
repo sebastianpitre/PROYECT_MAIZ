@@ -48,23 +48,21 @@ function calcularHerramientasPorHectarea(hectareas) {
     const baldesPorHectarea = 8;
     const palinPorHectarea = 8;
     const bolsasPorHectarea = 12;
-    const kgSemillasPorHectarea = 20;
+    // const kgSemillasPorHectarea = 20;
     const personalPorHectarea =4;
 
     const palasNecesarias = palasPorHectarea * hectareas / 10000;
     const baldesNecesarios = baldesPorHectarea * hectareas / 10000;
     const palinNecesarios = palinPorHectarea * hectareas / 10000;
     const bolsasNecesarias = bolsasPorHectarea * hectareas / 10000;
-    const kgSemillasNecesarias = kgSemillasPorHectarea * hectareas /10000;
     const personalNecesarios = personalPorHectarea * hectareas /10000;
 
     return [
-        { nombre: 'Personal', cantidad: personalNecesarios, imagen: '../assets/img/herramientas/006-agricultor.png', medida: ' pers' },
+        { nombre: 'Personal', cantidad: personalNecesarios, imagen: '../assets/img/herramientas/006-agricultor.png', medida: ' horas' },
         { nombre: 'Baldes', cantidad: baldesNecesarios, imagen: '../assets/img/herramientas/balde.png', medida: ' und' },
         { nombre: 'Palín', cantidad: palinNecesarios, imagen: '../assets/img/herramientas/001-pala.png', medida: ' und' },
         { nombre: 'Bolsas', cantidad: bolsasNecesarias, imagen: '../assets/img/herramientas/bolsas.png', medida: ' und' },
         { nombre: 'Palas', cantidad: palasNecesarias, imagen: '../assets/img/herramientas/001-pala.png', medida: ' und' },
-        { nombre: 'Semillas', cantidad: kgSemillasNecesarias, imagen: '../assets/img/herramientas/maiz.png', medida: ' kg' },
         
     ];
 }
