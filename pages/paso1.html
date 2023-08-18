@@ -41,11 +41,12 @@
   <link rel="stylesheet" href="style.css">
   <!-- Boxicons CSS -->
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="../assets/css/menu_global.css">
+  <link rel="stylesheet" href="../assets/css/estilo_global.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/jquery-3.6.0.min.js"></script>
   <script src="../assets/js/login_auto.js"></script>
+  <script src="../assets/js/modals_paginas.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
   
   <link rel="stylesheet" href="../assets/css/sweetalert2.min.css">
@@ -237,7 +238,7 @@
         <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="home" style="z-index: 9999;"><i class='bx bxs-home' ></i></a>
       </span>
       <span style="--i:2;">
-        <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Cartilla" style="z-index: 9999;"><i class='bx bxs-book-reader'></i></a>
+        <a href="#" id="openGuiaAnalisis" data-bs-toggle="tooltip" data-bs-placement="right" title="Cartilla" style="z-index: 9999;"><i class='bx bxs-book'></i></a>
       </span>
       <span style="--i:3;">
         <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="opcion" style="z-index: 9999;"><i class='bx bxs-alarm'></i></a>
@@ -250,8 +251,15 @@
       </span>
     </div>
   </section>
+  <div id="modalContAnalisis" class="modal">
+        
+    <div class="modal-content">
+        <a href="" onclick="closed()" class="btn-danger close">&times;</a>
+        <iframe id="modalFrameAnalisis" src=""></iframe>
+    </div>
+</div>
 
-  <div class="card1 mx-3 mx-md-6 mt-8 mb-4">
+  <div class="card1 mx-3 mx-md-7 mt-8 mb-4">
 
     <!-- CARD -->
     <section class="col-12 mb-4 card opacity-9">
@@ -285,7 +293,7 @@
                         </div>
                       </div>
                       <div class="col-md-12 mt-3 text-center">
-                        <button class="btn btn-success" id="condicion" value="hectarea" onclick="calcularHerramientas()" >Calcular</button>
+                        <button class="btn btn-success" id="condicion" value="hectarea" onclick="calcularHerramientas1()" >Calcular</button>
                       </div>
                     </div>
                   </div>
