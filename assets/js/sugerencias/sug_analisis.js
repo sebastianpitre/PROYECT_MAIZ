@@ -2,6 +2,7 @@ function calcularHerramienta1() {
     const hectarea = document.getElementById("hectareas").value;
     const condicion = document.getElementById("condicion").value;
     const cotizar = document.getElementById("cotizar").value;
+    const cronograma = document.getElementById("cronograma").value;
 
     const tipo_transaccion =0;
     
@@ -11,6 +12,7 @@ function calcularHerramienta1() {
     formData.append('condicion', condicion);
     formData.append('tipo_transaccion', tipo_transaccion);
     formData.append('cotizar', cotizar);
+    formData.append('cronograma',cronograma);
 
     // Realizar una petición Fetch para enviar los datos al servidor
 

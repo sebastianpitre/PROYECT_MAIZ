@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
   if ($verificacion0){
     $verificacion=consulta($miconexion,"ALTER TABLE usuario AUTO_INCREMENT=1");
     $verificaci=consulta($miconexion,"ALTER TABLE terreno AUTO_INCREMENT=1");
+    $verificacionf=consulta($miconexion,"ALTER TABLE cronograma AUTO_INCREMENT=1");
     $fila0=$verificacion0->fetch_object(); 
     $valor=$fila0->max_id;
     $valor=$valor+1;
@@ -40,24 +41,28 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
   if ($valor>0 ) {  
     //+$row0;//$_POST[''];
     // $password=$_POST[''];SELECT * FROM terreno WHERE id_user
-    $resultado=consulta($miconexion,"INSERT INTO `usuario`( `nombre_u`)
-    values('$username')");
-   $resultado2=consulta($miconexion,"INSERT INTO `terreno`(`surcos`,`distancia`,`id_user`)
-   values(90,15,'$valor')");
-   $resultado3=consulta($miconexion,"INSERT INTO `proceso_siembra`(`precio_semilla`,`id_user_siembra`)
+  $resultado=consulta($miconexion,"INSERT INTO `usuario`( `nombre_u`)
+  values('$username')");
+  $resultado2=consulta($miconexion,"INSERT INTO `terreno`(`surcos`,`distancia`,`id_user`)
+  values(90,15,'$valor')");
+  $resultado3=consulta($miconexion,"INSERT INTO `proceso_siembra`(`precio_semilla`,`id_user_siembra`)
   values(0,'$valor')");
-if($resultado){
-        $_SESSION['username']=$username;
-        $_SESSION['id_usuario']=$valor;
-        //echo"inciciando sesion  '{$_SESSION['id_usuario']}'";
-        echo '<script language="javascript">window.location.href="../../pages/paso1.html"</script>';
-      } else {
-          echo "Error al guardar los datos: " . $miconexion->error;
-      }
+  $resultadof = consulta($miconexion, "INSERT INTO `cronograma`(`id_user_cronograma`)
+  values('$valor')");
+  
+
+  if($resultado){
+          $_SESSION['username']=$username;
+          $_SESSION['id_usuario']=$valor;
+          //echo"inciciando sesion  '{$_SESSION['id_usuario']}'";
+          echo '<script language="javascript">window.location.href = "../../pages/paso1.html"</script>';
+        } else {
+            echo "Error al guardar los datos: " . $miconexion->error;
+        }
   }
-}
-}else{
-  echo '<script language="javascript">window.location.href="../../pages/paso1.html"</script>';
-}
+      }
+      }else{
+        echo '<script language="javascript">window.location.href = "../../pages/paso1.html"</script>';
+      }
 
 ?>
