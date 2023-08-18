@@ -1,17 +1,15 @@
 function closed() {
-    $("#closeModal").click(function() {
     $("#modalContAnalisis").fadeOut();
     $("#modalFrameAnalisis").attr("src", "");
-    $("#closeModal2");
     $("#modalContPreparacion").fadeOut();
     $("#modalFramePreparacion").attr("src", "");
-})};
+};
 
 // separador de modal
 $(document).ready(function() {
     $("#openGuiaAnalisis").click(function() {
     $("#modalContAnalisis").fadeIn();
-    $("#modalFrameAnalisis").attr("src", "../pages/pruebas/about-us.html#modal");
+    $("#modalFrameAnalisis").attr("src", "../instructivos/cartilla.html#analisis");
 });
 
 // separador de modal
