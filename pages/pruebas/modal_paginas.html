@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modal con Carga de Página</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        /* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    animation: cubic-bezier(0.215, 0.610, 0.355, 1);
+
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    animation: cubic-bezier(0.215, 0.610, 0.355, 1);
+
+}
+
+/* Estilos para el iframe */
+iframe {
+    width: 100%;
+    height: 86vh;
+}
+
+    </style>
+</head>
+<body>
+    <a href="#" id="openModal">Abrir Modal</a>
+    <a href="#" id="openModal2">Abrir Modal</a>
+    
+    <div id="modalContainer" class="modal">
+        
+        <div class="modal-content">
+            <a href="" onclick="closed()" class="btn-danger close">&times;</a>
+            <iframe id="modalFrame" src=""></iframe>
+        </div>
+    </div>
+    <div id="modalContainer2" class="modal">
+        <div class="modal-content">
+            <a href="" onclick="closed()" class="btn-danger close">&times;</a>
+            <iframe id="modalFrame2" src=""></iframe>
+        </div>
+    </div>
+</body>
+<script>
+    function closed() {
+        $("#closeModal").click(function() {
+        $("#modalContainer").fadeOut();
+        $("#modalFrame").attr("src", "");
+        $("#closeModal2");
+        $("#modalContainer2").fadeOut();
+        $("#modalFrame2").attr("src", "");
+    })};
+
+    // separador de modal
+    $(document).ready(function() {
+        $("#openModal").click(function() {
+        $("#modalContainer").fadeIn();
+        $("#modalFrame").attr("src", "about-us.html#modal");
+    });
+    
+    // separador de modal
+        $("#openModal2").click(function() {
+        $("#modalContainer2").fadeIn();
+        $("#modalFrame2").attr("src", "about2.html#modal2");
+    });
+});
+
+</script>
+</html>
