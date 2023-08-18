@@ -319,7 +319,7 @@
                       <table class="table align-items-center mb-0" onchange="session_start()">
                         <thead>
                           <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-5">Proceso</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-5">Proceso (%)</th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Subtotal</th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Editar/Modificar</th>
                           </tr>
@@ -327,12 +327,10 @@
                         <tbody> 
                           <tr>
                             <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <i class="fas fa-arrow-right ms-1"></i>
-                                </div>
+                              <div class="d-flex px-2 py-0">
+                                <span class="badge me-3" style="background-color: rgb(0 183 105)" id="v_analisis"> </span>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Análisis del Terreno</h6>
+                                  <h6 class="mb-0 text-sm">Análisis del terreno</h6>
                                 </div>
                               </div>
                             </td>
@@ -350,12 +348,10 @@
 
                           <tr>
                             <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <i class="fas fa-arrow-right ms-1"></i>
-                                </div>
+                              <div class="d-flex px-2 py-0">
+                                <span class="badge me-3" style="background-color: rgb(131, 166, 3)" id="v_preparacion"> </span>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Preparación del Terreno</h6>
+                                  <h6 class="mb-0 text-sm">Preparación del terreno</h6>
                                 </div>
                               </div>
                             </td>
@@ -374,12 +370,10 @@
 
                           <tr>
                             <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <i class="fas fa-arrow-right ms-1"></i>
-                                </div>
+                              <div class="d-flex px-2 py-0">
+                                <span class="badge me-3" style="background-color: rgb(255 150 0)" id="v_siembra"> </span>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Proceso de siembra</h6>
+                                  <h6 class="mb-0 text-sm">Proceso de siembra</h6>
                                 </div>
                               </div>
                             </td>
@@ -397,12 +391,10 @@
 
                                   <tr>
                             <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <i class="fas fa-arrow-right ms-1"></i>
-                                </div>
+                              <div class="d-flex px-2 py-0">
+                                <span class="badge me-3" style="background-color: rgb(70, 89, 2)" id="v_fertilizacion"> </span>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Proceso de Fertilización</h6>
+                                  <h6 class="mb-0 text-sm">Fertilización</h6>
                                 </div>
                               </div>
                             </td>
@@ -420,12 +412,10 @@
 
                           <tr>
                             <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <i class="fas fa-arrow-right ms-1"></i>
-                                </div>
+                              <div class="d-flex px-2 py-0">
+                                <span class="badge me-3" style="background-color: rgb(191, 73, 4)" id="v_cosecha"> </span>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Cosecha</h6>
+                                  <h6 class="mb-0 text-sm">Cosecha</h6>
                                 </div>
                               </div>
                             </td>
@@ -443,12 +433,10 @@
 
                           <tr>
                             <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <i class="fas fa-arrow-right ms-1"></i>
-                                </div>
+                              <div class="d-flex px-2 py-0">
+                                <span class="badge me-3" style="background-color: rgb(140, 28, 3)"  id="v_pos_cosecha"> </span>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Pos - Cosecha</h6>
+                                  <h6 class="mb-0 text-sm">Pos-Cosecha</h6>
                                 </div>
                               </div>
                             </td>
@@ -466,12 +454,10 @@
 
                           <tr>
                             <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <i class="fas fa-arrow-right ms-1"></i>
-                                </div>
+                              <div class="d-flex px-2 py-0">
+                                <span class="badge  me-3" style="background-color: rgb(216 245 0)" id="v_comercializar"> </span>
                                 <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Comercializacion</h6>
+                                  <h6 class="mb-0 text-sm">Comercializacion</h6>
                                 </div>
                               </div>
                             </td>
@@ -507,7 +493,7 @@
                   </div>
               </div>
               <!-- resultados en porcentajes -->
-              <div class="card">
+              <!-- <div class="card">
                 <div class="table-responsive">
                   <div class="card-header pb-0 p-3">
                     <div class="d-flex align-items-center">
@@ -602,12 +588,405 @@
                     </div>
                   </div>
                 </div>
+              </div> -->
+              <div class="container text-center">
+                <div class="row align-items-start">
+                  <a type="button" id="grafica_primerboton" onclick="ocultarmostarelementos('verelemento1')"
+                    value="mostrar_grafica_primerboton" class="col">
+                    <div id="grafica_botones">
+                      <div class="d-flex align-items-center">
+                        <h6 class="mb-0">Gráfica de botón BARRAS</h6>
+                      </div>
+                      <div class="col-7" id="grafica_botones" style="width: 100%; background-color: bisque;">
+                        <canvas id="grafica_boton" class="grafica_botones">
+                        </canvas>
+                      </div>
+                    </div>
+                  </a>
+                  <a type="button" id="grafica_segundoboton" onclick="ocultarmostarelementos('verelemento2')"
+                    value="mostrar_grafica_segundoboton" class="col">
+                    <div id="grafica_botones2">
+                      <div class="d-flex align-items-center">
+                        <h6 class="mb-0">Gráfica de botón PASTEL</h6>
+                      </div>
+                      <div class="col-7" id="grafica_botones2" style="width: 100%; background-color: bisque;">
+                        <canvas id="grafica2_boton" class="grafica_botones2"></canvas>
+                      </div>
+                    </div>
+                  </a>
+                  <a type="button" id="grafica_segundoboton" onclick="ocultarmostarelementos('verelemento3')"
+                    value="mostrar_grafica_segundoboton" class="col">
+                    <div id="grafica_botones2">
+                      <div class="d-flex align-items-center">
+                        <h6 class="mb-0">Gráfica de botón PASTEL</h6>
+                      </div>
+                      <div class="col-7" id="grafica_botones2" style="width: 100%; background-color: bisque;">
+                        <img src="../assets/img/tabla.png"alt="main_logo" style="width:80%">
+                      </div>
+                    </div>
+                  </a>
+                  
+                </div>
               </div>
               <button onclick="openModal()" class="btn bg-gradient-success">Ver resultados</button>
 
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class=" mb-2 card opacity-9">
+      <div class="container-fluid">
+       <div class="container my-4">
+        <div class="row">
+          <div id="elemento1" class="col-7" style="display: none; width: 100%; background-color: bisque;">
+            <canvas id="grafica_grande"></canvas>
+          </div>
+          <div id="elemento2" class="col-7" style="display: none; width: 100%; background-color: bisque;">
+            <canvas id="grafica2_grande"></canvas>
+          </div>
+          <div id="elemento3" class="col-7" style="display: none; width: 100%; ">
+            <table id="table table-responsive">
+              <tr class="bg-success text-white">
+                <td id="td" rowspan="3">Actividades</td>
+                <td id="td" rowspan="3">Fecha Inicio</td>
+                <td id="td" rowspan="3">Fecha Fin</td>
+                <td id="td" colspan="24">MESES</td>
+              </tr>
+              <tr class="bg-success text-white">
+                <td id="td" colspan="4">Mes 1</td>
+                <td id="td" colspan="4">Mes 2</td>
+                <td id="td" colspan="4">Mes 3</td>
+                <td id="td" colspan="4">Mes 4</td>
+                <td id="td" colspan="4">Mes 5</td>
+                <td id="td" colspan="4">Mes 6</td>
+              </tr>
+              <tr class="bg-success text-white">
+                <td id="td">1</td>
+                <td id="td">2</td>
+                <td id="td">3</td>
+                <td id="td">4</td>
+            
+                <td id="td">1</td>
+                <td id="td">2</td>
+                <td id="td">3</td>
+                <td id="td">4</td>
+            
+                <td id="td">1</td>
+                <td id="td">2</td>
+                <td id="td">3</td>
+                <td id="td">4</td>
+
+                <td id="td">1</td>
+                <td id="td">2</td>
+                <td id="td">3</td>
+                <td id="td">4</td>
+            
+                <td id="td">1</td>
+                <td id="td">2</td>
+                <td id="td">3</td>
+                <td id="td">4</td>
+            
+                <td id="td">1</td>
+                <td id="td">2</td>
+                <td id="td">3</td>
+                <td id="td">4</td>
+              </tr>
+            
+              <tr>
+                <th id="th" rowspan="2">Preparación del terreno</th>
+                <td id="td" rowspan="2">Mes 1</td>
+                <td id="td" rowspan="2">Mes 1</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+            
+              <tr>
+                <th id="th" rowspan="2">Instalar Riego</th>
+                <td id="td" rowspan="2">Mes 1</td>
+                <td id="td" rowspan="2">Mes 2</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+            
+              <tr>
+                <th id="th" rowspan="2">Proceso de siembra</th>
+                <td id="td" rowspan="2">Mes 1</td>
+                <td id="td" rowspan="2">Mes 1</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+              <tr>
+                <th id="th" rowspan="2">Realizar Proceso de Fertilización</th>
+                <td id="td" rowspan="2">Mes 2</td>
+                <td id="td" rowspan="2">Mes 3</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+              <tr>
+                <th id="th" rowspan="2">Cuidado y revisión del proceso vegetativo</th>
+                <td id="td" rowspan="2">Mes 3</td>
+                <td id="td" rowspan="2">Mes 3</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+              <tr>
+                <th id="th" rowspan="2">Aplicación de pesticida</th>
+                <td id="td" rowspan="2">Mes 2</td>
+                <td id="td" rowspan="2">Mes 2</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+              <tr>
+                <th id="th" rowspan="2">Revisión en etapa de maduración</th>
+                <td id="td" rowspan="2">Mes 3</td>
+                <td id="td" rowspan="2">Mes 3</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+              <tr>
+                <th id="th" rowspan="2">Preparar cosecha</th>
+                <td id="td" rowspan="2">Mes 3</td>
+                <td id="td" rowspan="2">Mes 3</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+            
+            
+            
+            
+            
+            
+            
+              <tr>
+                <th id="th" rowspan="2">Preparar Pos-Cosecha</th>
+                <td id="td" rowspan="2">Mes 3</td>
+                <td id="td" rowspan="2">Mes 3</td>
+              </tr>
+              <tr>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+                <td id="td"></td>
+              </tr>
+            
+            </table>
+          </div>
+        </div>
+       </div>
       </div>
     </section>
 
