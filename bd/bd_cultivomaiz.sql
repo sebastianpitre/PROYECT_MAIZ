@@ -33,7 +33,6 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 
-insert  into `usuario`(`id_usuario`,`nombre_u`,`pss_u`) values (1,'user1',NULL),(2,'user2',NULL);
 
 UNLOCK TABLES;
 
@@ -60,7 +59,6 @@ CREATE TABLE `analisis_terreno` (
 
 LOCK TABLES `analisis_terreno` WRITE;
 
-insert  into `analisis_terreno`(`id`,`nombre_producto`,`tipo_inventario`,`cantidad`,`precio_unidad`,`tiempo_alq`,`subtotal_alquiler`,`id_user_analisis`) values (1,'Tractor','alquilar','1','100000','2',NULL,2),(2,'Mangueras','comprar','12','20000',NULL,NULL,2);
 
 UNLOCK TABLES;
 
@@ -83,8 +81,6 @@ CREATE TABLE `terreno` (
 /*Data for the table `terreno` */
 
 LOCK TABLES `terreno` WRITE;
-
-insert  into `terreno`(`id`,`area`,`surcos`,`distancia`,`id_user`) values (1,'10000','90','25',1),(2,'1200000','90','25',2);
 
 UNLOCK TABLES;
 
@@ -231,6 +227,24 @@ CREATE TABLE `comercializar` (
 
 LOCK TABLES `comercializar` WRITE;
 UNLOCK TABLES;
+
+/*Table structure for table `cronograma` */
+
+DROP TABLE IF EXISTS `cronograma`;
+
+CREATE TABLE `cronograma`(  
+  `id_cronograma` INT NOT NULL AUTO_INCREMENT,
+  `fecha_inicial` DATETIME,
+  PRIMARY KEY (`id_cronograma`),
+  `id_user_cronograma` int(255) DEFAULT NULL,
+  KEY `fk_usuario` (`id_user_cronograma`),
+  CONSTRAINT `fk_usuario8` FOREIGN KEY (`id_user_cronograma`) REFERENCES `usuario` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+
+/*Data for the table `cronograma` */
+
+LOCK TABLES `cronograma` WRITE;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

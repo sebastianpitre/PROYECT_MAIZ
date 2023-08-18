@@ -60,101 +60,92 @@ $(document).ready(function() {
     }
     
 
+function actualizardatos() {
+    $.ajax({
+        url: '../assets/php/obtener_datos.php',
+        dataType: 'json',
+        success: function(data) {
+            $('#name_user').html(data.valor1);
+            $('#area').html(data.valor2);
+            $('#dist_semilla').html(data.valor4);
+            $('#dist_surcos').html(data.valor3);
+            $('#cant_plantas').html(data.valor5);
+            $('#cant_obtenida').html(data.valor6);
+            $('#cant_sembrar').html(data.valor7);
+            $('#precio_sembrar').html(data.valor8);
+            $('#respuesta_valor_maiz').html(data.valor9);
+            $('#nombre_producto').html(data.valor10);
 
-    function actualizardatos() {
-        $.ajax({
-            url: '../assets/php/obtener_datos.php',
-            dataType: 'json',
-            success: function(data) {
-              $('#name_user').html(data.valor1);
-              $('#area').html(data.valor2);
-              $('#dist_semilla').html(data.valor4);
-              $('#dist_surcos').html(data.valor3);
-              $('#cant_plantas').html(data.valor5);
-              $('#cant_obtenida').html(data.valor6);
-              $('#cant_sembrar').html(data.valor7);
-              $('#precio_sembrar').html(data.valor8);
-              $('#respuesta_valor_maiz').html(data.valor9);
-              $('#nombre_producto').html(data.valor10);
-
-
-            }
-        });
-    }
+        }
+    });
+}
 
 
-    // resultados de cada proceso
-    function resultados_procesos() {
-      
-        $.ajax({
-            url: '../assets/php/obtener_resultado.php',
-            dataType: 'json',
-            success: function(data) {
-                
-                var tamaño1 = data.v_analisis ;
-                var tamaño2 = data.v_preparacion ;
-                var tamaño3 = data.v_siembra ;
-                var tamaño4 = data.v_fertilizacion;
-                var tamaño5 = data.v_cosecha;
-                var tamaño6 = data.v_pos_cosecha;
-                var tamaño7 = data.v_comercializar;
-                // Obtener una referencia al elemento canvas del DOM
-                grafico(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7);
-                grafico_grande(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7);
-          
-
-
-                var analisis = data.v_analisis+"%";
-                var preparacion = data.v_preparacion+"%";
-                var siembra = data.v_siembra+"%";
-                var fertilizacion = data.v_fertilizacion+"%";
-                var cosecha = data.v_cosecha+"%";
-                var pos_cosecha = data.v_pos_cosecha+"%";
-                var comercializar = data.v_comercializar+"%";
-                var inversion = data.valor_total_proceso;
-                var ganancia = data.ganancias;
-
-                grafico2_boton(inversion,ganancia);
-                grafica2_grande(inversion,ganancia);
-
-
-              $('#valor_analisis').html(data.valor_analisis);
-              $('#valor_preparacion').html(data.valor_preparacion);
-              $('#valor_siembra').html(data.valor_siembra);
-              $('#valor_fertilizacion').html(data.valor_fertilizacion);
-              $('#valor_cosecha').html(data.valor_cosecha);
-              $('#valor_pos_cosecha').html(data.valor_pos_cosecha);
-              $('#valor_comercializar').html(data.valor_comercializar);
-              $('#valor_total_proceso').html(data.valor_total_proceso);
-             
-              $('#v_analisis').html(analisis);
-              $('#v_preparacion').html(preparacion);
-              $('#v_siembra').html(siembra);
-              $('#v_fertilizacion').html(fertilizacion);
-              $('#v_cosecha').html(cosecha);
-              $('#v_pos_cosecha').html(pos_cosecha);
-              $('#v_comercializar').html(comercializar);
-             
-              $('#bar_analisis').height(tamaño1);
-              $('#bar_preparacion').height(tamaño2);
-              $('#bar_siembra').height(tamaño3);
-              $('#bar_fertilizacion').height(tamaño4);
-              $('#bar_cosecha').height(tamaño5);
-              $('#bar_pos_cosecha').height(tamaño6);
-              $('#bar_comercializar').height(tamaño7);
-            console.log(ganancias);
-                   
-
-
-
-
-
-            }
-        });
-    }
+// resultados de cada proceso
+function resultados_procesos() {
     
+    $.ajax({
+        url: '../assets/php/obtener_resultado.php',
+        dataType: 'json',
+        success: function(data) {
+            
+            var tamaño1 = data.v_analisis ;
+            var tamaño2 = data.v_preparacion ;
+            var tamaño3 = data.v_siembra ;
+            var tamaño4 = data.v_fertilizacion;
+            var tamaño5 = data.v_cosecha;
+            var tamaño6 = data.v_pos_cosecha;
+            var tamaño7 = data.v_comercializar;
+            // Obtener una referencia al elemento canvas del DOM
+            grafico(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7);
+            grafico_grande(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7);
+        
 
 
+            var analisis = data.v_analisis+"%";
+            var preparacion = data.v_preparacion+"%";
+            var siembra = data.v_siembra+"%";
+            var fertilizacion = data.v_fertilizacion+"%";
+            var cosecha = data.v_cosecha+"%";
+            var pos_cosecha = data.v_pos_cosecha+"%";
+            var comercializar = data.v_comercializar+"%";
+            var inversion = data.valor_total_proceso;
+            var ganancia = data.ganancias;
+
+            grafico2_boton(inversion,ganancia);
+            grafica2_grande(inversion,ganancia);
+
+
+            $('#valor_analisis').html(data.valor_analisis);
+            $('#valor_preparacion').html(data.valor_preparacion);
+            $('#valor_siembra').html(data.valor_siembra);
+            $('#valor_fertilizacion').html(data.valor_fertilizacion);
+            $('#valor_cosecha').html(data.valor_cosecha);
+            $('#valor_pos_cosecha').html(data.valor_pos_cosecha);
+            $('#valor_comercializar').html(data.valor_comercializar);
+            $('#valor_total_proceso').html(data.valor_total_proceso);
+            
+            $('#v_analisis').html(analisis);
+            $('#v_preparacion').html(preparacion);
+            $('#v_siembra').html(siembra);
+            $('#v_fertilizacion').html(fertilizacion);
+            $('#v_cosecha').html(cosecha);
+            $('#v_pos_cosecha').html(pos_cosecha);
+            $('#v_comercializar').html(comercializar);
+            
+            $('#bar_analisis').height(tamaño1);
+            $('#bar_preparacion').height(tamaño2);
+            $('#bar_siembra').height(tamaño3);
+            $('#bar_fertilizacion').height(tamaño4);
+            $('#bar_cosecha').height(tamaño5);
+            $('#bar_pos_cosecha').height(tamaño6);
+            $('#bar_comercializar').height(tamaño7);
+        console.log(ganancias);
+
+        }
+    });
+}
+    
     // Llamar a la función inicialmente para cargar la tabla con los datos actuales
     actualizarTabla();
     actualizardatos();
@@ -174,12 +165,12 @@ function grafico(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7)
 
     const $grafica_boton = document.querySelector("#grafica_boton");
     // Las etiquetas son las porciones de la gráfica
-    const etiquetas = ["Análisis del terreno", "Preparación del terreno", "Proceso de siembra", "Fertilización","Cosecha","Pos-Cosecha","Comercializacion"]
+    const etiquetas = ["Aná..", "Prep..", "siem..", "Fert..","Cos..","Pos..","Com.."]
     // Podemos tener varios conjuntos de datos. Comencemos con uno
     const datosIngresos = {
         data: [tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
         // Ahora debería haber tantos background colors como datos, es decir, para este ejemplo, 4
-        labels:"Representación de Costos de Producción",
+        label:"Costos de Pro..",
         backgroundColor: [
             'rgb(0 183 105)',//Verde marino
             'rgb(131, 166, 3)',//Verde lima
@@ -219,15 +210,24 @@ function grafico(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7)
         borderWidth: 2,// Ancho del borde
         
     };
+    const options = {
+        responsive: true,
+        AspectRatio: false,
+        title: {
+          display: true,
+          text: 'Ventas por mes'
+        }
+    };
     new Chart($grafica_boton, {
         type: 'bar',// Tipo de gráfica. Puede ser dougnhut o pie
         data: {
-            //labels: etiquetas,
+            labels: etiquetas,
             datasets: [
                 datosIngresos,
                 // Aquí más datos...
             ]
         },
+        //options:options,
 
     });
     
@@ -285,6 +285,14 @@ function grafico_grande(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,ta
         borderWidth: 2,// Ancho del borde
         
     };
+    const options = {
+        responsive: true,
+        AspectRatio: false,
+        title: {
+          display: true,
+          text: 'Ventas por mes'
+        }
+    };
     new Chart($grafica_grande, {
         type: 'bar',// Tipo de gráfica. Puede ser dougnhut o pie
         data: {
@@ -294,11 +302,12 @@ function grafico_grande(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,ta
                 // Aquí más datos...
             ]
         },
+        options:options,
 
     });
     
-
 }
+
 // gráfico de barras GRANDE
 function grafico2_boton(inversion,ganancia){
 
@@ -333,19 +342,27 @@ function grafico2_boton(inversion,ganancia){
         borderWidth: 2,// Ancho del borde
         
     };
+    const options = {
+        responsive: true,
+        AspectRatio: false,
+        title: {
+          display: true,
+          text: 'Ventas por mes'
+        }
+    };
     new Chart($grafica2_boton, {
         type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie
         data: {
-            //labels: etiquetas,
+            labels: etiquetas,
             datasets: [
                 datosIngresos,
                 // Aquí más datos...
             ]
         },
+        options: options,
 
     });
     
-
 }
 
 // grafico pastel BOTON
@@ -382,6 +399,14 @@ function grafica2_grande(inversion,ganancia){
         borderWidth: 2,// Ancho del borde
         
     };
+    const options = {
+        responsive: true,
+        AspectRatio: false,
+        title: {
+          display: true,
+          text: 'Ventas por mes'
+        }
+    };
     new Chart($grafica2_grande, {
         type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie
         data: {
@@ -391,10 +416,10 @@ function grafica2_grande(inversion,ganancia){
                 // Aquí más datos...
             ]
         },
+        options:options,
 
     });
     
-
 }
 // GRafico pastel BOTON
 
@@ -404,11 +429,11 @@ function grafica2_grande(inversion,ganancia){
 
 
  // Obtener el botón y el modal
- function openModal() {
+function openModal() {
     var modal = document.getElementById("modal");
     
     modal.style.display = "block"; // muestra el modal
-    }
+}
 
 function closeModal() {
   var modal = document.getElementById("modal");
@@ -417,21 +442,33 @@ function closeModal() {
 }
 
 
+function ocultarmostarelementos(validacion) {
 
-function mostrar_ocultar() {
-    document.getElementById("grafica_grande").style.display = document.getElementById("grafica_primerboton").classList.contains("active") ? "block" : "none";
-    document.getElementById("grafica2_grande").style.display = document.getElementById("grafica_segundoboton").classList.contains("active") ? "block" : "none";
+    var elemento1=document.getElementById("elemento1");
+    var elemento2=document.getElementById("elemento2");
+    var elemento3=document.getElementById("elemento3");
+    if(validacion=="verelemento1"){
+        elemento1.style.display="block";
+        
+        elemento2.style.display="none";
+        
+        elemento3.style.display="none";
+ 
+    }
+    else if(validacion=="verelemento2")
+    {
+        elemento1.style.display="none";
+        
+        elemento2.style.display="block";
+        
+        elemento3.style.display="none";
+    }else if(validacion==="verelemento3")
+    {
+        elemento1.style.display="none";
+        
+        elemento2.style.display="none";
+        
+        elemento3.style.display="block";
+    }
+  
 }
-
-document.getElementById("grafica_primerboton").addEventListener("click", function() {
-    this.classList.add("active");
-    document.getElementById("grafica_segundoboton").classList.remove("active");
-    mostrar_ocultar();
-});
-document.getElementById("grafica_segundoboton").addEventListener("click", function() {
-    this.classList.add("active");
-    document.getElementById("grafica_primerboton").classList.remove("active");
-    mostrar_ocultar();
-});
-
-mostrar_ocultar();       

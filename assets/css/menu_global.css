@@ -86,6 +86,7 @@ section.open .global-content span{
   width: 100%;
   height: 100%;
   overflow: auto;
+  
   background-color: rgb(0 0 0 / 88%);
 }
 
@@ -127,4 +128,15 @@ height: 500px;
 }
 .grafica_botones2:hover{
   background-color: rgb(0 183 105);
+}
+
+#table {
+  border-collapse: collapse;
+}
+
+#th,
+#td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
 }

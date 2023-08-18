@@ -8,12 +8,15 @@ session_start();
   // Obtener el dato enviado desde JavaScript
   $hectarea = $_POST['hectareas'];
   $condicion = $_POST['condicion'];
+  $cronograma = $_POST['cronograma'];
  
   /* Guarda al seleccionar el Botón comprar 909 =hectareas*/
   if( $condicion==="hectarea"){
     $cotizar = $_POST['cotizar'];
-    $hectarea=$_POST['hectareas'];   
+    $hectarea=$_POST['hectareas'];     
+    $cronograma = $_POST['cronograma'];
     $resultado=consulta($miconexion,"UPDATE `terreno` SET `area`='$hectarea',`cotizar_lab`='$cotizar' WHERE `id_user`LIKE '{$_SESSION['id_usuario']}'");
+    $resultado_fecha=consulta($miconexion,"UPDATE `cronograma` SET `fecha_inicial`='$cronograma' WHERE `id_user_cronograma`LIKE '{$_SESSION['id_usuario']}'");
  
   }
 
