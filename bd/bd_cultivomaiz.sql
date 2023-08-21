@@ -47,8 +47,6 @@ CREATE TABLE `analisis_terreno` (
   `cantidad` varchar(255) DEFAULT NULL,
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
-  
-  `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user_analisis` int(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_usuario` (`id_user_analisis`),
@@ -95,8 +93,6 @@ CREATE TABLE `preparacion_terreno` (
   `cantidad` varchar(255) DEFAULT NULL,
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
-  
-  `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user_preparacion` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_terreno`),
   KEY `fk_usuario` (`id_user_preparacion`),
@@ -142,8 +138,6 @@ CREATE TABLE `fertilizacion` (
   `cantidad` varchar(255) DEFAULT NULL,
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
-  
-  `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user_fertilizacion` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_fertilizacion`),
   KEY `fk_usuario` (`id_user_fertilizacion`),
@@ -167,8 +161,6 @@ CREATE TABLE `cosecha` (
   `cantidad` varchar(255) DEFAULT NULL,
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
-  
-  `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user_cosecha` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_cosecha`),
   KEY `fk_usuario` (`id_user_cosecha`),
@@ -191,8 +183,6 @@ CREATE TABLE `pos_cosecha` (
   `cantidad` varchar(255) DEFAULT NULL,
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
-  
-  `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user_pos_cosecha` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_pos_cosecha`),
   KEY `fk_usuario` (`id_user_pos_cosecha`),
@@ -215,8 +205,6 @@ CREATE TABLE `comercializar` (
   `cantidad` varchar(255) DEFAULT NULL,
   `precio_unidad` varchar(255) DEFAULT NULL,
   `tiempo_alq` varchar(255) DEFAULT NULL,
-  
-  `subtotal_alquiler` varchar(255) DEFAULT NULL,
   `id_user_comercializar` int(255) DEFAULT NULL,
   PRIMARY KEY (`id_comercializar`),
   KEY `fk_usuario` (`id_user_comercializar`),
