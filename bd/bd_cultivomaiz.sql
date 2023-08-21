@@ -234,7 +234,7 @@ DROP TABLE IF EXISTS `cronograma`;
 
 CREATE TABLE `cronograma`(  
   `id_cronograma` INT NOT NULL AUTO_INCREMENT,
-  `fecha_inicial` DATETIME,
+  `fecha_inicial` DATE,
   PRIMARY KEY (`id_cronograma`),
   `id_user_cronograma` int(255) DEFAULT NULL,
   KEY `fk_usuario` (`id_user_cronograma`),

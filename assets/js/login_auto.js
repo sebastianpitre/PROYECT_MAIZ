@@ -66,15 +66,34 @@ function actualizardatos() {
         dataType: 'json',
         success: function(data) {
             $('#name_user').html(data.valor1);
-            $('#area').html(data.valor2);
-            $('#dist_semilla').html(data.valor4);
-            $('#dist_surcos').html(data.valor3);
-            $('#cant_plantas').html(data.valor5);
-            $('#cant_obtenida').html(data.valor6);
-            $('#cant_sembrar').html(data.valor7);
-            $('#precio_sembrar').html(data.valor8);
-            $('#respuesta_valor_maiz').html(data.valor9);
-            $('#nombre_producto').html(data.valor10);
+            $('#fecha_inicial').html(data.valor2);
+            let fechaSumada = data.valor2 ;
+            let fechaSumada1= new Date(fechaSumada);
+            let mesSumado = fechaSumada1.getMonth() ;
+            var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    
+            var numero2=0;
+            var numero=0;
+        
+            for (let i = 0; i < 6; i++) {
+            
+                if(numero>10){
+                    
+                    let meses1=meses[numero2];
+                    console.log(meses1);
+                    $('#mes'+i).html(meses1);
+                    var  numero2=numero2+1;
+                
+                }else{
+                        numero=parseInt(mesSumado)+i;
+                    let meses1=meses[numero];
+                    console.log(meses1);
+                    $('#mes'+i).html(meses1);
+                }
+            }
+            
+
+    
 
         }
     });
@@ -469,6 +488,110 @@ function ocultarmostarelementos(validacion) {
         elemento2.style.display="none";
         
         elemento3.style.display="block";
+        colorRow();
     }
   
+}
+
+function colorRow() {
+    // 
+ 
+      var table = document.getElementById("table1");
+      var rows = table.getElementsByTagName("tr");
+      selectedRow = rows[2];
+      var cells = selectedRow.getElementsByTagName("td");
+      //colocamos los numeros de la semanaen la fila 0 iniciando desde la columna 0
+    /* for(var i=0;i<24;i++){
+      cells[i].innerHTML= numeroSemana+i;
+     }*/
+        //dede aqui simplemente seleccionamos que fila se va a pintar y cuantas celldas se van a seleccionar
+        // number se encarga  de seleccionar las filas
+        var s1=0; //inicia desde que semana inicia
+        var s2=6; // finaliza  columnas de las tabla
+        //selecciona las fila que se va a pintar
+        var number = 1;
+        //cellscolor  selecciona  cuantas celldas se pintaran
+      var cellsToColor = s2;
+    
+      for (var j =3; j < 12; j++) {
+          
+          //reseteamos el color hasta el valor de todas las celldas
+          /*for (var i = s1; i < s2; i++) {
+            var number = j;
+          selectedRow = rows[number ];
+          var cells = selectedRow.getElementsByTagName("td");
+            if (i==1) {
+              cells[i].style.backgroundColor = "white"; // Cambia el color de las celdas a amarillo
+            
+            }
+            cells[i].style.backgroundColor = "white"; // Cambia el color de las celdas a amarillo
+           
+          }*/
+          // cargamos el color de  las seldas seleccionadas
+          for (var i1 = 0; i1 < 27; i1++) {
+            var number = j;
+          selectedRow = rows[j];
+          var cells = selectedRow.getElementsByTagName("td");
+          
+            if (i1>=0 && i1<=3 && j==3) {
+              cells[i1].style.backgroundColor = "rgb(0 183 105)"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="1. Desmalezado 2. Arado  3. Nivelación   Fertilización y enmendamiento del suelo   5. Siembra";
+              console.log("aqui"+i1);
+            }
+            else if (i1>=5 && i1<=6 && j==4) {
+              cells[i1].style.backgroundColor = "rgb(131, 166, 3)"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            else if (i1>=3 && i1<=6 && j==5) {
+              cells[i1].style.backgroundColor = "rgb(255 150 0)"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            else if (i1>=7 && i1<=15 && j==6) {
+              cells[i1].style.backgroundColor = "rgb(70, 89, 2)"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            else if (i1>=9 && i1<=10 && j==7) {
+              cells[i1].style.backgroundColor = "rgb(191, 73, 4)"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            else if (i1>=5 && i1<=6 && j==8) {
+              cells[i1].style.backgroundColor = "rgb(140, 28, 3)"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            else if (i1>=3 && i1<=6 && j==9) {
+              cells[i1].style.backgroundColor = "blue"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            else if (i1>=12 && i1<=16 && j==10) {
+              cells[i1].style.backgroundColor = "red"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            else if (i1>=20 && i1<=24 && j==11) {
+              cells[i1].style.backgroundColor = "yellow"; // Cambia el color de las celdas a amarillo        console.log(i); 
+              cells[i1].classList="mensaje";
+              cells[i1].title="holaaaaaaaaaaaaaaaa";
+              console.log("else"+i1);
+            }
+            
+            
+        console.log("ninguno"+i1);
+           // cells[i1].style.backgroundColor = "yellow"; // Cambia el color de las celdas a amarillo        console.log(i); 
+    
+         }
+    }
 }
