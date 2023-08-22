@@ -239,407 +239,307 @@
     </div>
   </section>
 
-  <div class="card1 card-body  mx-3 mx-md-8 mt-8 mb-4">
+  <div class="card1 card-body  mx-3 mx-md-6 mt-7">
 
-    <!-- CARD -->
-    <section>
-      <div class="row mb-2 card opacity-9">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-8 mx-auto border-radius-lg">
-              <div class="row mb-3">
-                <h4 class="text-center mt-3 mb-3 animate-text" id="animate-text1">RESULTADO FINAL</h4>
-                  <!-- Estilos de animacion de texto -->
-                  <style>
+    <section class="row">
+      <div class="row col-md-12 ">
 
-                    .animate-text {
-                    letter-spacing: 0.075rem;
-                    }
+        <!-- CARD NUMERO 1 -->
+        <div class="col-lg-9 me-4 mb-4 p-4 card opacity-9">
+          <div class="row mb-3">
+            <h4 class="text-center mt-3 mb-3 animate-text" id="animate-text1">RESULTADO FINAL</h4>
+              <!-- Estilos de animacion de texto -->
+              <style>
 
-                    /*Para Planear el cursor del teclado usamos la siguiente pseudoclase con una animación que pueden ver en la parte final del código CSS*/
-                    .animate-text::after {
-                    content: "|";
-                    font-size: 1.6rem;
-                    font-family: "Inconsolata", monospace;
-                    animation-name: parpadeo;
-                    animation-duration: 1s;
-                    animation-timing-function: linear;
-                    animation-iteration-count: infinite;
-                    }
-                    .zoom {
-                    animation: zoom 8s 0s;
-                    }
+                .animate-text {
+                letter-spacing: 0.075rem;
+                }
 
-                    /*Esta animación imita el parpadeo del cursor del teclado*/
-                    @keyframes parpadeo {
-                    0% {
-                        opacity: 1;
-                    }
-                    20% {
-                        opacity: 1;
-                    }
-                    25% {
-                        opacity: 0;
-                    }
-                    90% {
-                        opacity: 0;
-                    }
-                    100% {
-                        opacity: 1;
-                    }
-                    }
+                /*Para Planear el cursor del teclado usamos la siguiente pseudoclase con una animación que pueden ver en la parte final del código CSS*/
+                .animate-text::after {
+                content: "|";
+                font-size: 1.6rem;
+                font-family: "Inconsolata", monospace;
+                animation-name: parpadeo;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                }
+                .zoom {
+                animation: zoom 8s 0s;
+                }
 
-                  </style>
-                  <!-- Escript de animacion de texto -->
-                  <script>
-                    //Primero capturamos el elemento del DOM con el id que definimos en el html
-                    const text1 = document.getElementById("animate-text1");
-                    let str = text1.innerHTML;
-                    text1.innerHTML = "";
+                /*Esta animación imita el parpadeo del cursor del teclado*/
+                @keyframes parpadeo {
+                0% {
+                    opacity: 1;
+                }
+                20% {
+                    opacity: 1;
+                }
+                25% {
+                    opacity: 0;
+                }
+                90% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+                }
 
-                    //Declaramos una varible en la que asignaremos un valor para que sea el tiempo en ms que durará la función setTimeout
-                    const speed = 25;
-                    let i = 0;
+              </style>
+              <!-- Escript de animacion de texto -->
+              <script>
+                //Primero capturamos el elemento del DOM con el id que definimos en el html
+                const text1 = document.getElementById("animate-text1");
+                let str = text1.innerHTML;
+                text1.innerHTML = "";
 
-                    //Esta función recorre todos los caracteres nuestro texto
-                    const typeWriter = () => {
-                    if (i < str.length) {
-                        text1.innerHTML += str.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, speed);
-                    }
-                    };
+                //Declaramos una varible en la que asignaremos un valor para que sea el tiempo en ms que durará la función setTimeout
+                const speed = 25;
+                let i = 0;
 
-                    //Acá ejecutamos la función
+                //Esta función recorre todos los caracteres nuestro texto
+                const typeWriter = () => {
+                if (i < str.length) {
+                    text1.innerHTML += str.charAt(i);
+                    i++;
                     setTimeout(typeWriter, speed);
+                }
+                };
 
-                  </script>
-                  <div class="card">
-                    <div class="table-responsive">
-                      <table class="table align-items-center mb-0" onchange="session_start()">
-                        <thead>
-                          <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-5">Proceso (%)</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Subtotal</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Editar/Modificar</th>
-                          </tr>
-                        </thead>
-                        <tbody> 
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-0">
-                                <span class="badge me-3" style="background-color: rgb(0 183 105)" id="v_analisis"> </span>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">Análisis del terreno</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_analisis">Valor</p>
-                            </td>
+                //Acá ejecutamos la función
+                setTimeout(typeWriter, speed);
 
-                            <td class="align-middle">
-                              <a href="paso1.html">
-                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
-                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
-                              </a>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-0">
-                                <span class="badge me-3" style="background-color: rgb(131, 166, 3)" id="v_preparacion"> </span>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">Preparación del terreno</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_preparacion">Valor</p>
-                            </td>
-
-                            <td class="align-middle">
-                              <a href="paso2.html">                              
-                                <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
-                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
-                              </a>
-                            
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-0">
-                                <span class="badge me-3" style="background-color: rgb(255 150 0)" id="v_siembra"> </span>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">Proceso de siembra</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_siembra">Valor</p>
-                            </td>
-
-                            <td class="align-middle">
-                              <a href="paso3.html">
-                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
-                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
-                              </a>
-                            </td>
-                          </tr>
-
-                                  <tr>
-                            <td>
-                              <div class="d-flex px-2 py-0">
-                                <span class="badge me-3" style="background-color: rgb(70, 89, 2)" id="v_fertilizacion"> </span>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">Fertilización</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_fertilizacion">Valor</p>
-                            </td>
-
-                            <td class="align-middle">
-                              <a href="paso4.html">
-                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
-                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
-                              </a>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-0">
-                                <span class="badge me-3" style="background-color: rgb(191, 73, 4)" id="v_cosecha"> </span>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">Cosecha</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_cosecha">Valor</p>
-                            </td>
-
-                            <td class="align-middle">
-                              <a href="paso5.html">
-                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
-                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
-                              </a>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-0">
-                                <span class="badge me-3" style="background-color: rgb(140, 28, 3)"  id="v_pos_cosecha"> </span>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">Pos-Cosecha</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_pos_cosecha">Valor</p>
-                            </td>
-
-                            <td class="align-middle">
-                              <a href="paso6.html">
-                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
-                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
-                            </a>
-                            </td>
-                          </tr>
-
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-0">
-                                <span class="badge  me-3" style="background-color: rgb(216 245 0)" id="v_comercializar"> </span>
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-sm">Comercializacion</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_comercializar">Valor</p>
-                            </td>
-
-                            <td class="align-middle">
-                              <a href="paso7.html">
-                              <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
-                              data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
-                              </a>
-                            </td>
-                          </tr>
-
-                          <!-- total -->
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-1">
-                                <div class="d-flex flex-column justify-content-center">
-                                  <h6 class="mb-0 text-xs">Total</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0" id="valor_total_proceso">Valor</p>
-                            </td>
-                          </tr>
-
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-              </div>
-              <!-- resultados en porcentajes -->
-              <!-- <div class="card">
+              </script>
+              <div class="">
                 <div class="table-responsive">
-                  <div class="card-header pb-0 p-3">
-                    <div class="d-flex align-items-center">
-                      <h6 class="mb-0">Ánalisis de datos (%)</h6>
-                      <button type="button"
-                        class="btn btn-icon-only btn-rounded btn-outline-secondary mb-0 ms-2 btn-sm d-flex align-items-center justify-content-center ms-auto"
-                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Información">
-                        <i class="fas fa-info" aria-hidden="true"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body p-3">
-                    <div class="row">
-                      <div class="col-7">
-                        <div class="table-responsive">
-                          <table class="table align-items-center mb-0">
-                            <tbody>
+                  <table class="table align-items-center mb-0" onchange="session_start()">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 col-5">Proceso (%)</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Subtotal</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 col-3">Editar/Modificar</th>
+                      </tr>
+                    </thead>
+                    <tbody> 
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-0">
+                            <span class="badge me-3" style="background-color: rgb(0 183 105)" id="v_analisis"> </span>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Análisis del terreno</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_analisis">Valor</p>
+                        </td>
+
+                        <td class="align-middle">
+                          <a href="paso1.html">
+                          <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                          data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-0">
+                            <span class="badge me-3" style="background-color: rgb(131, 166, 3)" id="v_preparacion"> </span>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Preparación del terreno</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_preparacion">Valor</p>
+                        </td>
+
+                        <td class="align-middle">
+                          <a href="paso2.html">                              
+                            <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                          data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                          </a>
+                        
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-0">
+                            <span class="badge me-3" style="background-color: rgb(255 150 0)" id="v_siembra"> </span>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Proceso de siembra</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_siembra">Valor</p>
+                        </td>
+
+                        <td class="align-middle">
+                          <a href="paso3.html">
+                          <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                          data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                          </a>
+                        </td>
+                      </tr>
+
                               <tr>
-                                <td>
-                                  <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(0 183 105)" id="v_analisis"> </span>
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">Análisis del terreno</h6>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(131, 166, 3)" id="v_preparacion"> </span>
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">Preparación del terreno</h6>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(255 150 0)" id="v_siembra"> </span>
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">Proceso de siembra</h6>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(70, 89, 2)" id="v_fertilizacion"> </span>
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">Fertilización</h6>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(191, 73, 4)" id="v_cosecha"> </span>
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">Cosecha</h6>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <div class="d-flex px-2 py-0">
-                                    <span class="badge me-3" style="background-color: rgb(140, 28, 3)"  id="v_pos_cosecha"> </span>
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">Pos-Cosecha</h6>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <div class="d-flex px-2 py-0">
-                                    <span class="badge  me-3" style="background-color: rgb(216 245 0)" id="v_comercializar"> </span>
-                                    <div class="d-flex flex-column justify-content-center">
-                                      <h6 class="mb-0 text-sm">Comercializacion</h6>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>               
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-              <div class="container text-center">
-                <div class="row align-items-start">
-                  <a type="button" id="grafica_primerboton" onclick="ocultarmostarelementos('verelemento1')"
-                    value="mostrar_grafica_primerboton" class="col">
-                    <div class="grafica_botones">
-                      <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Gráfica de botón BARRAS</h6>
-                      </div>
-                      <div class="col-7" style="width: 100%; background-color: bisque;">
-                        <canvas id="grafica_boton" >
-                        </canvas>
-                      </div>
-                    </div>
-                  </a>
-                  <a type="button" id="grafica_segundoboton" onclick="ocultarmostarelementos('verelemento2')"
-                    value="mostrar_grafica_segundoboton" class="col">
-                    <div class="grafica_botones">
-                      <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Gráfica de botón PASTEL</h6>
-                      </div>
-                      <div class="col-7" style="width: 100%; background-color: bisque;">
-                        <canvas id="grafica2_boton"></canvas>
-                      </div>
-                    </div>
-                  </a>
-                  <a type="button" id="grafica_tercerboton" onclick="ocultarmostarelementos('verelemento3')"
-                    value="mostrar_grafica_segundoboton" class="col">
-                    <div class="grafica_botones">
-                      <div class="d-flex align-items-center">
-                        <h6 class="mb-0">Cronograma de actividades</h6>
-                      </div>
-                      <div class="col-7"style="width: 100%; background-color: bisque;">
-                        <img src="../assets/img/tabla.png" alt="main_logo" style="width:80%">
-                      </div>
-                    </div>
-                  </a>
-                  
+                        <td>
+                          <div class="d-flex px-2 py-0">
+                            <span class="badge me-3" style="background-color: rgb(70, 89, 2)" id="v_fertilizacion"> </span>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Fertilización</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_fertilizacion">Valor</p>
+                        </td>
+
+                        <td class="align-middle">
+                          <a href="paso4.html">
+                          <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                          data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-0">
+                            <span class="badge me-3" style="background-color: rgb(191, 73, 4)" id="v_cosecha"> </span>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Cosecha</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_cosecha">Valor</p>
+                        </td>
+
+                        <td class="align-middle">
+                          <a href="paso5.html">
+                          <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                          data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-0">
+                            <span class="badge me-3" style="background-color: rgb(140, 28, 3)"  id="v_pos_cosecha"> </span>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Pos-Cosecha</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_pos_cosecha">Valor</p>
+                        </td>
+
+                        <td class="align-middle">
+                          <a href="paso6.html">
+                          <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                          data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                        </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-0">
+                            <span class="badge  me-3" style="background-color: rgb(216 245 0)" id="v_comercializar"> </span>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">Comercializacion</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_comercializar">Valor</p>
+                        </td>
+
+                        <td class="align-middle">
+                          <a href="paso7.html">
+                          <button type="button" class="btn bg-gradient-success btn-tooltip material-icons opacity-9 me-2 text-md" data-bs-toggle="tooltip" 
+                          data-bs-placement="top" title="Modificar proceso" data-container="body" data-animation="true">edit</button>
+                          </a>
+                        </td>
+                      </tr>
+
+                      <!-- total -->
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-xs">Total</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0" id="valor_total_proceso">Valor</p>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <button onclick="openModal()" class="btn bg-gradient-success">Ver resultados</button>
-
-            </div>
           </div>
         </div>
+
+        <!-- CARD NUMERO 2 -->
+        <div class="col-lg-3 me-n4 mb-4 p-4 card opacity-9">
+          <h4 class="text-center">Graficas Representativas</h4>
+          <div class="row align-self-center col-12">
+            <div class="col-12">
+
+              <a type="button" href="#graficas_view" id="grafica_primerboton" onclick="ocultarmostarelementos('verelemento1')" value="mostrar_grafica_primerboton" >
+                <div class="grafica_botones">
+                  <h6 class="mb-0">Gráfica de botón BARRAS</h6>
+                  <div style="background-color: bisque;">
+                    <canvas class="col-12" id="grafica_boton" >
+                    </canvas>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 mt-3">
+
+              <a type="button" href="#graficas_view" id="grafica_segundoboton" onclick="ocultarmostarelementos('verelemento2')" value="mostrar_grafica_segundoboton" >
+                <div class="grafica_botones">
+                  <h6 class="mb-0">Gráfica de botón PASTEL</h6>
+                  <div style="background-color: bisque;">
+                    <canvas class="col-12" id="grafica2_boton"></canvas>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+            <div class="col-10 text-center mt-3">
+              
+              <a type="button" class="btn bg-gradient-success" href="#elemento3" id="grafica_tercerboton" onclick="ocultarmostarelementos('verelemento3')" value="mostrar_grafica_segundoboton" >Cronograma de actividades</a>
+            
+            </div>
+          </div>
+          
+        </div>
+
       </div>
-    </section>
+    </section> 
+    <!-- CARD -->
+
+
 
     <section class=" mb-2 card opacity-9">
       <div class="container-fluid">
        <div class="container my-4">
-        <div class="row">
+        <div class="row" id="graficas_view">
           <div id="elemento1" class="col-7" style="display: none; width: 100%; background-color: bisque;">
             <canvas id="grafica_grande"></canvas>
           </div>
