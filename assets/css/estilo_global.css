@@ -180,7 +180,7 @@ cursor: pointer;
   padding: 6px;
   text-align: center;
 }
-.mensaje {
+/* .mensaje {
   padding: 20px;
   background-color: #ff9898;
   color: #fff;
@@ -200,7 +200,7 @@ cursor: pointer;
     background-color: rgb(179, 255, 0);}
   100% { transform: scale(1); 
     background-color: rgb(13, 0, 255);}
-}
+} */
 .h6{
   line-height: 0;
 }

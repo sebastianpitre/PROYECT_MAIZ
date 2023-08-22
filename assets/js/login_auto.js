@@ -682,7 +682,7 @@ function colorRow(semanas_1,semanas_2,dia0,dia1) {
       selectedRow = rows[2];
       var cells = selectedRow.getElementsByTagName("td");
       //colocamos los numeros de la semanaen la fila 0 iniciando desde la columna 0
-     for(var i=0;i<24;i++){
+      for(var i=0;i<24;i++){
         var contador = numero_semana+i; 
         if (contador<10){
             cells[i].innerHTML="0"+ (numero_semana+i);      
@@ -724,6 +724,9 @@ function colorRow(semanas_1,semanas_2,dia0,dia1) {
               cells[i1].style.backgroundColor = "rgb(0 183 105)"; // Cambia el color de las celdas a amarillo        console.log(i); 
               var contenedor=document.createElement("div");
               var contenedor2=document.createElement("div");
+              var br=document.createElement("br");
+              var br1=document.createElement("br");
+              var p=document.createElement("p");
               contenedor.setAttribute("class","tooltip-container");
            //   contenedor.innerText="X";
               contenedor2.setAttribute("class","tooltip-content");
@@ -732,7 +735,15 @@ function colorRow(semanas_1,semanas_2,dia0,dia1) {
 
               cells[i1].appendChild(contenedor);
               contenedor.appendChild(contenedor2);
-               console.log("aqui"+i1);
+            //  contenedor2.appendChild(br1);
+              //contenedor2.appendChild(p);
+              //contenedor2.appendChild(br);
+
+
+              //cells[i1].classList.add('tooltip-container');
+
+//              cells[i1].title="1. Desmalezado 2. Arado  3. Nivelación   Fertilización y enmendamiento del suelo   5. Siembra";
+              console.log("aqui"+i1);
             }
             else if (i1>semanas_1 && i1<=(semanas_1+semanas_2+dia1) && j==4) {
               cells[i1].style.backgroundColor = "rgb(131, 166, 3)"; // Cambia el color de las celdas a amarillo        console.log(i); 
