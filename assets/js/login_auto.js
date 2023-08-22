@@ -68,36 +68,200 @@ function actualizardatos() {
             $('#name_user').html(data.valor1);
             $('#fecha_inicial').html(data.valor2);
             let fechaSumada = data.valor2 ;
+
             let fechaSumada1= new Date(fechaSumada);
-            let mesSumado = fechaSumada1.getMonth() ;
-            var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+         
+            
+           
+            
+           
+          
+          fechaSumada1.setDate(fechaSumada1.getDate()+1);
+          let mesSumado = fechaSumada1.getMonth() ;
+         
+          let dia0 = Math.floor(fechaSumada1.getDate()/7);
+          
+          var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
     
-            var numero2=0;
-            var numero=0;
+          var numero2=0;
+          var numero=0;
         
             for (let i = 0; i < 6; i++) {
             
                 if(numero>10){
-                    
+                 
                     let meses1=meses[numero2];
                     console.log(meses1);
                     $('#mes'+i).html(meses1);
                     var  numero2=numero2+1;
                 
                 }else{
-                        numero=parseInt(mesSumado)+i;
+                    numero=parseInt(mesSumado)+i;                     
                     let meses1=meses[numero];
                     console.log(meses1);
                     $('#mes'+i).html(meses1);
                 }
             }
-            
+                var fechaActual = new Date(fechaSumada);
+               
+                // Sumar 7 días
+                var dias = 28;
+                var dias2 = 8;
+                var dias3 = 8;
+                var dias4 = 8;
+                var dias5 = 8;
+                var dias6 = 8;
+                var dias7 = 8;
+                var dias8 = 8;
+                var dias9 = 8;
+                var dias10 = 8;
+                var dias11 = 8;
+                var dias12 = 8;
+                var dias13 = 8;
+                var dias14 = 8;
+                var dias15 = 8;
+                var dias16 = 8;
+                var dias17 = 8;
 
-    
+                fechaActual.setDate(fechaActual.getDate() + dias);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                var diferencia = fechaActual-fechaSumada1;
+                 
+                var semanas_1=Math.floor(diferencia/(1000*60*60*24*7));
+              
+                semanas_1=semanas_1+dia0;
+                
+                $('#mes_1').html(year+"-"+mes+"-"+dia);
+                console.log(year+"-"+mes+"-"+dia)
+                console.log(fechaActual);
+                fechaActual.setDate(fechaActual.getDate() + dias2);
+                
+                
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_2').html(year+"-"+mes+"-"+dia);
+                var fechaAnteiror1 = new Date(year+"-"+mes+"-"+dia);
+                console.log(year+"-"+mes+"-"+dia)
+                fechaActual.setDate(fechaActual.getDate() + dias3);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_3').html(year+"-"+mes+"-"+dia);
+                var fechaActual1= new Date(year+"-"+mes+"-"+dia);
+                
+                //---------------------------------
+                var diferencia1 = fechaActual1-fechaAnteiror1;
+                let dia1 = Math.floor(fechaAnteiror1.getDate()/7);
+                var semanas_2=Math.floor(diferencia1/(1000*60*60*24*7));
+              
+                semanas_2=semanas_2+dia1;
+              
+                //--------------------------
+                fechaActual.setDate(fechaActual.getDate() + dias4);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+
+
+                $('#mes_4').html(year+"-"+mes+"-"+dia);
+                fechaActual.setDate(fechaActual.getDate() + dias5);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_5').html(year+"-"+mes+"-"+dia);
+
+                fechaActual.setDate(fechaActual.getDate() + dias6);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_6').html(year+"-"+mes+"-"+dia);
+                fechaActual.setDate(fechaActual.getDate() + dias7);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_7').html(year+"-"+mes+"-"+dia);
+
+                fechaActual.setDate(fechaActual.getDate() + dias8);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_8').html(year+"-"+mes+"-"+dia);
+                fechaActual.setDate(fechaActual.getDate() + dias9);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_9').html(year+"-"+mes+"-"+dia);
+
+                fechaActual.setDate(fechaActual.getDate() + dias10);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_10').html(year+"-"+mes+"-"+dia);
+                fechaActual.setDate(fechaActual.getDate() + dias11);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_11').html(year+"-"+mes+"-"+dia);
+
+                fechaActual.setDate(fechaActual.getDate() + dias12);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_12').html(year+"-"+mes+"-"+dia);
+                fechaActual.setDate(fechaActual.getDate() + dias13);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_13').html(year+"-"+mes+"-"+dia);
+
+                fechaActual.setDate(fechaActual.getDate() + dias14);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_14').html(year+"-"+mes+"-"+dia);
+                fechaActual.setDate(fechaActual.getDate() + dias15);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_15').html(year+"-"+mes+"-"+dia);
+
+                fechaActual.setDate(fechaActual.getDate() + dias16);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_16').html(year+"-"+mes+"-"+dia);
+                fechaActual.setDate(fechaActual.getDate() + dias17);
+                console.log(fechaActual);
+                var dia =(fechaActual.getDate()).toString().padStart(2,"0");
+                var mes=(fechaActual.getMonth()+1).toString().padStart(2,"0");
+                var year=fechaActual.getFullYear();
+                $('#mes_17').html(year+"-"+mes+"-"+dia);
+         
+
+                colorRow(semanas_1,semanas_2,dia0,dia1);
 
         }
     });
 }
+
+
 
 
 // resultados de cada proceso
@@ -172,13 +336,16 @@ function resultados_procesos() {
 
     // Escuchar eventos de cambio en el formulario
     setInterval(actualizarTabla, 1000); 
-    setInterval(actualizardatos, 1000);
+    //setInterval(actualizardatos, 1000);
 
 
     //edité la actualización de la tabla
 });
 
-
+function getWeekNumber(date) {
+    var onejan = new Date(date.getFullYear(), 0, 1);
+    return Math.ceil(((date - onejan) / 86400000 + onejan.getDay() + 1) / 7);
+    }
 // grafica de barras BOTON
 function grafico(tamaño1,tamaño2,tamaño3,tamaño4,tamaño5,tamaño6,tamaño7){
 
@@ -493,17 +660,36 @@ function ocultarmostarelementos(validacion) {
   
 }
 
-function colorRow() {
+function obtener_semana(){
+    //fila 2
+    let sema_2 = document.getElementById("mes_2");
+    //fila 2
+    var sema1=sema_2.innerText;
+    var sema1 = new Date(sema1);
+
+}
+
+function colorRow(semanas_1,semanas_2,dia0,dia1) {
+    obtener_semana();
     // 
- 
+    let sema1 = document.getElementById("fecha_inicial");
+    var seman_1=sema1.innerText;
+    var sema = new Date(seman_1);
+    sema.setDate(sema.getDate()+1);
+    var  numero_semana= getWeekNumber(sema);
       var table = document.getElementById("table1");
       var rows = table.getElementsByTagName("tr");
       selectedRow = rows[2];
       var cells = selectedRow.getElementsByTagName("td");
       //colocamos los numeros de la semanaen la fila 0 iniciando desde la columna 0
-    /* for(var i=0;i<24;i++){
-      cells[i].innerHTML= numeroSemana+i;
-     }*/
+     for(var i=0;i<24;i++){
+        if (i<9){
+            cells[i].innerHTML="0"+ (numero_semana+i);      
+        }else{
+            cells[i].innerHTML= numero_semana+i;
+        }
+   
+     }
         //dede aqui simplemente seleccionamos que fila se va a pintar y cuantas celldas se van a seleccionar
         // number se encarga  de seleccionar las filas
         var s1=0; //inicia desde que semana inicia
@@ -533,57 +719,76 @@ function colorRow() {
           selectedRow = rows[j];
           var cells = selectedRow.getElementsByTagName("td");
           
-            if (i1>=0 && i1<=3 && j==3) {
+            if (i1>=(dia0-1) && i1<=semanas_1 && j==3) {
               cells[i1].style.backgroundColor = "rgb(0 183 105)"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
-              cells[i1].title="1. Desmalezado 2. Arado  3. Nivelación   Fertilización y enmendamiento del suelo   5. Siembra";
+              var contenedor=document.createElement("div");
+              var contenedor2=document.createElement("div");
+              var br=document.createElement("br");
+              var br1=document.createElement("br");
+              var p=document.createElement("p");
+              contenedor.setAttribute("class","tooltip-container");
+           //   contenedor.innerText="X";
+              contenedor2.setAttribute("class","tooltip-content");
+              contenedor2.innerText="Eliminar malezas,\nArado, Nivelación, Fertilización y enmendamiento del suelo, Siembra";
+
+
+              cells[i1].appendChild(contenedor);
+              contenedor.appendChild(contenedor2);
+            //  contenedor2.appendChild(br1);
+              //contenedor2.appendChild(p);
+              //contenedor2.appendChild(br);
+
+
+              //cells[i1].classList.add('tooltip-container');
+
+//              cells[i1].title="1. Desmalezado 2. Arado  3. Nivelación   Fertilización y enmendamiento del suelo   5. Siembra";
               console.log("aqui"+i1);
             }
-            else if (i1>=5 && i1<=6 && j==4) {
+            else if (i1>semanas_1 && i1<=(semanas_1+semanas_2+dia1) && j==4) {
               cells[i1].style.backgroundColor = "rgb(131, 166, 3)"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
             else if (i1>=3 && i1<=6 && j==5) {
               cells[i1].style.backgroundColor = "rgb(255 150 0)"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
             else if (i1>=7 && i1<=15 && j==6) {
               cells[i1].style.backgroundColor = "rgb(70, 89, 2)"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
             else if (i1>=9 && i1<=10 && j==7) {
               cells[i1].style.backgroundColor = "rgb(191, 73, 4)"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
             else if (i1>=5 && i1<=6 && j==8) {
               cells[i1].style.backgroundColor = "rgb(140, 28, 3)"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
             else if (i1>=3 && i1<=6 && j==9) {
               cells[i1].style.backgroundColor = "blue"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
             else if (i1>=12 && i1<=16 && j==10) {
               cells[i1].style.backgroundColor = "red"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
             else if (i1>=20 && i1<=24 && j==11) {
               cells[i1].style.backgroundColor = "yellow"; // Cambia el color de las celdas a amarillo        console.log(i); 
-              cells[i1].classList="mensaje";
+              
               cells[i1].title="holaaaaaaaaaaaaaaaa";
               console.log("else"+i1);
             }
@@ -595,3 +800,6 @@ function colorRow() {
          }
     }
 }
+
+    
+   

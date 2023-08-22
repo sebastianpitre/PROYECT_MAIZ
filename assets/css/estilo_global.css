@@ -174,10 +174,10 @@ cursor: pointer;
   border-collapse: collapse;
 }
 
-#th,
-#td {
+.th,
+.td {
   border: 1px solid black;
-  padding: 8px;
+  padding: 6px;
   text-align: center;
 }
 .mensaje {
@@ -200,4 +200,47 @@ cursor: pointer;
     background-color: rgb(179, 255, 0);}
   100% { transform: scale(1); 
     background-color: rgb(13, 0, 255);}
+}
+.h6{
+  line-height: 0;
+}
+
+.tooltip-container {
+  position: relative;
+  width: 100%;
+  height: 25px;
+
+  visibility: visible;
+  opacity: 1;
+
+  
+}
+
+.tooltip-content {
+  position: absolute;
+  top: 35px;
+  left: 100%;
+  transform: translateX(5%);
+  width: 200px;
+  background-color: #e2e2e2;
+  border: 1px solid #e2e2e2;
+  color: black;
+  padding: 10px;
+  visibility: hidden;
+  opacity: 0;
+  border-top-left-radius: 0px;
+  border-radius: 0px 16px 16px 16px;
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.884);
+  transition: visibility 0s, opacity 0.3s;
+}
+
+td :hover .tooltip-content {
+  visibility: visible;
+  ;
+  opacity: 1;
+}
+
+.tooltip-content p {
+  margin: 0;
 }
