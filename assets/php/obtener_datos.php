@@ -11,48 +11,17 @@ include('funciones.php');
   $nombre =$fila1->nombre_u;
   $id_usuario = $fila1->id_usuario;
 
-  $busqueda1=consulta($miconexion,"SELECT * FROM terreno WHERE id_user like $id_usuario");
-
-  $fila2 = $busqueda1->fetch_object(); 
-  $busqueda2=consulta($miconexion,"SELECT * FROM proceso_siembra WHERE id_user_siembra like $id_usuario");
+ 
+  $busqueda2=consulta($miconexion,"SELECT * FROM cronograma WHERE id_user_cronograma like $id_usuario");
 
   $fila3 = $busqueda2->fetch_object(); 
-  $precio_sembrar=$fila3->precio_semilla;
-  $nombre_producto=$fila3->nombre_producto;
+  $fecha_inicial=$fila3->fecha_inicial;
 
-  $area = $fila2->area;
-  $dist_surcos = $fila2->surcos;
-  $dist_semillas = $fila2->distancia;
-  $dist_semillasm = intval($dist_semillas)/100;
-  $dist_surcosm = intval($dist_surcos)/100;
-  $cant_plantas = round(intval($area)/($dist_semillasm*$dist_surcosm));
-  $cant_obtenida = (($cant_plantas*100)/1000);
-  $cant_sembrar = number_format(intval($cant_plantas*3)/(10000),2)." Kg";
-  
-  $cant_sembrar1 = intval($cant_plantas*3)/(10000);
-  $area=$area = intval($area*1);
-  $area=$area ." m²";
-  $dist_semillas = $dist_semillas ." cm";
-  $dist_surcos = $dist_surcos ." cm";
-  $cant_obtenida = number_format($cant_obtenida/1000,2) ." T - ". number_format(($cant_obtenida/1000)*.75,2)." T" ;
 
-  $precio_sembrar1 = intval($precio_sembrar);
-  $precio_sembrar ="$". intval($precio_sembrar);
-  $respuesta_valor_maiz = "$ ". number_format($cant_sembrar1 * $precio_sembrar1,2);
-  $respuesta_valor_maiz1 =  number_format($cant_sembrar1 * $precio_sembrar1,2);
-  
   // Creamos un array con los valores
   $valores = array(
     'valor1' => $nombre,
-    'valor2' => $area,
-    'valor3' => $dist_surcos,
-    'valor4' => $dist_semillas,
-    'valor5' => $cant_plantas,
-    'valor6' => $cant_obtenida,
-    'valor7' => $cant_sembrar/*,
-    'valor8' => $precio_sembrar,
-    'valor9' => $respuesta_valor_maiz,
-    'valor10' => $nombre_producto*/
+    'valor2' => $fecha_inicial
 
 
   );
