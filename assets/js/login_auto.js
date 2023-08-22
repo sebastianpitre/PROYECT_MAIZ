@@ -697,7 +697,7 @@ function colorRow(semanas_1,semanas_2,dia0,dia1) {
         var s2=6; // finaliza  columnas de las tabla
         //selecciona las fila que se va a pintar
         var number = 1;
-        //cellscolor  selecciona  cuantas celldas se pintaran
+        //cellscolor  selecciona  cuantas celldas se  pintaran 
       var cellsToColor = s2;
     
       for (var j =3; j < 12; j++) {
